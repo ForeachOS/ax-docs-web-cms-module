@@ -1,6 +1,4 @@
 = Summary
-. link:README.adoc#About[About]
-
 . link:chap-general-information.adoc[General Information]
 .. link:chap-general-information.adoc#artifact[Artifact]
 .. link:chap-general-information.adoc#module-dependencies[Module dependencies]
