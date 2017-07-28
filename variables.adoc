@@ -1,4 +1,3 @@
-:toc: left
 :sectanchors:
 :module-version: 0.0.2-SNAPSHOT
 :module-name: WebCmsModule
