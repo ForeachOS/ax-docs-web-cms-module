@@ -154,7 +154,7 @@ And our publications *IT Jobs* and *Marketing Jobs* are example collections of d
 
 All required configuration is shown using the YAML data structures:
 
-.Defining the article type
+===== Defining the article type
 We create a Job article type that specifies the different content fields any Job article should have.
 
 [source,yaml]
@@ -198,7 +198,7 @@ These fields will be directly editable in the administration UI and the `sortInd
 <6> Special markers _@@title@@_, _@@subTitle@@_ and_@@description@@_ can be used to represent article properties.
 When creating a new article these markers will be replaced by the actual property value of the newly created article.
 
-.Defining the publication type
+===== Defining the publication type
 We create a Jobs publication type that can only hold articles with our Job article type.
 
 [source,yaml]
@@ -221,7 +221,7 @@ The link type can be any string value, but in case of a `WebCmsPublicationType` 
 <5> The unique object id of the `WebCmsArticleType` that is attached to this publication type.
 Because a `WebCmsTypeSpecifierLink` can hold a reference to any `WebCmsTypeSpecifier`, we must use the globally unique object id.
 
-.Creating the publications
+===== Creating the publications
 We create two publications with our Jobs types.
 Both publications use the same article template page for rendering the article
 [source,yaml]
@@ -264,7 +264,7 @@ If a publication is not published (offline), none of its articles will be publis
 <8> We link our publications to the template page we defined previously.
 We can use either the `objectId` or the `canonicalPath` to refer to the `WebCmsPage`.
 
-.Adding a sample job to our IT Jobs publication
+===== Adding a sample job to our IT Jobs publication
 [source,yaml]
 ----
 assets:
