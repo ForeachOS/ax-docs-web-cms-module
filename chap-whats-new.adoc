@@ -1,5 +1,5 @@
-== What's new in this version?
+include::variables.adoc[]
+= What's new in this version?
 :numbered!:
-=== 0.0.2-SNAPSHOT
+== 0.0.2-SNAPSHOT
 Initial public release available on http://search.maven.org/[Maven central].
-
