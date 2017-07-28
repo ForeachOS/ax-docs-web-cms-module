@@ -1,10 +1,10 @@
 = Summary
 . link:README.adoc#About[About]
 
-. link:chap-general-information.md[General Information]
-.. link:chap-general-information.md#artifact[About]
-.. link:chap-general-information.md#module-dependencies[Module dependencies]
-.. link:chap-general-information.md#module-settings[Module settings]
+. link:chap-general-information.adoc[General Information]
+.. link:chap-general-information.adoc#artifact[Artifact]
+.. link:chap-general-information.adoc#module-dependencies[Module dependencies]
+.. link:chap-general-information.adoc#module-settings[Module settings]
 
 = What's new in this version
 . link:chap-whats-new.adoc[What's new in this version]
