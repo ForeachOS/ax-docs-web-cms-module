@@ -5,12 +5,12 @@
 
 . link:chap-whats-new.adoc[What's new in this version]
 = Domain Model
-. link:chap-asset-model.adoc[Asset model]
-. link:pages/chap-web-page.adoc[Page model]
-. link:publication/chap-publication-model.adoc[Publication model]
-. link:urls/chap-endpoint-url.adoc[Endpoints and URLs]
-. link:chap-redirects.adoc[Redirects]
-. link:menu/chap-menu.adoc[Menu]
+.. link:chap-asset-model.adoc[Asset model]
+.. link:pages/chap-web-page.adoc[Page model]
+.. link:publication/chap-publication-model.adoc[Publication model]
+.. link:urls/chap-endpoint-url.adoc[Endpoints and URLs]
+.. link:chap-redirects.adoc[Redirects]
+.. link:menu/chap-menu.adoc[Menu]
 
 ////
 
