@@ -1,10 +1,11 @@
+include::../variables.adoc[]
 [[endpoint-url]]
-=== Endpoints and URLs
+= Endpoints and URLs
 WebCmsModule provides a basic a basic model for mapping an endpoint on a website.
 An endpoint has one or more URLs pointing to it.
 The endpoint data determines the handler method that will be executed on the application end.
 
-==== WebCmsEndpoint
+== WebCmsEndpoint
 A `WebCmsEndpoint` represents a single endpoint, and has a `urls` property which is the collection of `WebCmsUrl` instances that point to the endpoint.
 
 WebCmsModule provides two endpoint implementations:
@@ -17,7 +18,7 @@ The primary URL is considered to be the primary URL identifier for the endpoint.
 If an endpoint has multiple redirecting URLs mapped, the target of the redirect should be the primary URL.
 
 [[WebCmsUrl-overview]]
-==== WebCmsUrl
+== WebCmsUrl
 `WebCmsUrl` represents a single URL targeting a specific endpoint with a HTTP-status code.
 A `WebCmsUrl` must be coupled with an `WebCmsEndpoint`.
 
@@ -42,7 +43,7 @@ See the next table for more information.|None
 |OK|200|Done
 |================
 
-==== Services/repositories
+== Services/repositories
 The primary API for working with URLs in application code is the `WebCmsEndpointService`.
 
 If you want to manually manage endpoints on a lower level, the following repositories are available:
@@ -51,7 +52,7 @@ If you want to manually manage endpoints on a lower level, the following reposit
 * `WebCmsAssetEndpointRepository`
 * `WebCmsRemoteEndpointRepository`
 
-==== Mapping infrastructure
+== Mapping infrastructure
 WebCmsModule configures default mapping and model loading for its default endpoints:
 
 * a `WebCmsAssetEndpoint` accessed with a `WebCmsUrl` that has a redirection status code will result in a redirect to the primary URL of that endpoint
@@ -65,7 +66,7 @@ The resolved endpoint is stored on the request-scoped `WebCmsEndpointContext` be
 
 NOTE: The `WebCmsEndpoint` as well as the `WebCmsUrl` of a request can be used as handler method arguments.
 
-===== Mapping handler methods
+=== Mapping handler methods
 You can easily create your own handler methods for specific endpoints using the `@WebCmsEndpointMapping`.
 This allows you to map on the `WebCmsEndpoint` implementation, as well as status codes of the `WebCmsUrl` the request mapped to.
 
@@ -85,7 +86,7 @@ public class SillyRemoteEndpointController
 
 NOTE: For `WebCmsPage` and `WebCmsArticle` it is easier to use the specialized annotations `@WebCmsPageMapping` and `@WebCmsArticleMapping` respectively.
 
-===== Default model loading
+=== Default model loading
 When a `WebCmsEndpoint` is loaded, WebCmsModule will attempt to load a default model for the request.
 The default implementations will add model attributes, set a default template or load asset components.
 See the `WebCmsEndpointModelLoader` interface for adding your own default model loaders for endpoints.
@@ -93,13 +94,13 @@ See the `WebCmsEndpointModelLoader` interface for adding your own default model 
 Default model loading will always be done, regardless of the actual handler method invoked.
 If you want to specifically suppress the default model, you should annotated your handler method with `@IgnoreEndpointModel`.
 
-===== Access validation
+=== Access validation
 Whenever a `WebCmsEndpoint` is requested, the endpoint will be matched against all available `WebCmsEndpointAccessValidator` beans to see if the endpoint is allowed.
 Default implementations will for example only allow access to assets that are published, unless the request happens in preview mode.
 
 See the `WebCmsEndpointAccessValidator` source code for implementing your own validation mechanisms.
 
-==== Enabling URLs for an asset
+== Enabling URLs for an asset
 By default URL mappings are only enabled for `WebCmsPage` and `WebCmsArticle` assets.
 This means as soon a `WebCmsPage` or `WebCmsArticle` is created, a single `WebCmsAssetEndpoint` linked to the asset will be created as well.
 
