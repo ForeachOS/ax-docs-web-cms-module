@@ -1,5 +1,5 @@
 [[PublicationModel-overview]]
-=== Publication model
+= Publication model
 
 WebCmsModule contains a default publication model for articles.
 An article can typically be pretty much any type of content, but usually it is something like a piece of news or a blog article.
@@ -8,28 +8,30 @@ An article can typically be pretty much any type of content, but usually it is s
 * A publication is of a specific publication type
 * The publication type determines the different article types any publication of that publication type can have
 
-.Example model
+=== Example model
+
 * Publication type _blog_ would represent a collection of blog articles
 ** Article types _blog_ and _status-update_ would be linked to the publication type
 * Publication _John's blog_ would be a single instance of the _blog_ publication type
 * _Leaving on holiday today!_ would be an article of type _status-update_ in _John's blog_
 
-.Default model
+=== Default model
+
 Out of the box, WebCmsModule configures the following data:
 
- * publication types: *news*, *blogs*
- * article types: *news*, *blog*
- * template pages: */blog/****, ***/news/**
+* publication types: *news*, *blogs*
+* article types: *news*, *blog*
+* template pages: */blog/****, ***/news/**
 
- * publications:
- ** *news* with article type *news* and template page */news/**
- ** *blogs* with article type *blog* and template page */blog/**
+* publications:
+** *news* with article type *news* and template page */news/**
+** *blogs* with article type *blog* and template page */blog/**
 
-==== Domain implementation
+== Domain implementation
 
-===== Asset implementation
+=== Asset implementation
 
-.WebCmsArticle
+=== WebCmsArticle
 Represents a single article.
 `WebCmsArticle` is an implementation of a publishable `WebCmsAsset`.
 
@@ -43,7 +45,7 @@ See _<<configuring-publication-model>>_ for an example component configuration.
 An article is considered an asset with an endpoint URL.
 When saving an article, a URL will always be created combining the title of the article with the canonical path of the publication template page.
 
-.WebCmsArticleType
+=== WebCmsArticleType
 Represents the specific type of an article.
 `WebCmsArticleType` is an implementation of `WebCmsTypeSpecifier`.
 The article type is used to determine the components that should be added to an article of that type.
@@ -57,7 +59,7 @@ An article is always linked to a single article type.
 
 See _<<configuring-publication-model>>_ for a full example.
 
-.WebCmsPublication
+=== WebCmsPublication
 Represents a named collection of articles.
 `WebCmsPublication` is an implementation of a publishable `WebCmsAsset`.
 Property `publicationType` refers to the `WebCmsPublicationType` of the publication.
@@ -68,7 +70,7 @@ The template page model will also be loaded automatically when rendering an arti
 
 An article is always linked to a single publication.
 
-.WebCmsPublicationType
+=== WebCmsPublicationType
 Represents the specific type of a publication.
 `WebCmsPublicationType` is an implementation of `WebCmsTypeSpecifier`.
 The publication type defines the different article types that are allowed in a publication of that type.
@@ -83,14 +85,14 @@ The following repositories are available for managing the publication related do
 
 NOTE: If you want to change the strategy for default components, see the `WebCmsDefaultComponentsService`.
 
-==== Administrative UI
+== Administrative UI
 The default configuration allows managing publications and articles from the administration UI.
 Both article type and publication type are assumed to be installed using code.
 
 Enabling/disabling managing of article type or publication type can be done by modifying the EntityModule configuration of `WebCmsArticleType` and `WebCmsPublicationType`.
 
 [[article-web-model]]
-==== Web infrastructure
+== Web infrastructure
 Any `WebCmsArticle` will automatically create a `WebCmsAssetEndpoint` with generated URL values.
 
 .Default article controller model
@@ -107,7 +109,7 @@ When requesting an article endpoint a default model will be rendered:
 
 The default article model is loaded by the `WebCmsArticleModelLoader` bean.
 
-.Custom article mapping
+=== Custom article mapping
 You can create your own article handler by using `@WebCmsArticleMapping` annotation.
 The `@WebCmsArticleMapping` annotation can be combined with other `@RequestMapping` annotations to create a specific match.
 
@@ -138,7 +140,7 @@ public String renderBreakingNews( WebCmsArticle article, Model model ) {
  The handler method should fully initialize the model required as well as return the view that should be rendered.
 
 [[WebCmsArticle-import]]
-==== Importing data
+=== Importing data
 Most domain data of the publication model can be imported using YAML.
 See _<<configuring-publication-model>>_ for a full example.
 
