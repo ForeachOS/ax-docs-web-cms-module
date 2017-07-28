@@ -5,7 +5,7 @@
 
 . link:chap-whats-new.adoc[What's new in this version]
 
-. link:chap-placehodler.adoc[Domain model]
+. link:chap-placeholder.adoc[Domain model]
 .. link:chap-asset-model.adoc[Asset model]
 .. link:pages/chap-web-page.adoc[Page model]
 .. link:publication/chap-publication-model.adoc[Publication model]
