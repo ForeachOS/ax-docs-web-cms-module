@@ -55,7 +55,7 @@ If the `WebCmsPageType` does not specify a template either, the value of module 
 A page template will usually be resolved by the configured Spring MVC `ViewResolver` beans.
 By default page templates are expected to be Thymeleaf template files.
 
-At startup of the application, WebCmsModule will attempt to determine the default template path of the current application.
+At startup of the application, {module-name} will attempt to determine the default template path of the current application.
 Any relative template will then be automatically prefixed with the default template path.
 Only templates with a specified prefix (eg. _th/_) are considered absolute and will be left untouched.
 
@@ -79,7 +79,7 @@ A `WebCmsPage` can be referred to by different URLs. Please see the respective <
 
 [[WebCmsPage-import]]
 === Importing a page
-One can import a page by using the import infrastructure provided by the import functionality of WebCmsModule.
+One can import a page by using the import infrastructure provided by the import functionality of {module-name}.
 
 ==== Examples
 .Example page
