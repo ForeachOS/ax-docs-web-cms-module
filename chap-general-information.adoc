@@ -2,6 +2,7 @@ include::variables.adoc[]
 = General information
 
 == Artifact
+
 [source,xml,indent=0]
 [subs="verbatim,quotes,attributes"]
 ----

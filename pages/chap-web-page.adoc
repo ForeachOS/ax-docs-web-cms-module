@@ -2,11 +2,13 @@ include::../variables.adoc[]
 = Page model
 [[WebCmsPage-overview]]
 == Overview
+
 A `WebCmsPage` is a component that represents a single page in the application. It differs from an <<PublicationModel-overview, article>> in that the page is stand-alone,
 i.e. you have more control regarding the layout and the components of the page. One can use this, for example, to create _about_ or _faq_ pages. It is related to the publication model
  in that an article is contained in a page: the data is contained in the article component, but how the article is rendered is handled by the page.
 
 === Properties
+
 .Properties of a page
 [options="header", cols="2,1,1,3,1"]
 |================
@@ -72,9 +74,11 @@ You can manually specify the default template prefix using property `webCmsModul
 See the <<module-settings,module settings>> for all options you can configure if you want to change the default template resolving behaviour.
 
 === Web Components
+
 A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the building blocks of the pages. For further information, please check the <<WebCmsComponents-overview, chapter>> on components.
 
 === URLs
+
 A `WebCmsPage` can be referred to by different URLs. Please see the respective <<WebCmsUrl-pages, chapter>> for more information.
 
 [[WebCmsPage-import]]
@@ -82,6 +86,7 @@ A `WebCmsPage` can be referred to by different URLs. Please see the respective <
 One can import a page by using the import infrastructure provided by the import functionality of {module-name}.
 
 ==== Examples
+
 .Example page
 [source,yaml,indent=0]
 ----
@@ -118,6 +123,7 @@ page:
 <3> You can use this notation to manipulate the associated menu items.
 
 ==== Properties
+
 .Page properties that can be imported
 [options="header", cols="1,1,2"]
 |================
@@ -138,9 +144,11 @@ page:
 
 [[WebCmsPageType-overview]]
 == WebCmsPageType
+
 A WebCmsPageType is used for assigning a certain type of page to a <<WebCmsPage-overview, WebCmsPage>>. The default page type is controlled via the `webCmsModule.pages.default-page-type` parameter in the configuration.
 
 === Properties
+
 .Parameters
 [options="header", cols="1,1,1,4,1"]
 |===
@@ -162,6 +170,7 @@ If omitted, a component called *contentTemplate* will be searched for.
 |===
 
 === Importing a page type
+
 In the standard setup one can only manipulate the available page types via the import functionality. The default types are described further down. One can extrapolate any other needed page type from them.
 
 .Default page types
@@ -236,6 +245,7 @@ tabbed-page:
 
 [[page-web-model]]
 == Web infrastructure
+
 Any `WebCmsPage` will automatically create a `WebCmsAssetEndpoint` with generated URL values.
 
 .Default page controller model
