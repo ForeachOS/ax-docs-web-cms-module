@@ -24,20 +24,3 @@ Features provided by {module-name} include:
 A fully functional administration UI is available using AdminWebModule and EntityModule.
 
 Module website: {module-url}
-////
-include::chap-general-information.adoc[]
-
-include::chap-whats-new.adoc[]
-
-include::chap-domain-model.adoc[]
-
-include::components/chap-web-components.adoc[]
-
-include::importing/chap-importing-data.adoc[]
-
-include::chap-performance-tuning.adoc[]
-
-include::extending/chap-extending-domain-model.adoc[]
-
-include::appendices/chap-appendices.adoc[]
-///
