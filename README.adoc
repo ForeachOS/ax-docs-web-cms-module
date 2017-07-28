@@ -1,0 +1,53 @@
+= WebCmsModule
+Arne Vandamme, Raf Ceuls
+0.0.2-SNAPSHOT
+include::variables.adoc[]
+[subs=+macros]
+
+----
+Copyright (C) 2014-2017 +
+Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
+----
+
+[abstract]
+== About
+{module-name} aims to provide some core Web CMS features for your Across application out-of-the-box.
+Building a simple website is very easy and requires very little development.
+
+Features provided by {module-name} include:
+
+* an extensible <<domain-model,domain model>> with common asset types like <<WebCmsPage-overview,web pages>>, <<PublicationModel-overview,articles>> and <<Redirects-overview,redirects>>
+* a way to manage the <<endpoint-url,URLs to these assets>>
+* a <<WebCmsComponents-overview,powerful component model>> for building templates and managing dynamic content
+* an easy way to <<importing-data,import data using YAML files>>
+
+A fully functional administration UI is available using AdminWebModule and EntityModule.
+
+Module website: {module-url}
+
+:numbered:
+// General information
+include::chap-general-information.adoc[]
+
+// What's new section
+include::chap-whats-new.adoc[]
+
+:numbered:
+
+// Domain model - bulk of domain documentation
+include::chap-domain-model.adoc[]
+
+// Components
+include::components/chap-web-components.adoc[]
+
+// General data import information
+include::importing/chap-importing-data.adoc[]
+
+// Performance tuning related configuration
+include::chap-performance-tuning.adoc[]
+
+// Extending the domain model: creating your own assets, types, configuring admin UI etc
+include::extending/chap-extending-domain-model.adoc[]
+
+// Appendices
+include::appendices/chap-appendices.adoc[]

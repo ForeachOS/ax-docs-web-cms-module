@@ -1,0 +1,27 @@
+{
+  "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons" ],
+  "pluginsConfig": {
+    "theme-api": {
+      "languages": [{
+          "lang": "java",
+          "name": "JavaScript",
+          "default": true
+        },
+        {
+          "lang": "xml",
+          "name": "XML"
+        }]
+    }},
+  "variables": {
+    "module-version": "0.0.2-SNAPSHOT",
+    "module-name": "WebCmsModule",
+    "module-artifact": "web-cms-module",
+    "module-url": "https://foreach.atlassian.net/wiki/display/AX/WebCmsModule",
+    "hibernate-jpa-module-url": "https://foreach.atlassian.net/wiki/display/AX/AcrossHibernateModule",
+    "hibernate-jpa-unit-of-work-factory": "https://across.foreach.be/docs/across-standard-modules/AcrossHibernateModule/2.0.0.RELEASE/reference/#unitofworkfactory",
+    "admin-web-module-url": "https://foreach.atlassian.net/wiki/display/AX/AdminWebModule",
+    "entity-module-url": "https://foreach.atlassian.net/wiki/display/AX/EntityModule",
+    "ehcache-module-url": "https://foreach.atlassian.net/wiki/display/AX/EhcacheModule"
+  }
+
+}
