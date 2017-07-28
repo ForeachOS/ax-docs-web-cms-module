@@ -95,7 +95,7 @@ Enabling/disabling managing of article type or publication type can be done by m
 == Web infrastructure
 Any `WebCmsArticle` will automatically create a `WebCmsAssetEndpoint` with generated URL values.
 
-.Default article controller model
+=== Default article controller model
 When requesting an article endpoint a default model will be rendered:
 
 * the template rendered will be determined by the `WebCmsPage` that is the article template of the `WebCmsPublication` the article belongs to
