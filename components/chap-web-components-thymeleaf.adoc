@@ -1,3 +1,4 @@
+include::../variables.adoc[]
 === Thymeleaf integration
 
 WebCmsModule provides its own Thymeleaf dialect for working with components.
@@ -483,7 +484,3 @@ If you want to use content markers in your content snippets, you can use the `We
 ==== Custom content markers
 Content containing content markers can easily be written to Thymeleaf output using the `WebCmsComponentContentModelWriter`.
 If you want to implement your own custom content markers you must provide an implementation of `WebCmsComponentContentMarkerRenderer` as a bean.
-
-
-
-

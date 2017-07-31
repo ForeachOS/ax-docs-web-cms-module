@@ -1,3 +1,4 @@
+include::variables.adoc[]
 [[performance-tuning]]
 == Performance tuning
 This chapter describes some recommended settings for improving the overall performance of WebCmsModule.
@@ -47,4 +48,3 @@ It is recommended to configure these caches in any production application.
 
 .Hibernate level 2 cache
 To improve overall performance of the domain model, configuring Hibernate level 2 cache is also strongly advised.
-

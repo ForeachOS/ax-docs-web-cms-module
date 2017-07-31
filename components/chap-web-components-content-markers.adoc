@@ -1,3 +1,4 @@
+include::../variables.adoc[]
 === Content markers
 
 WebCmsModule provides content marker infrastructure to work with special marker snippets inside textual content.
