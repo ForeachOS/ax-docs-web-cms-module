@@ -1,6 +1,7 @@
 include::variables.adoc[]
 = General information
 
+[[artifact]]
 == Artifact
 
 [source,xml,indent=0]
@@ -15,6 +16,7 @@ include::variables.adoc[]
 	</dependencies>
 ----
 
+[[module-dependencies]]
 == Module dependencies
 
 [options="header",cols="1,1,4"]

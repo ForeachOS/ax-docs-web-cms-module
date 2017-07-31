@@ -1,5 +1,5 @@
 include::../variables.adoc[]
-== Extending WebCmsModule
+= Extending WebCmsModule
 
 customize configuration
 types & attributes -> importer
@@ -25,7 +25,7 @@ body of method describes how to show endpoint
 default `WebCmsPageEndpoint` puts page on model and uses default Thymeleaf template
 default `WebCmsRemoteEndpoint` does redirect to target url
 
-=== Create your own endpoint
+== Create your own endpoint
 Create an entity that extends `WebCmsEndpoint` which contains all properties needed to display the endpoint
 Create a corresponding repository
 Reference the endpoint and/or HTTP status code(s) in annotation of controller method

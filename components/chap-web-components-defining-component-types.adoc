@@ -1,11 +1,11 @@
 include::../variables.adoc[]
 [[defining-component-types]]
-=== Defining component types
+= Defining component types
 You can easily define your own component types.
 Depending on your needs you can <<extending-base-types,extend one of the base types>> or create a <<custom-component-type,fully custom implementation>>.
 
 [[extending-base-types]]
-==== Extending the base types
+== Extending the base types
 You can add a custom `WebCmsComponentType` by importing it via YAML or by adding it via the `WebCmsComponentTypeRepository`.
 Component types to import should be defined in the section *types - component* where the key of a component type definition is the`unique `WebCmsComponentType` `typeKey`.
 
@@ -94,7 +94,7 @@ These markers will be replaced when copying the template to a newly created cont
 * `@@container.title@@` will be replaced with the `title` of the newly created container
 
 
-===== Example: custom container component
+=== Example: custom container component
 This is an example of a custom component that is a fixed container with 2 member components.
 A custom metadata class allows configuring the position of the members (left or right), the custom template uses the metadata to determine what the output should be.
 
@@ -191,7 +191,7 @@ The Thymeleaf template inspects the metadata `layout` property and renders membe
 As a `WebCmsComponentModel` is a `ViewElement` using an _across:view_ node takes care of rendering the member components.
 
 [[custom-component-type]]
-==== Custom component type
+== Custom component type
 Apart from extending one of the base types and using a custom template or metadata class, you can also pretty much customize any part of the component related infrastructure by providing specific interface implementations.
 This allows you to create a fully custom component type and read/write/render or manage it in whichever way you like.
 

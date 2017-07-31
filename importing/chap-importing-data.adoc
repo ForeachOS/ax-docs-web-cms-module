@@ -1,10 +1,10 @@
 include::../variables.adoc[]
 [[importing-data]]
-== Importing data
+= Importing data
 WebCmsModule provides infrastructure for easy importing of data using YAML files.
 The data import services are also the ones used for the default data of WebCmsModule, see the <<appendix-default-data,appendix>> for the YAML version of the default types and assets.
 
-=== WebCmsDataImportService
+== WebCmsDataImportService
 The `WebCmsDataImportService` allows importing data from `Map` structures.
 The `Map` based data could for example be sourced from YAML, JSON or XML files.
 
@@ -26,7 +26,7 @@ If a `UnitOfWorkFactory` is present, a data import will execute as a single unit
 See the {hibernate-jpa-unit-of-work-factory}[AcrossHibernateJpaModule reference documentation] for how to set up a `UnitOfWorkFactory`.
 
 [[installer]]
-=== Using an installer
+== Using an installer
 The `AbstractWebCmsDataInstaller` is a base class for an installer that imports one or more YAML files using the `WebCmsDataImportService`.
 The files specified will be imported in registration order.
 
@@ -46,7 +46,7 @@ public class TestDataInstaller extends AbstractWebCmsDataInstaller
 ----
 
 [[yaml]]
-=== YAML structure
+== YAML structure
 NOTE: In this chapter we focus on the key structure for importing data and use YAML examples.
 The `WebCmsDataImportService` acts on `Map`/`Collection` data structures however, so JSON, XML or native structures could be used as well.
 
@@ -70,7 +70,7 @@ assets:
           menu: sidenav
 ----
 
-==== Root key values
+=== Root key values
 By default, WebCmsModule supports 3 top-level keywords:
 
 * `assets`: specifies the children define `WebCmsAsset` import data
@@ -79,7 +79,7 @@ By default, WebCmsModule supports 3 top-level keywords:
 
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
-==== Data importers
+=== Data importers
 WebCmsModule provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
 
 See the relevant chapters for examples and more details:
@@ -89,7 +89,7 @@ See the relevant chapters for examples and more details:
 * <<WebCmsPage-import,importing pages>>
 * <<WebCmsArticle-import,importing publications and articles>>
 
-==== Generic importers
+=== Generic importers
 WebCmsModule has some generic importers that can be used in multiple situations.
 These importers act on a specific prefixed keyword.
 
@@ -118,7 +118,7 @@ See <<WebCmsPage-import,page importing>> for examples.
 |===
 
 [[importing-action]]
-==== Import action
+=== Import action
 The optional `wcm:action` represents the import action that should be performed with a data block (insert, update etc).
 If the parent data contains a wcm:action and the child doesn't, the child action is the same as the parent one.
 
