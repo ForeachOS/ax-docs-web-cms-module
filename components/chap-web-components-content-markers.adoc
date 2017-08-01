@@ -1,5 +1,6 @@
 include::../variables.adoc[]
-= Content markers
+[[content-markers]]
+==== Content markers
 
 WebCmsModule provides content marker infrastructure to work with special marker snippets inside textual content.
 Upon rendering, these markers would be processed and the resulting output would be rendered instead.
@@ -40,14 +41,14 @@ Default rendering support is available for Thymeleaf templates, see the <<thymel
 Content markers are supported in all <<default-component-types,default component types>>.
 
 [[placeholder-content-markers]]
-== Placeholder content markers
+===== Placeholder content markers
 A placeholder content marker indicates that placeholder content should be rendered at the marker's location.
 The key is _wcm:placeholder_ and the parameter is the name of the placeholder whose content should be rendered.
 
 Example: `@@wcm:placeholder(some.placeholder)@@`
 
 [[component-content-markers]]
-== Component content markers
+===== Component content markers
 A component content marker indicates a component should be rendered at the location of the marker.
 The key is _wcm:component_ and 3 parameters are required:
 
@@ -66,5 +67,5 @@ Examples:
 * `@@wcm:component(my.component.name,container,false)@@`
 ** will search for _my.component_in the container members - only relevant in the context of a `ContainerWebCmsComponentModel` being rendered
 
-== Creating custom content markers
+===== Creating custom content markers
 See <<thymeleaf-content-markers,WebCmsModule Thymeleaf dialect>> on how to add content marker support for component rendering.

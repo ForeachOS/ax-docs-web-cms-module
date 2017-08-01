@@ -17,7 +17,7 @@ i.e. you have more control regarding the layout and the components of the page. 
 |Parent|Select|No|Parent page of the page. Affects any generated URLs and (if auto-generated) the canonical path.|None
 |Template|String|No|The thymeleaf template of the page. The filename of the page without the extension. If none is defined the one from the page type is used.|None
 |Path Segment|String|No|The path segment of the page.|None
-|Auto create menu items|Checklist of <<WebCmsMenu-overview, menu>> names.|No|If checked, a menu item is generated for the checked menu(s).|None
+|Auto create menu items|Checklist of menu names.|No|If checked, a menu item is generated for the checked menu(s).|None
 |================
 
 There are two configurable subsections, one for URL settings and one for publication settings
@@ -48,7 +48,7 @@ When creating or updating the page, the following updates are done with regards 
 * If the page object is saved, and the publication is in the future or not yet published, update the primary url.
 * If the page object is saved and published but the publication date is in the past, no adjustments to the primary url will happen.
 
-This, however, can be overridden by behaviour defined in <<WebCmsMenu-overview,  `WebCmsMenu`>>.
+This, however, can be overridden by behaviour defined in `WebCmsMenu`.
 
 ==== Page template
 A page can optionally specify a template that should be used for rendering.

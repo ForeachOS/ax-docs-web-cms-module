@@ -224,7 +224,8 @@ Because a `WebCmsTypeSpecifierLink` can hold a reference to any `WebCmsTypeSpeci
 
 ===== Creating the publications
 We create two publications with our Jobs types.
-Both publications use the same article template page for rendering the article
+Both publications use the same article template page for rendering the article.
+
 [source,yaml]
 ----
 assets:
@@ -270,21 +271,21 @@ We can use either the `objectId` or the `canonicalPath` to refer to the `WebCmsP
 ----
 assets:
  article: // <1>
-    - title: "IT Manager EMEA @ Foreach" // <2>
-      objectId: "wcm:asset:article:job-it-manager-emea" // <3>
-      publication: it-jobs // <4>
-      articleType: job // <4>
-      description: Supposed to be online until August 2017  // <2>
-      published: true // <5>
-      wcm:components: // <6>
-        content:
-          wcm:components:
-            company:
-              content: Foreach
-            description:
-              content: A really cool job at a really great company.
-            salary:
-              content: Remuneration package discussable.
+  - title: "IT Manager EMEA @ Foreach" // <2>
+    objectId: "wcm:asset:article:job-it-manager-emea" // <3>
+    publication: it-jobs // <4>
+    articleType: job // <4>
+    description: Supposed to be online until August 2017  // <2>
+    published: true // <5>
+    wcm:components: // <6>
+      content:
+        wcm:components:
+          company:
+            content: Foreach
+          description:
+            content: A really cool job at a really great company.
+          salary:
+            content: Remuneration package discussable.
 ----
 
 <1> YAML data path _assets/article_ specifies the block defines a `WebCmsArticle`.

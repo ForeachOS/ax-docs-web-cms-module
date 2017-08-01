@@ -7,8 +7,6 @@ Web CMS Components are the building block of the pages that are displayed for th
 
 === WebCmsComponentType
 
-.Attributes
-
 === WebCmsComponent
 
 `WebCmsComponent`
