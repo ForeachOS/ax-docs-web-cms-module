@@ -87,7 +87,7 @@ public class SillyRemoteEndpointController
 NOTE: For `WebCmsPage` and `WebCmsArticle` it is easier to use the specialized annotations `@WebCmsPageMapping` and `@WebCmsArticleMapping` respectively.
 
 === Default model loading
-When a `WebCmsEndpoint` is loaded, WebCmsModule will attempt to load a default model for the request.
+When a `WebCmsEndpoint` is loaded, {module-name} will attempt to load a default model for the request.
 The default implementations will add model attributes, set a default template or load asset components.
 See the `WebCmsEndpointModelLoader` interface for adding your own default model loaders for endpoints.
 

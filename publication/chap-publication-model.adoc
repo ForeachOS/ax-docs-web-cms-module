@@ -18,7 +18,7 @@ An article can typically be pretty much any type of content, but usually it is s
 
 === Default model
 
-Out of the box, WebCmsModule configures the following data:
+Out of the box, {module-name} configures the following data:
 
 * publication types: *news*, *blogs*
 * article types: *news*, *blog*

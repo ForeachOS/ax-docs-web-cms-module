@@ -78,7 +78,7 @@ A metadata class must:
 If the administration UI is active, a form for metadata properties will automatically be generated using the EntityModule.
 This does require you to register the metadata type as an entity in the `EntityRegistry`.
 
-NOTE: Default (de-)serialization for `WebCmsObject` implementations is provided by the WebCmsModule by dispatching to the `WebCmsDataConversionService`.
+NOTE: Default (de-)serialization for `WebCmsObject` implementations is provided by the {module-name} by dispatching to the `WebCmsDataConversionService`.
 This means metadata properties can often refer to other web cms types without requiring custom configuration.
 
 See <<custom-component-type,creating a custom component type>> if you want to have a custom metadata class, change serialization or admin UI rendering.

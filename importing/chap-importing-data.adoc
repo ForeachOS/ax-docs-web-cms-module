@@ -71,7 +71,7 @@ assets:
 ----
 
 === Root key values
-By default, WebCmsModule supports 3 top-level keywords:
+By default, {module-name} supports 3 top-level keywords:
 
 * `assets`: specifies the children define `WebCmsAsset` import data
 * `types`: specifies the children define `WebCmsTypeSpecifier` import data
