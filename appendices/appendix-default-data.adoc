@@ -116,7 +116,8 @@ types:
 ----
 
 === Default assets
-.classpath:installers/WebCmsModule/default-assets.yml
+_classpath:installers/WebCmsModule/default-assets.yml_
+
 [source,yaml,indent=0]
 ----
 assets:
