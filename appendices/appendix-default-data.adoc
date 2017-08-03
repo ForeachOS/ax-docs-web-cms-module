@@ -4,7 +4,7 @@ include::../variables.adoc[]
 {module-name} installs some default assets and types when starting for the first time.
 You usually want to extend or customize the default data installed.
 
-If you want to start from an entirely blank sheet, you can disable the default data by setting the `webCmsModule.default-data.assets.enabled` property to `false`.
+If you want to start from an entirely blank slate, you can disable the default data by setting the `webCmsModule.default-data.assets.enabled` property to `false`.
 
 This section lists the default data being imported.
 
