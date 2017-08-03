@@ -16,7 +16,7 @@ Building a simple website is very easy and requires very little development.
 
 Features provided by {module-name} include:
 
-* an extensible <<domain-model,domain model>> with common asset types like <<WebCmsPage-overview,web pages>>, <<PublicationModel-overview,articles>> and <<Redirects-overview,redirects>>
+* an extensible link:../chap-asset-model[Domain Model] with common asset types like <<WebCmsPage-overview,web pages>>, <<PublicationModel-overview,articles>> and <<Redirects-overview,redirects>>
 * a way to manage the <<endpoint-url,URLs to these assets>>
 * a <<WebCmsComponents-overview,powerful component model>> for building templates and managing dynamic content
 * an easy way to <<importing-data,import data using YAML files>>
