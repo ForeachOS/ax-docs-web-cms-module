@@ -6,7 +6,7 @@ You usually want to extend or customize the default data installed.
 
 If you want to start from an entirely blank slate, you can disable the default data by setting the `webCmsModule.default-data.assets.enabled` property to `false`.
 
-This section lists the default data being imported.
+This section lists the default data that will be imported.
 
 === Default types
 _classpath:installers/WebCmsModule/default-types.yml_

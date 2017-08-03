@@ -2,12 +2,12 @@ include::../variables.adoc[]
 [[PublicationModel-overview]]
 = Publication model
 
-WebCmsModule contains a default publication model for articles.
+{module-name} contains a default publication model for articles.
 An article can typically be pretty much any type of content, but usually it is something like a piece of news or a blog article.
 
-* An article is of a specific article type and belongs to a single publication
-* A publication is of a specific publication type
-* The publication type determines the different article types any publication of that publication type can have
+* An article is of a specific article type and belongs to a single publication.
+* A publication is of a specific publication type.
+* The publication type determines the different article types any publication of that publication type can have.
 
 === Example model
 
@@ -267,6 +267,7 @@ If a publication is not published (offline), none of its articles will be publis
 We can use either the `objectId` or the `canonicalPath` to refer to the `WebCmsPage`.
 
 ===== Adding a sample job to our IT Jobs publication
+
 [source,yaml]
 ----
 assets:

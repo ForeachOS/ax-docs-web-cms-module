@@ -2,7 +2,7 @@ include::../variables.adoc[]
 [[default-component-types]]
 === Default component types
 
-WebCmsModule contains a number of default component types, backed by a set of default `WebCmsComponentModel` implementations.
+{module-name} contains a number of default component types, backed by a set of default `WebCmsComponentModel` implementations.
 You can easily define your own component types by extending one of these base types, see the chapter <<defining-component-types>>.
 
 The following component types are added with the default data:
