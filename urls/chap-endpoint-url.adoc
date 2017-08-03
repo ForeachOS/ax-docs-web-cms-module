@@ -10,7 +10,7 @@ A `WebCmsEndpoint` represents a single endpoint, and has a `urls` property which
 
 {module-name} provides two endpoint implementations:
 * `WebCmsAssetEndpoint` maps a single asset (by default only `WebCmsPage` or `WebCmsArticle`)
-* `WebCmsRemoteEndpoint` maps <<Redirects-overview,redirects to a target URL>>
+* `WebCmsRemoteEndpoint` maps :link:content/chap-redirects.html[redirects to a target URL]
 
 === Primary URL
 An endpoint can have a single *primary URL*.
