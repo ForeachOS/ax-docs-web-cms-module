@@ -1,7 +1,7 @@
 include::../variables.adoc[]
 === Thymeleaf integration
 
-WebCmsModule provides its own Thymeleaf dialect for working with components.
+{module-name} provides its own Thymeleaf dialect for working with components.
 It enables you to:
 
 * replace template fragments by component output

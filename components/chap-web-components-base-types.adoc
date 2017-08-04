@@ -69,7 +69,7 @@ See `WebCmsComponentUtils` for some utility functions when working with componen
 ==== WebCmsComponentModel implementations
 
 All component models must extend `WebCmsComponentModel`.
-A number of default implementations is provided by the WebCmsModule.
+A number of default implementations is provided by the {module-name}.
 It is usually the `WebCmsComponentType` base type (_type_ attribute) that will determine the `WebCmsComponentModel` that gets instantiated.
 
 ===== TextWebCmsComponentModel

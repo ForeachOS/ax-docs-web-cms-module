@@ -1,8 +1,8 @@
 include::../variables.adoc[]
 [[importing-data]]
 = Importing data
-WebCmsModule provides infrastructure for easy importing of data using YAML files.
-The data import services are also the ones used for the default data of WebCmsModule, see the <<appendix-default-data,appendix>> for the YAML version of the default types and assets.
+{module-name} provides infrastructure for easy importing of data using YAML files.
+The data import services are also the ones used for the default data of {module-name}, see the <<appendix-default-data,appendix>> for the YAML version of the default types and assets.
 
 == WebCmsDataImportService
 The `WebCmsDataImportService` allows importing data from `Map` structures.
@@ -80,7 +80,7 @@ By default, {module-name} supports 3 top-level keywords:
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
 === Data importers
-WebCmsModule provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
+{module-name} provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
 
 See the relevant chapters for examples and more details:
 
@@ -90,7 +90,7 @@ See the relevant chapters for examples and more details:
 * <<WebCmsArticle-import,importing publications and articles>>
 
 === Generic importers
-WebCmsModule has some generic importers that can be used in multiple situations.
+{module-name} has some generic importers that can be used in multiple situations.
 These importers act on a specific prefixed keyword.
 
 .Generic importer keywords

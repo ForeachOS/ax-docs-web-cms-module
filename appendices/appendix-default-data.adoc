@@ -9,7 +9,7 @@ If you want to start from an entirely blank slate, you can disable the default d
 This section lists the default data that will be imported.
 
 === Default types
-_classpath:installers/WebCmsModule/default-types.yml_
+_classpath:installers/{module-name}/default-types.yml_
 
 [source,yaml,indent=0]
 ----
@@ -117,7 +117,7 @@ types:
 ----
 
 === Default assets
-_classpath:installers/WebCmsModule/default-assets.yml_
+_classpath:installers/{module-name}/default-assets.yml_
 
 [source,yaml,indent=0]
 ----

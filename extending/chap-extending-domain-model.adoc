@@ -1,5 +1,5 @@
 include::../variables.adoc[]
-= Extending WebCmsModule
+= Extending {module-name}
 
 customize configuration
 types & attributes -> importer
