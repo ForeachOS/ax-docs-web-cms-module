@@ -65,7 +65,7 @@ Examples:
 * `@@wcm:component(my.component.name,global,false)@@`
 ** will search for _my.component_ in the global scope only (as global is the last scope the parent flag is of no meaning)
 * `@@wcm:component(my.component.name,container,false)@@`
-** will search for _my.component_in the container members - only relevant in the context of a `ContainerWebCmsComponentModel` being rendered
+** will search for _my.component_ in the container members - only relevant in the context of a `ContainerWebCmsComponentModel` being rendered
 
 ===== Creating custom content markers
 See <<thymeleaf-content-markers,{module-name} Thymeleaf dialect>> on how to add content marker support for component rendering.
