@@ -96,7 +96,7 @@ The default implementations will add model attributes, set a default template or
 See the `WebCmsEndpointModelLoader` interface for adding your own default model loaders for endpoints.
 
 Default model loading will always be done, regardless of the actual handler method invoked.
-If you want to specifically suppress the default model, you should annotated your handler method with `@IgnoreEndpointModel`.
+If you want to specifically suppress the default model, you should annotate your handler method with `@IgnoreEndpointModel`.
 
 === Access validation
 Whenever a `WebCmsEndpoint` is requested, the endpoint will be matched against all available `WebCmsEndpointAccessValidator` beans to see if the endpoint is allowed.
