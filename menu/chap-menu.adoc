@@ -10,7 +10,7 @@ define where and how you want to display the menu; there is no automatic display
 == Programmatically accessing the menu
 You can access the menu on your Thymeleaf template if you follow the following steps.
 
-- In the class where you configure your template, override the `buildMenus` method. In our example, we're adding the _topNav_ menu to the page.
+- In the class where you configure your template, override the `buildMenus` method. In our example, we're adding the _sideNav_ menu to the page.
 
 .DefaultPageTemplate.java
 [source,java]
