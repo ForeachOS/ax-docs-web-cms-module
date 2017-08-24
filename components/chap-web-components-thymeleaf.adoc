@@ -71,7 +71,7 @@ Auto-creation of components from markup
 
 Special scopes:
 
-- *default*: always refers to the lowest level - first one to perform the lookup (usually asset) - you would not normally use this scope name as it is default is a scope name is omitted
+- *default*: always refers to the lowest level - first one to perform the lookup (usually asset) - you would not normally use this scope name as it is the default if a scope name is omitted
 - *global*: always refers to the global scope, components that have no owner
 - *container*: this is a reserved scope name that ensures the component is added as a container member - you would not normally use this scope name as it is the default if omitted inside a container component
 
