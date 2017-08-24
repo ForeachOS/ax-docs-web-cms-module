@@ -9,6 +9,7 @@ The endpoint data determines the handler method that will be executed on the app
 A `WebCmsEndpoint` represents a single endpoint, and has a `urls` property which is the collection of `WebCmsUrl` instances that point to the endpoint.
 
 {module-name} provides two endpoint implementations:
+
 * `WebCmsAssetEndpoint` maps a single asset (by default only `WebCmsPage` or `WebCmsArticle`)
 * `WebCmsRemoteEndpoint` maps :link:content/chap-redirects.html[redirects to a target URL]
 
