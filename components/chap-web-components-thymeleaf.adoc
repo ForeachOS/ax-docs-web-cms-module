@@ -143,7 +143,7 @@ NOTE: You can still use the standard Thymeleaf dialect (eg. _th:block_ or _th:re
 <div wcm:component="my-component" wcm:always-replace>This markup will never be rendered.</div>
 ----
 
-By adding the _wcm:always-replace_ attribute you can ensure the the original template markup will be suppressed.
+By adding the _wcm:always-replace_ attribute you can ensure the original template markup will be suppressed.
 Even if the component is not found, the body of the _div_ element will be empty.
 
 .Specifying a scope for the component
