@@ -196,7 +196,7 @@ This means that when a new article is created, the *content* component will be c
 <5> Represents the collection of components that make up the members of the *content* component.
 These are the actual content fields of a job article.
 These fields will be directly editable in the administration UI and the `sortIndex` determines both rendering and editing order.
-<6> Special markers _@@title@@_, _@@subTitle@@_ and_@@description@@_ can be used to represent article properties.
+<6> Special markers _@@title@@_, _@@subTitle@@_ and _@@description@@_ can be used to represent article properties.
 When creating a new article these markers will be replaced by the actual property value of the newly created article.
 
 ===== Defining the publication type
