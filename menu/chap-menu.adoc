@@ -2,12 +2,20 @@ include::../variables.adoc[]
 = Menu
 [[WebCmsMenu-overview]]
 == Overview
-A `WebCmsMenu` is a construct that can be used to render content resembling a menu. A single menu can have zero or
-more `WebCmsMenuItem` assets. A `WebCmsMenuItem` represents a link from a path in the menu to an endpoint. Like everything in WebCms you need to manually
-define where and how you want to display the menu; there is no automatic display provided nor is there a default menu.
+A `WebCmsMenu` is a construct that can be used to render content resembling a menu. A single menu can have zero or more `WebCmsMenuItem` assets. 
+A `WebCmsMenuItem` represents a link from a path in the menu to an endpoint. 
+Like everything in WebCmsModule you need to manually define where and how you want to display the menu; there is no automatic display provided nor is there a default menu.
 
 [[WebCmsMenu-programatically]]
-== Programmatically accessing the menu
+== Building a menu
+A menu is always built using the `MenuFactory` from AcrossWebModule.
+The WebCmsModule will intercept any menu being built, will check if there is a `WebCmsMenu` with that menu name, and will add all menu items if that is the case.
+
+Usually a menu is built in a layout processor and then rendered in for example a Thymeleaf template.
+
+Apart form items registered on a `WebCmsMenu`, it is perfectly to possible to add or modify items directly to the generated `Menu` from code.
+
+=== Example building an rendering a menu
 You can access the menu on your Thymeleaf template if you follow the following steps.
 
 - In the class where you configure your template, override the `buildMenus` method. In our example, we're adding the _sideNav_ menu to the page.
@@ -51,6 +59,16 @@ public class DefaultPageTemplate extends LayoutTemplateProcessorAdapterBean
   </li>
 </ul>
 ----
+
+=== Generated menu items
+WebCmsModule automatically adds all items of a `WebCmsMenu` to the menu being built with the same name.
+
+Some particular rules apply when the menu item refers to a `WebCmsEndpoint`:
+
+* if a menu item is a `WebCmsEndpoint` the primary url of the endpoint will be used as url property for the menu item
+* if a menu item is a `WebCmsEndpoint` an attribute *endpointId* containing the *id* value of the endpoint will be added to the item
+* if a menu item is a `WebCmsAssetEndpoint` an additional attribute *assetObjectId* will be added to the item, containing the *objectId* value of the actual `WebCmsAsset`
+* if a menu item is a `WebCmsAssetEndpoint` and the `WebCmsAsset` is not published, a menu item will still be created but the value of *disabled* will be `true`
 
 == Properties
 .Properties of a menu
