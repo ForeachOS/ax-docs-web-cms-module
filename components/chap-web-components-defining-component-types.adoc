@@ -83,16 +83,20 @@ This means metadata properties can often refer to other web cms types without re
 
 See <<custom-component-type,creating a custom component type>> if you want to have a custom metadata class, change serialization or admin UI rendering.
 
-.Extending container types
-When defining a custom container type, you can link a *componentTemplate* component to the `WebCmsComponentType` definition.
-The component should be a container of which all members will be copied to a new component of your custom container type.
+.Providing a component template
+When defining a custom component type, you can link a *componentTemplate* component to the `WebCmsComponentType` definition.  
+If present, that component will be used as a template for a new component of your custom component type.
+Class properties as well as any child components will be copied to a new component your type.
 
-All `TextWebCmsComponentModel` members of *componentTemplate* can have special markers in their content.
-These markers will be replaced when copying the template to a newly created container:
+When your component type and *componentTemplate* are a container type, any `TextWebCmsComponentModel` member of the template component can have special markers in its content.
+These markers will be replaced when copying the template to a newly created component:
 
 * `@@container.name@@` will be replaced with the `name` of the newly created container
 * `@@container.title@@` will be replaced with the `title` of the newly created container
 
+NOTE: The *componentTemplate* should have the same class implementation as the component type being defined.
+For example when creating a *fixed-container*, the *componentTemplate* must implement `ContainerWebCmsComponentModel`.
+Providing custom metadata is not supported on the template component, the metadata will be reset when creating a new component.
 
 ===== Example: custom container component
 This is an example of a custom component that is a fixed container with 2 member components.
