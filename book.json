@@ -2,18 +2,21 @@
   "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons" ],
   "pluginsConfig": {
     "theme-api": {
-      "languages": [{
-          "lang": "java",
-          "name": "JavaScript",
-          "default": true
-        },
-        {
-          "lang": "xml",
-          "name": "XML"
-        },
-        {
-          "lang": "yml",
-          "name": "YAML"
-        }]
+        "languages": [
+          {
+            "lang": "java",
+            "name": "JavaScript",
+            "default": true
+          },
+          {
+            "lang": "xml",
+            "name": "XML"
+          },
+          {
+            "lang": "yml",
+            "name": "YAML"
+          }
+         ]
     }
+  }
 }
