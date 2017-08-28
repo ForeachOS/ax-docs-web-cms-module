@@ -1,0 +1,45 @@
+[cols=2]
+|===
+
+| wcm:component
+| The body of the element will be replaced with the rendering of the component, if the component is found.
+
+| wcm:scope
+| Specify the name of the scope in which the component should be looked for - if omitted wil look in the default scope and all parent scopes.
+When specified, only that scope will be queried unless _search-parent-scopes_ is explicitly present.
+
+| wcm:search-parent-scopes
+| Set explicitly to `false` if you only want the component to be looked up in the scope specified (or the default scope) but none of the parent scopes.
+Otherwise adding the attribute will ensure that parent scopes are always searched, even if an explicit _wcm:scope_ was specified.
+
+| wcm:always-replace
+| If present the body of the element will always be replaced even if the component is not found.
+The actual (optional) value of this attribute is irrelevant.
+
+Default behaviour is to render the original template markup if a component is not found, use this attribute to force empty output instead.
+
+| wcm:auto-create
+| If present, the component will be auto-created with the element body as input parameters.
+ Optionally the attribute value can be be the scope name in which the component should be created.
+If no value is present, the value of _wcm:scope_ will be used to determine the scope in which to create the component.
+
+| wcm:type
+| Type key of the `WebCmsComponentType` of the component.
+This will only be used for auto-creation of a component.
+If no type is specified, generic markup (*html*) will be assumed.
+
+| wcm:parent-create-include
+| Relevant only during auto-creation of a possible parent component.
+If the parent component is being auto-created nested components would by default be inserted as content markers or added as `ProxyWebCmsComponentModel` members.
+By providing this attribute (the actual value is ignored) you indicate the output of the component should be inserted instead.
+
+| wcm:parse-placeholders
+| If present on an element attributed with _wcm:component_, the body of the element will always be parsed and all sections marked _wcm:placeholder_ will be made available in the `WebCmsPlaceholderContentModel`.
+
+| wcm:placeholder
+| Attribute to indicate that a section should be rendered to a placeholder.
+ The name of the placeholder is the value of the attribute.
+ Note that the element itself will also be part of the placeholder content, not just the body of the element.
+
+|===
+
