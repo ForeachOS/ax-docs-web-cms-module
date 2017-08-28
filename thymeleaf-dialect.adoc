@@ -1,4 +1,6 @@
 include::variables.adoc[]
 
+{% include "variables.adoc" %}
+
 == Thymeleaf dialect
 {module-name} provides its own Thymeleaf dialect for working with components.
