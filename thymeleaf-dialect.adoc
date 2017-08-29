@@ -8,7 +8,6 @@ The following section gives an overview of the custom Thymeleaf dialect provided
 The `WebCmsRenderUtilityService` is available as the `#wcm` expression object.
 
 [source,java,indent=0]
-[subs="verbatim,quotes,attributes"]
 ----
 /**
  * Render the image url for either a WebCmsImage or a ImageWebCmsComponentModel.
