@@ -6,7 +6,7 @@ jsdqkmlf jdslkjfsd lkmjqsd k
 static void main(String args) {
 }
 ```
-{{ book }}
+{{ config }}
 
 Cehck: 
 {% include "./test.md" %}
