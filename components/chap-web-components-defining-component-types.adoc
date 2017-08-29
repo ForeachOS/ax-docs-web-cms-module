@@ -103,7 +103,6 @@ A custom metadata class allows configuring the position of the members (left or 
 
 .Component definition
 [source,yaml,indent=0]
-[subs="verbatim,quotes,attributes"]
 ----
 types:
   component:
@@ -137,7 +136,6 @@ The _sortIndex_ will determine the order of the components in the administration
 
 .Metadata class
 [source,java,indent=0]
-[subs="verbatim,attributes"]
 ----
 @Data   // Use Lombok @Data to generate getters, setters and equals() method
 public class LeftRightMetadata
@@ -175,7 +173,6 @@ See <<custom-component-type,create a custom component type>> for more informatio
 
 .Thymeleaf template: th/mymodule/components
 [source,html,indent=0]
-[subs="verbatim,attributes"]
 ----
 <th:block th:fragment="left-right(component)"
           th:with="metadata=${component.metadata}">
