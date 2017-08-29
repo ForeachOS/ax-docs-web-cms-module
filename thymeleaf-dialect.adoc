@@ -3,8 +3,12 @@ include::variables.adoc[]
 == Thymeleaf dialect
 The following section gives an overview of the custom Thymeleaf dialect provided by {module-name}.
 
-expression objects
+=== Expression objects
 
-attributes
+=== HTML attributes
+
+include::./fragment-component-attributes.adoc[]
+
+
 
 

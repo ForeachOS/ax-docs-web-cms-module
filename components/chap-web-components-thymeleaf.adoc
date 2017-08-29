@@ -1,4 +1,5 @@
 include::../variables.adoc[]
+[[component-thymeleaf-integration]]
 === Thymeleaf integration
 
 {module-name} provides its own Thymeleaf dialect for working with components.
