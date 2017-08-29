@@ -11,7 +11,6 @@ Component types to import should be defined in the section *types - component* w
 
 .Example YAML component type definition
 [source,yaml,indent=0]
-[subs="verbatim,quotes,attributes"]
 ----
 types:
   component:
