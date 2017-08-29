@@ -10,6 +10,11 @@ The `WebCmsRenderUtilityService` is available as the `#wcm` expression object.
 [source,java,indent=0]
 ----
 /**
+ * Build the local application url for a particular asset.
+ */
+${#wcm.url(asset)}
+
+/**
  * Render the image url for either a WebCmsImage or a ImageWebCmsComponentModel.
  */
 ${#wcm.imageUrl(image)}

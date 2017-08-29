@@ -6,8 +6,6 @@ jsdqkmlf jdslkjfsd lkmjqsd k
 
 ### Cloudinary connector
 
-
-
 ### ImageServer connector
 
 ## Rendering images
