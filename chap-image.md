@@ -1,4 +1,4 @@
-# Image model
+# Image model {#image-model}
 
 jsdqkmlf jdslkjfsd lkmjqsd k
 
@@ -6,10 +6,14 @@ jsdqkmlf jdslkjfsd lkmjqsd k
 static void main(String args) {
 }
 ```
-{{ config }}
 
-Cehck: 
-{% include "./test.md" %}
+## Connecting to an image repository
+
+### Cloudinary connector
+
+### ImageServer connector
+
+Importing images
 
 
 

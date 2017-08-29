@@ -33,7 +33,7 @@ The files specified will be imported in registration order.
 .Example YAML data installer
 [source,java,indent=0]
 ----
-@Installer(description = "Install some test data", phase = InstallerPhase.AfterModuleBootstrap, version = 1)
+@Installer(description = "Install some test data", phase = InstallerPhase.AfterContextBootstrap, version = 1)
 @RequiredArgsConstructor
 public class TestDataInstaller extends AbstractWebCmsDataInstaller
 {
