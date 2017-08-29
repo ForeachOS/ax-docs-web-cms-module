@@ -11,7 +11,7 @@ static void main(String args) {
 {% include "./test.md" %}
 ```
 
-{% include "test.md" %}
+{% include "./test.md" %}
 
 
 
