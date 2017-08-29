@@ -1,4 +1,4 @@
-
+include::../variables.adoc[]
 
 [[endpoint-url]]
 = Endpoints and URLs
