@@ -1,5 +1,4 @@
 include::variables.adoc[]
-
 = Asset model
 
 {module-name} provides a basic model for mapping assets and types.
