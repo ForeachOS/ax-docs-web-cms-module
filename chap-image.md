@@ -13,7 +13,9 @@ static void main(String args) {
 
 ### ImageServer connector
 
-Importing images
+## Rendering images
+
+## Importing images
 
 
 
