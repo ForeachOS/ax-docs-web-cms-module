@@ -4,10 +4,31 @@ include::variables.adoc[]
 The following section gives an overview of the custom Thymeleaf dialect provided by {module-name}.
 
 === Expression objects
+==== Render utilities
+The `WebCmsRenderUtilityService` is available as the `#wcm` expression object.
+
+[source,java,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
+/**
+ * Render the image url for either a WebCmsImage or a ImageWebCmsComponentModel.
+ */
+${#wcm.imageUrl(image)}
+${#wcm.imageUrl(image,maxWidth,maxHeight)}
+
+/**
+
+----
+
 
 === HTML attributes
 
+The following HTML attributes are supported.
+
+==== Attributes for rendering components
 include::./fragment-component-attributes.adoc[]
+
+For more details, see the section <<component-thymeleaf-integration,web components Thymeleaf integration>>.
 
 
 
