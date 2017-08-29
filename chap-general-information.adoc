@@ -96,4 +96,44 @@ If unspecified the default resources of any present `@AcrossApplication` will be
 |Enable default assets to be installed: this includes component and asset types as well as some sample assets.
 |`true`
 
+|images.cloudinary.enabled
+|`Boolean`
+|Should a Cloudinary bean be created? Requires Cloudinary dependency to be on the classpath.
+|`false`
+
+|images.cloudinary.cloud-name
+|`String`
+|Cloudinary cloud name.
+|
+
+|images.cloudinary.api-key
+|`String`
+|Cloudinary API key for secure operations (eg. file upload).
+|
+
+|images.cloudinary.api-secret
+|`String`
+|Cloudinary API secret for secure operations (eg. file upload).
+|
+
+|images.imageServer.enabled
+|`Boolean`
+|Base URL for the remote ImageServer.
+|`false`
+
+|images.imageServer.url
+|`String`
+|Cloudinary cloud name.
+|
+
+|images.imageServer.hash-token
+|`String`
+|Sets the optional hash token that should be used when building image URLs.
+|
+
+|images.imageServer.access-token
+|`String`
+| Access token that should be for secure operations (eg. file upload).
+|
+    
 |===
