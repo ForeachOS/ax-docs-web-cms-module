@@ -1,4 +1,5 @@
 include::../variables.adoc[]
+
 [[endpoint-url]]
 = Endpoints and URLs
 {module-name} provides a basic a basic model for mapping an endpoint on a website.
