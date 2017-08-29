@@ -17,12 +17,21 @@ ${#wcm.imageUrl(image)}
 ${#wcm.imageUrl(image,maxWidth,maxHeight)}
 
 /**
+ * Get components from the WebCmsComponentModelHierarchy of the current request.
+ */
+${#wcm.component(componentName)}
+${#wcm.componentFromScope(componentName,scopeName)}
+${#wcm.componentFromScope(componentName,scopeName,searchParentScopes)}
 
+/**
+ * Access container component members without exceptions if they are unavailable.
+ * Supports proxy components that point to an actual container.
+ */
+${#wcm.member(componentName,container)}
+${#wcm.members(container)}
 ----
 
-
 === HTML attributes
-
 The following HTML attributes are supported.
 
 ==== Attributes for rendering components
