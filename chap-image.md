@@ -6,11 +6,9 @@ jsdqkmlf jdslkjfsd lkmjqsd k
 static void main(String args) {
 }
 ```
+{{ book }}
 
-```
-{% include "./test.md" %}
-```
-
+Cehck: 
 {% include "./test.md" %}
 
 
