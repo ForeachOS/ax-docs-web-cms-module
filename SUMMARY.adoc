@@ -5,7 +5,7 @@
 ** link:chap-general-information.adoc#artifact[Artifact]
 ** link:chap-general-information.adoc#module-dependencies[Module dependencies]
 ** link:chap-general-information.adoc#module-settings[Module settings]
-* link:chap-whats-new.adoc[What’s new in this version]
+* link:chap-whats-new.md[What’s new in this version]
 * link:chap-placeholder.adoc[Domain model]
 ** link:chap-asset-model.adoc[Asset model]
 ** link:pages/chap-web-page.adoc[Page model]
