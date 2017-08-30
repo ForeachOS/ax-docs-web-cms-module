@@ -98,7 +98,7 @@ If unspecified the default resources of any present `@AcrossApplication` will be
 
 |images.cloudinary.enabled
 |`Boolean`
-|Should a Cloudinary bean be created? Requires Cloudinary dependency to be on the classpath.
+|Should a `Cloudinary` bean be created? Requires Cloudinary dependency to be on the classpath.
 |`false`
 
 |images.cloudinary.cloud-name
@@ -118,12 +118,12 @@ If unspecified the default resources of any present `@AcrossApplication` will be
 
 |images.imageServer.enabled
 |`Boolean`
-|Base URL for the remote ImageServer.
+|Should an `ImageServerClient` bean be created?  Requires the ImageServer client dependency to be on the classpath.
 |`false`
 
 |images.imageServer.url
 |`String`
-|Cloudinary cloud name.
+|Base URL for the remote ImageServer.
 |
 
 |images.imageServer.hash-token
