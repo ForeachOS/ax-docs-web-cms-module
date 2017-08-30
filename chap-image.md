@@ -1,10 +1,20 @@
 # Image model {#image-model}
 
-jsdqkmlf jdslkjfsd lkmjqsd k
+WebCmsModule provides an asset representing an image file.  The main entity is the `WebCmsImage` and you can use the `WebCmsImageRepository` to query the image entities.
+
+WebCmsModule does not actually store the physical image data.  It routes all interactions with the physical files through a `WebCmsImageConnector` that is responsible for the connection with an image repository.  The image repository is also expected to serve as CDN for rendering images in a browser.
+
+The administration UI allows you to upload and select images in components.  Different utility functions are available to generate urls to the images for use in templates.
 
 ## Connecting to an image repository
 
+Out of the box, WebCmsModule has support for connecting to either [Cloudinary](http://cloudinary.com/) or a [Foreach ImageServer](https://repository.foreach.be/projects/image-server/4.0.0.RELEASE/reference/) image repository.
+
 ### Cloudinary connector
+
+To connect to Cloudinary for your images you should add the Cloudinary dependency to your application and add the properties with the correct credentials.
+
+> WebCmsModule will only store the image assets in your Cloudinary account and will generate optimized urls for rendering an image.  Previously existing assets will not be read from your Cloudinary account.
 
 ##### pom.xml
 
@@ -22,12 +32,31 @@ jsdqkmlf jdslkjfsd lkmjqsd k
 webCmsModule:
   images:
     cloudinary:
+      enabled: true
       cloudName: yourCloudName
       apiKey: 123456789
       apiSecret: secret
 ```
 
+When setting **webCmsModule.images.cloudinary.enabled** to `true`, WebCmsModule will create its own `Cloudinary` instance with the specified values.  If your application creates a `Cloudinary` bean manually however, there is no need to specify the properties as WebCmsModule will automatically detect it and create the corresponding `WebCmsImageConnector`.
+
+> When you delete a `WebCmsImage`, the corresponding image asset in your Cloudinary account will be deleted as well.  If you do not want this, you can manually create a `CloudinaryWebCmsImageConnector` with different settings.
+
 ### ImageServer connector
+
+To connect to a remote ImageServer for your images you should add the ImageServer Client dependency to your application and add the properties with the correct credentials.
+
+> WebCmsModule will only store the image assets in your ImageServer account and will generate optimized urls for rendering an image.  Previously existing assets will not be read from ImageServer.
+
+##### pom.xml
+
+```xml
+<dependency>
+    <groupId>com.foreach.imageserver</groupId>
+    <artifactId>imageserver-client</artifactId>
+    <version>4.0.0.RELEASE</version>
+</dependency>
+```
 
 ##### application.yml
 
@@ -35,6 +64,7 @@ webCmsModule:
 webCmsModule:
   images:
     imageServer:
+      enabled: true
       url: "http://remote.imageserver.domain/resources/images"
       hashToken: optionalHashToken
       accessToken: secureApiAccessToken
@@ -42,13 +72,21 @@ webCmsModule:
 
 If not using a **hashToken**, retrieving the resolution **0x0** should be allowed in order to retrieve the original image.
 
+When setting **webCmsModule.images.imageServer.enabled** to `true`, WebCmsModule will create its own `ImageServerClient` instance with the specified values.  If your application creates an `ImageServerClient` bean manually however, there is no need to specify the properties as WebCmsModule will automatically detect it and create the corresponding `WebCmsImageConnector`.
+
+If your application is also the ImageServer \(by running ImageServerCoreModule\), there is no need to add the client dependency seperately or to specify any property credentials.  If you ensure the ImageServerCoreModule is configured to create a local client, it will be picked up automatically.
+
+> When you delete a `WebCmsImage`, the corresponding image asset in your ImageServer will be deleted as well.  If you do not want this, you can manually create a `ImageServerWebCmsImageConnector` with different settings.
+
 ### Using a custom connector
 
 You can easily create a connector for a different type of image store.  Simply provide a bean called **webCmsImageConnector** that implements `WebCmsImageConnector`.  The bean will be automatically detected by WebCmsModule and will be integrated with the `WebCmsImage` infrastructure.
 
 ## Rendering images
 
-refer to the [thymeleaf dialect](/thymeleaf-dialect.adoc) \( \)
+Rendering images is done by generating an url to the image from the image repository.  This can be done directly through `WebCmsImageConnector` or by using the `WebCmsRenderUtilityService`.
+
+The [Thymeleaf dialect](/thymeleaf-dialect.adoc) has the **\#wcm** expression object to easily generate the url for a `WebCmsImage` in your Thymeleaf template.
 
 ## Importing images
 
