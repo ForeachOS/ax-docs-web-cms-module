@@ -27,6 +27,6 @@
 * link:appendices/chap-appendices.adoc[Appendix]
 ** link:thymeleaf-dialect.adoc[Thymeleaf dialect]
 ** link:appendices/chap-appendices.adoc#appendix-default-data[Default data]
-
+* link:how-tos.adoc[How-tos]
 
 
