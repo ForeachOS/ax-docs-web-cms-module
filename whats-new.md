@@ -1,6 +1,10 @@
-= What's new in this version?
+# What's new in this version?
 
-== 0.0.3-SNAPSHOT
+## 0.0.3-SNAPSHOT
 
-== 0.0.2-SNAPSHOT
-Initial public release available on http://search.maven.org/[Maven central].
+* multi domain support
+
+## 0.0.2-SNAPSHOT
+
+Initial public release available on [Maven central](http://search.maven.org).
+
