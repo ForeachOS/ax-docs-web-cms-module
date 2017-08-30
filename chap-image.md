@@ -44,7 +44,7 @@ If not using a **hashToken**, retrieving the resolution **0x0** should be allowe
 
 ### Using a custom connector
 
-You can easily WebCmsImageConnector
+You can easily create a connector for a different type of image store.  Simply provide a bean called **webCmsImageConnector** that implements `WebCmsImageConnector`.  The bean will be automatically detected by WebCmsModule and will be integrated with the `WebCmsImage` infrastructure.
 
 ## Rendering images
 
@@ -63,11 +63,16 @@ Only if the resource location changes between import runs would a new image be u
 ##### Example image import yaml
 
 ```yaml
+#
+# Example of importing image web components.
+# The actual WebCmsImage of the components is specified by setting the
+# image property to a resource location of the image file.
+#
 assets:
   component:
-    fixed-section:
-      title: Fixed section
-      componentType: section
+    custom-component:
+      title: Custom container with Image member
+      componentType: custom-type-with-image-member
       wcm:components:
         image:
           image: "file:./src/main/test-data/test-image.jpg"
