@@ -44,7 +44,7 @@ If not using a **hashToken**, retrieving the resolution **0x0** should be allowe
 
 ### Using a custom connector
 
-WebCmsImageConnector
+You can easily WebCmsImageConnector
 
 ## Rendering images
 
@@ -52,7 +52,13 @@ refer to the [thymeleaf dialect](/thymeleaf-dialect.adoc) \( \)
 
 ## Importing images
 
-Any property of WebCmsImage can either refer the object id \(starting with wcm:asset:image\) or be a resource location representing the image.  If the latter, an object id will be generated and if no WebCmsImage with that object id can be found, the resource file will be uploaded.
+You can easily import images by providing a resource location to the actual image file.
+
+Any property of `WebCmsImage` can either refer the **objectId** \(starting with _wcm:asset:image_\) or be a resource location representing the image file.  If the latter, an object id will be generated and if no `WebCmsImage` with that object id can be found, the resource file will be uploaded.
+
+Only if the resource location changes between import runs would a new image be uploaded, otherwise it is perfectly safe to re-run the import.
+
+> The ability to import images depends on the presence of the `WebCmsImageConnector` bean.  Because it is possible that a `WebCmsImageConnector` is only initialized late during the application bootstrap, data installers are best set to execute in the `AfterContextBootstrap` phase.
 
 ##### Example image import yaml
 
@@ -74,6 +80,8 @@ assets:
       componentType: image
       image: "http://images.freeimages.com/images/large-previews/afa/black-jaguar-1402097.jpg"
 ```
+
+> All Spring resource locations are supported.  Take into account that URL resources using HTTPS will only work if the executing Java runtime has the required SSL certificates to connect to the remote host.
 
 
 
