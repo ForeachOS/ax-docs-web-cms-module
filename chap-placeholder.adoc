@@ -1,1 +1,11 @@
 For further information regarding this subject, please see the relevant subchapters.
+
+---
+
+*General usage*
+
+All entities in WebCmsModule implement the `EntityWithDto` interface.
+You should never modify a managed entity directly, but use either the `toDto()` or `toBuilder` method, and then pass the entity to the corresponding `JpaRepository#save()` method.
+
+---
+
