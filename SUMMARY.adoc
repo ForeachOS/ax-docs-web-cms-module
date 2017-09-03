@@ -8,6 +8,7 @@
 * link:whats-new.md[What’s new in this version]
 * link:chap-placeholder.adoc[Domain model]
 ** link:chap-asset-model.adoc[Asset model]
+** link:multi-domain-support.md[Multi-domain support]
 ** link:pages/chap-web-page.adoc[Page model]
 ** link:publication/chap-publication-model.adoc[Publication model]
 ** link:urls/chap-endpoint-url.adoc[Endpoints and URLs]
