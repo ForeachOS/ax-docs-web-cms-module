@@ -1,5 +1,5 @@
 {
-  "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons" ],
+  "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link"],
   "pluginsConfig": {
     "theme-api": {
         "languages": [
@@ -17,6 +17,13 @@
             "name": "YAML"
           }
          ]
+    },
+    "versions": {
+        "type": "branches"
+    },
+    "edit-link": {
+        "base": "https://github.com/rceuls/doc-webcmsmodule/edit/master/",
+        "label": "Edit This Page"
     }
   }
 }
