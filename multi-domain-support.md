@@ -64,5 +64,39 @@ TODO: how to implement domain bound validation for an entity \(eg name must be u
 
 TODO: example
 
+### Importing domain configuration for WebCmsObjects
 
+All default `WebCmsObject`s \(`WebCmsPage`, `WebCmsMenu`...\), with the exception of `WebCmsTypeSpecifier`s are domainbound. This means that their identifiers can be reused across different domains. To attach a `WebCmsObject `to a specific `WebCmsDomain `you only need to add the _domain _property in the yaml configuration. The domain property can be any of the following:
+
+* objectId of the WebCmsDomain \(e.g. `"wcm:domain:my-domain"` \)
+* the domainKey \(e.g. `my-domain`\)
+
+Example domainbound menu import - YAML
+
+```yaml
+menus:
+ topNav:
+   description: Top navigation
+   domain: my-domain
+ sideNav:
+   description: Side navigation
+   domain: "wcm:domain:my-domain"
+```
+
+To import a `WebCmsTypeSpecifier `you are required to prefix the _typeKey _with the attached domain for all _newly _created types. This is however not required when updating existing types.
+
+Example domainbound component type  import - YAML
+
+```yaml
+types:
+  component:
+    my-domain:my-teaser:
+      name: My teaser
+      domain: my-domain
+    my-domain:another-teaser:
+      name: Another teaser
+      domain: "wcm:domain:my-domain"
+```
+
+TODO: wcm:domain block
 
