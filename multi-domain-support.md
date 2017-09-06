@@ -18,6 +18,14 @@ You can activate multi-domain support by providing a `WebCmsMultiDomainConfigura
 
 TODO: example of providing a WebCmsMultiDomainConfiguration bean
 
+If your application is configured in a single-domain, the actual `WebCmsDomain` used is the `null` value.  For programmatic purposes you can use the `WebCmsDomain.NONE` constant.
+
+In a multi-domain configuration,  `WebCmsDomain.NONE` \(`null`\) represents items shared across all domains.
+
+> ##### NOTE
+>
+> Switching from a single-domain to a multi-domain configuration \(or vice versa\) after data has been added to your application is not advised.  It will usually require manual actions to ensure all data is still accessible and attached to the proper domain.
+
 ### Multi-domain configuration options
 
 TODO: explain the different options of WebCmsMultiDomainConfiguration
@@ -58,6 +66,11 @@ Default configuration changes are the following:
 
 TODO: how to implement domain bound validation for an entity \(eg name must be unique within the domain\)
 
+Repositories & services
+
+* repositories are usually used in the backend - especially if you want to support both multi-domain and no-domain configurations
+* services usually use the current domain to interact with the repository, making them very easy to use in frontend business logic
+
 ## Importing domain configuration
 
 `WebCmsDomain` is a `WebCmsObject` like most other entities provided by WebCmsModule.  It has full support for being imported using YAML \(or another format - see the section [Importing Data](/chap-placeholder.adoc) for more information\).
@@ -66,7 +79,7 @@ TODO: example
 
 ### Importing domain configuration for WebCmsObjects
 
-All default `WebCmsObject`s \(`WebCmsPage`, `WebCmsMenu`...\), with the exception of `WebCmsTypeSpecifier`s are domainbound. This means that their identifiers can be reused across different domains. To attach a `WebCmsObject `to a specific `WebCmsDomain `you only need to add the _domain _property in the yaml configuration. The domain property can be any of the following:
+All default `WebCmsObject`s \(`WebCmsPage`, `WebCmsMenu`...\), with the exception of `WebCmsTypeSpecifier`s are domainbound. This means that their identifiers can be reused across different domains. To attach a `WebCmsObject`to a specific `WebCmsDomain`you only need to add the \_domain \_property in the yaml configuration. The domain property can be any of the following:
 
 * objectId of the WebCmsDomain \(e.g. `"wcm:domain:my-domain"` \)
 * the domainKey \(e.g. `my-domain`\)
@@ -83,7 +96,7 @@ menus:
    domain: "wcm:domain:my-domain"
 ```
 
-To import a `WebCmsTypeSpecifier `you are required to prefix the _typeKey _with the attached domain for all _newly _created types. This is however not required when updating existing types.
+To import a `WebCmsTypeSpecifier`you are required to prefix the \_typeKey \_with the attached domain for all \_newly \_created types. This is however not required when updating existing types.
 
 Example domainbound component type  import - YAML
 
