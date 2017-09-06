@@ -18,6 +18,8 @@ You can activate multi-domain support by providing a `WebCmsMultiDomainConfigura
 
 TODO: example of providing a WebCmsMultiDomainConfiguration bean
 
+##### WebCmsDomain used to represent "no-domain"
+
 If your application is configured in a single-domain, the actual `WebCmsDomain` used is the `null` value.  For programmatic purposes you can use the `WebCmsDomain.NONE` constant.
 
 In a multi-domain configuration,  `WebCmsDomain.NONE` \(`null`\) represents items shared across all domains.
