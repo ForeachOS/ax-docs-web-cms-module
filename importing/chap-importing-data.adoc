@@ -131,7 +131,21 @@ This is the default value if no action is specified.
 This replaces the existing object but keeps the same identity (primary key).
 |===
 
-=== Creating an importer
+=== Creating a custom importer
+To create a custom object importer, simply implement the `WebCmsDataImporter` interface and provide your instances as beans.
+
+The `AbstractWebCmsDataImporter` is a generic base class that provides useful hooks for implementing import logic, as well as logging and exception handling in line with the default importers.
+
+If you want to import a custom `WebCmsAsset`, the `AbstractWebCmsAssetImporter` is a more specialized base class.
+
+==== Importing custom properties
+You can easily define custom properties to import as long as you namespace them (eg. *mynamespace:*).
+These properties will not be handled by the default value to object converters.
+
+NOTE The *wcm:* namespace is for WebCmsModule itself, example properties are *wcm:components* and *wcm:menu-items*.
+
+Provide your own property importer by implementing `WebCmsPropertyDataImporter` and creating your implementation as a bean.
+The `AbstractWebCmsPropertyDataImporter` is a useful base class for common implementations.
 
 === Debugging imports
 Receiving debug information on data imports can be done by setting the log levels for `WebCmsDataImporter` and `WebCmsPropertyDataImporter` implementations to *TRACE*.
