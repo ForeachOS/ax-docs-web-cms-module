@@ -134,5 +134,9 @@ This replaces the existing object but keeps the same identity (primary key).
 === Creating an importer
 
 === Debugging imports
+Receiving debug information on data imports can be done by setting the log levels for `WebCmsDataImporter` and `WebCmsPropertyDataImporter` implementations to *TRACE*.
+
+
+
 
 
