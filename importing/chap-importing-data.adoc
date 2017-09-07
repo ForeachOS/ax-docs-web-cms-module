@@ -20,12 +20,6 @@ Map<String, Object> data = (Map<String, Object>) yaml.load( inputStream );
 dataImportService.importData( data );
 ----
 
-NOTE: The default implementation of `WebCmsDataImportService` requires either a `UnitOfWorkFactory` to be present or your import to run within a single transaction.
-If neither is present, lazy initialisation of entities might not work and imports will fail.
-If a `UnitOfWorkFactory` is present, a data import will execute as a single unit of work. +
- +
-See the {hibernate-jpa-unit-of-work-factory}[AcrossHibernateJpaModule reference documentation] for how to set up a `UnitOfWorkFactory`.
-
 [[installer]]
 == Using an installer
 The `AbstractWebCmsDataInstaller` is a base class for an installer that imports one or more YAML files using the `WebCmsDataImportService`.
@@ -136,3 +130,9 @@ This is the default value if no action is specified.
 |replace|If the item exists, overwrite it entirely with the new data.
 This replaces the existing object but keeps the same identity (primary key).
 |===
+
+=== Creating an importer
+
+=== Debugging imports
+
+
