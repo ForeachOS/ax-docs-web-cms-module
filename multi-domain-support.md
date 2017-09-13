@@ -81,7 +81,7 @@ TODO: example
 
 ### Importing domain configuration for WebCmsObjects
 
-All default `WebCmsObject`s \(`WebCmsPage`, `WebCmsMenu`...\), with the exception of `WebCmsTypeSpecifier`s are domainbound. This means that their identifiers can be reused across different domains. To attach a `WebCmsObject`to a specific `WebCmsDomain`you only need to add the \_domain \_property in the yaml configuration. The domain property can be any of the following:
+All default `WebCmsObject`s \(`WebCmsPage`, `WebCmsMenu`...\) are domainbound. This means that their identifiers can be reused across different domains. To attach a `WebCmsObject`to a specific `WebCmsDomain`you only need to add the _domain_ property in the yaml configuration. The domain property can be any of the following:
 
 * objectId of the WebCmsDomain \(e.g. `"wcm:domain:my-domain"` \)
 * the domainKey \(e.g. `my-domain`\)
@@ -98,7 +98,7 @@ menus:
    domain: "wcm:domain:my-domain"
 ```
 
-To import a `WebCmsTypeSpecifier`you are required to prefix the \_typeKey \_with the attached domain for all \_newly \_created types. This is however not required when updating existing types.
+To import a `WebCmsTypeSpecifier`you are required to prefix the _typeKey_ with the attached domain for all _newly_ created types. This is however not required when updating existing types.
 
 Example domainbound component type  import - YAML
 
@@ -114,4 +114,93 @@ types:
 ```
 
 TODO: wcm:domain block
+
+### Scoping imports to a domain
+
+With the use of `wcm:domain` it is possible to set the domain of the surrounding block and it's children to the specified domain. 
+
+```yaml
+wcm:domain: my-domain
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+                
+assets:
+    component:
+        my-teaser:
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+```
+
+* All `WebCmsObject`s will be imported under _my-domain_
+
+```yaml
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+                
+assets:
+    wcm:domain: my-domain
+    component:
+        my-teaser:
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+```
+
+* All `WebCmsAsset`s will be imported under _my-domain_
+
+```yaml
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+                
+assets:
+    component:
+        wcm:domain: my-domain
+        my-teaser:
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+```
+
+* All component assets \(=global components\) and their children will be imported under _my-domain. _
+
+
+
+
 
