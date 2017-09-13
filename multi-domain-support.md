@@ -86,7 +86,7 @@ All default `WebCmsObject`s \(`WebCmsPage`, `WebCmsMenu`...\) are domainbound. T
 * objectId of the WebCmsDomain \(e.g. `"wcm:domain:my-domain"` \)
 * the domainKey \(e.g. `my-domain`\)
 
-Example domainbound menu import - YAML
+Example domainbound menu import
 
 ```yaml
 menus:
@@ -100,7 +100,7 @@ menus:
 
 To import a `WebCmsTypeSpecifier`you are required to prefix the _typeKey_ with the attached domain for all _newly_ created types. This is however not required when updating existing types.
 
-Example domainbound component type  import - YAML
+Example domainbound component type  import
 
 ```yaml
 types:
@@ -113,11 +113,11 @@ types:
       domain: "wcm:domain:my-domain"
 ```
 
-TODO: wcm:domain block
-
 ### Scoping imports to a domain
 
 With the use of `wcm:domain` it is possible to set the domain of the surrounding block and it's children to the specified domain.
+
+Example scoped imports:
 
 ```yaml
 wcm:domain: my-domain
@@ -199,6 +199,35 @@ assets:
 ```
 
 * All `WebCmsDomainBound` component assets \(=global components\) and their children will be imported under _my-domain. _
+
+```yaml
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+
+assets:
+    component:
+        my-teaser:
+            wcm:domain: my-domain
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+```
+
+* The component _my-teaser_ and it's child component, _body_, will be imported under _my-domain_.
+
+
 
 
 
