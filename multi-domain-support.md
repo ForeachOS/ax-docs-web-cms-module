@@ -117,7 +117,7 @@ TODO: wcm:domain block
 
 ### Scoping imports to a domain
 
-With the use of `wcm:domain` it is possible to set the domain of the surrounding block and it's children to the specified domain. 
+With the use of `wcm:domain` it is possible to set the domain of the surrounding block and it's children to the specified domain.
 
 ```yaml
 wcm:domain: my-domain
@@ -133,7 +133,7 @@ types:
                     wcm:components:
                         body:
                             componentType: rich-text
-                
+
 assets:
     component:
         my-teaser:
@@ -144,7 +144,7 @@ assets:
                     content: My teaser body
 ```
 
-* All `WebCmsObject`s will be imported under _my-domain_
+* All `WebCmsDomainBound` objects will be imported under _my-domain_
 
 ```yaml
 types:
@@ -159,7 +159,7 @@ types:
                     wcm:components:
                         body:
                             componentType: rich-text
-                
+
 assets:
     wcm:domain: my-domain
     component:
@@ -171,7 +171,7 @@ assets:
                     content: My teaser body
 ```
 
-* All `WebCmsAsset`s will be imported under _my-domain_
+* All `WebCmsDomainBound` assets will be imported under _my-domain_
 
 ```yaml
 types:
@@ -186,7 +186,7 @@ types:
                     wcm:components:
                         body:
                             componentType: rich-text
-                
+
 assets:
     component:
         wcm:domain: my-domain
@@ -198,9 +198,7 @@ assets:
                     content: My teaser body
 ```
 
-* All component assets \(=global components\) and their children will be imported under _my-domain. _
-
-
+* All `WebCmsDomainBound` component assets \(=global components\) and their children will be imported under _my-domain. _
 
 
 
