@@ -32,11 +32,11 @@ In a multi-domain configuration,  `WebCmsDomain.NONE` \(`null`\) represents item
 
 TODO: explain the different options of WebCmsMultiDomainConfiguration
 
-### Customizing a single domain configuration: WebCmsDomainData
+### Customizing a single domain configuration: metadata
 
 `WebCmsDomain` is a simple entity with support for an infinite number of String based attributes.  Because this is usually not very efficient to work with, you can implement a `WebCmsDomainData` class that wraps around a `WebCmsDomain` providing strong-typed access to domain-related configuration properties.
 
-TODO: explain the WebCmsDomainData interface
+TODO: explain the WebCmsDomainAware interface
 
 TODO: example with the default dns based implementation
 
@@ -47,6 +47,10 @@ This section explains how you can use the domain concept directly in your contro
 ### Accessing the current domain: WebCmsDomainContext
 
 TODO: explain WebCmsDomainContext and WebCmsDomainContextHolder
+
+Mapping handler methods to domain
+
+use @WebCmsDomainMapping  or use domain attribute on other mapping annotations
 
 ### Entity Query Language extensions
 
