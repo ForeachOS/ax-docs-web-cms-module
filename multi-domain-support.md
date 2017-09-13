@@ -227,7 +227,5 @@ assets:
 
 * The component _my-teaser_ and it's child component, _body_, will be imported under _my-domain_.
 
-
-
-
+Note: In a multi-domain supported setup, all newly created `WebCmsDomainBound` objects will be imported under their currently scoped domain \(by default: no domain\). The domain of a specific entry can still be changed by using the _domain_ property.
 
