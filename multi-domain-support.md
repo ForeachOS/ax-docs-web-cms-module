@@ -229,3 +229,5 @@ assets:
 
 Note: In a multi-domain supported setup, all newly created `WebCmsDomainBound` objects will be imported under their currently scoped domain \(by default: no domain\). The domain of a specific entry can still be changed by using the _domain_ property.
 
+Note: We strongly advise to scope entire imports for a specific domain in a multi-domain setup. If you do want to explicitly set the domain afterwards, we advise you to explicitly set it everywhere.
+
