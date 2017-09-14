@@ -58,6 +58,8 @@ TODO: document and explain the extensions
 
 * currentDomain\(\)
 
+explain WebCmsEntityAttributes
+
 ### Resolving the current domain
 
 TODO: explain cookie based resolver and dns based resolver
