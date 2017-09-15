@@ -1,0 +1,1 @@
+TODO: list the different attributes available for entitymodule configuration

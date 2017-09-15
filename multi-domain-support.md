@@ -32,6 +32,40 @@ In a multi-domain configuration,  `WebCmsDomain.NONE` \(`null`\) represents item
 
 TODO: explain the different options of WebCmsMultiDomainConfiguration
 
+#### EntityModule auto-configuration
+
+WebCmsModule attempts to auto-configure the EntityModule entities if multi-domain support is active.  Depending on your multi-domain configuration the following entity configurations will be modified:
+
+1. list views of `EntityConfiguration` and `EntityAssociation` will be modified with domain aware base predicates \(this ensures that you will only see entities bound to the domain your are managing\)
+2. the `EntityModel` of `WebCmsDomainBound` entities will be adjusted with a custom `EntityFactory` that will pre-set the currently selected domain
+3. the `EntityConfigurationAllowableActionsBuilder` of all entities will be wrapped with a domain-aware actions builder that will deny any action attempting to modify an entity on a domain it does not belong to
+
+In many cases the auto-configuration will be just what you need and there won't be any need for tweaking.  However if you want to manually configure some of your entities, you can force the auto-configuration parts to be skipped.
+
+##### Auto-configuration related attributes
+
+Domain auto-configuration is performed during a post-processing of all entity configurations.  Custom attributes allow you to skip parts of the auto-configuration or to tweak auto-configuration settings.
+
+###### Skipping automatic list view adjustment
+
+When you manually configure a list view with a domain specific base predicate, you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.LIST_VIEW_ADJUSTED` to true.  This attribute is supported on any `EntityConfiguration` or `EntityAssociation`.
+
+###### Skipping automatic EntityModel adjustment
+
+TBD
+
+###### Skipping automatic AllowableActions adjustment
+
+TBD
+
+###### Setting a custom property representing the WebCmsDomain
+
+If you want to activate \(partial\) multi-domain auto-configuration for entities not implementing `WebCmsDomainBound`, you can specify an explicit property that links to the `WebCmsDomain` by setting `WebCmsEntityAttributes.DOMAIN_PROPERTY` on the `EntityConfiguration`.  
+
+**An example:**
+
+`WebCmsUrl` does not implement `WebCmsDomainBound`.  But a `WebCmsUrl` is linked to a `WebCmsEndpoint` that does  implement `WebCmsDomainBound`, so an URL is also bound implicitly.  To auto-configure the domain-based filtering for `WebCmsUrl`: set `WebCmsEntityAttributes.DOMAIN_PROPERTY` to **endpoint.domain**.
+
 ### Customizing a single domain configuration: metadata
 
 `WebCmsDomain` is a simple entity with support for an infinite number of String based attributes.  Because this is usually not very efficient to work with, you can implement a `WebCmsDomainData` class that wraps around a `WebCmsDomain` providing strong-typed access to domain-related configuration properties.
