@@ -1,4 +1,4 @@
-# Multi-domain support
+# Multi-domain and multi-site support
 
 The default configuration of WebCmsModule considers all entities as part of a single pool of data \(the "domain"\).  Usually a domain corresponds with a single website, often represented by an actual DNS record.
 
@@ -60,7 +60,7 @@ TBD
 
 ###### Setting a custom property representing the WebCmsDomain
 
-If you want to activate \(partial\) multi-domain auto-configuration for entities not implementing `WebCmsDomainBound`, you can specify an explicit property that links to the `WebCmsDomain` by setting `WebCmsEntityAttributes.DOMAIN_PROPERTY` on the `EntityConfiguration`.  
+If you want to activate \(partial\) multi-domain auto-configuration for entities not implementing `WebCmsDomainBound`, you can specify an explicit property that links to the `WebCmsDomain` by setting `WebCmsEntityAttributes.DOMAIN_PROPERTY` on the `EntityConfiguration`.
 
 **An example:**
 
