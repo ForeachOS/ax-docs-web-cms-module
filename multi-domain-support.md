@@ -37,8 +37,9 @@ TODO: explain the different options of WebCmsMultiDomainConfiguration
 WebCmsModule attempts to auto-configure the EntityModule entities if multi-domain support is active.  Depending on your multi-domain configuration the following entity configurations will be modified:
 
 1. list views of `EntityConfiguration` and `EntityAssociation` will be modified with domain aware base predicates \(this ensures that you will only see entities bound to the domain your are managing\)
-2. the `EntityModel` of `WebCmsDomainBound` entities will be adjusted with a custom `EntityFactory` that will pre-set the currently selected domain
-3. the `EntityConfigurationAllowableActionsBuilder` of all entities will be wrapped with a domain-aware actions builder that will deny any action attempting to modify an entity on a domain it does not belong to
+2. options queries of entities (`EntityAttributes.OPTIONS_ENTITY_QUERY`) will be modified so you can only select entities of the currently selectable domains
+3. the `EntityModel` of `WebCmsDomainBound` entities will be adjusted with a custom `EntityFactory` that will pre-set the currently selected domain
+4. the `EntityConfigurationAllowableActionsBuilder` of all entities will be wrapped with a domain-aware actions builder that will deny any action attempting to modify an entity on a domain it does not belong to
 
 In many cases the auto-configuration will be just what you need and there won't be any need for tweaking.  However if you want to manually configure some of your entities, you can force the auto-configuration parts to be skipped.
 
@@ -48,15 +49,25 @@ Domain auto-configuration is performed during a post-processing of all entity co
 
 ###### Skipping automatic list view adjustment
 
-When you manually configure a list view with a domain specific base predicate, you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.LIST_VIEW_ADJUSTED` to true.  This attribute is supported on any `EntityConfiguration` or `EntityAssociation`.
+When you manually configure a list view with a domain specific base predicate, you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.LIST_VIEW_ADJUSTED` to `true`.  This attribute is supported on any `EntityConfiguration` or `EntityAssociation`.
+
+###### Skipping automatic options query adjustment
+
+When you manually configure the options filtering of an entity (e.g. by setting `EntityAttributes.OPTIONS_ENTITY_QUERY` you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.OPTIONS_QUERY_ADJUSTED` to `true`.  This attribute is supported on any `EntityConfiguration` or `EntityPropertyDescriptor`.
 
 ###### Skipping automatic EntityModel adjustment
 
-TBD
+If you don't want the default `EntityFactory` to be modified, you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.ENTITY_MODEL_ADJUSTED` to `true` on the `EntityConfiguration`.
 
 ###### Skipping automatic AllowableActions adjustment
 
-TBD
+If you don't want the default `EntityConfigurationAllowableActionsBuilder` to be modified, you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.ALLOWABLE_ACTIONS_ADJUSTED` to `true` on the `EntityConfiguration`.
+
+###### Skipping auto-configuration of an entity
+
+If you want to skip the entire auto-configuration of an `EntityConfiguration` you should set the attribute `WebCmsEntityAttributes.MultiDomainConfiguration.FINISHED` to `true` on that `EntityConfiguration`.
+
+This will ensure no processing is done on the `EntityConfiguration` or any of its registered associations.
 
 ###### Setting a custom property representing the WebCmsDomain
 

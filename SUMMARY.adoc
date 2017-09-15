@@ -1,5 +1,7 @@
 = Summary
 
+== Reference documentation
+
 * link:README.adoc[Introduction]
 * link:chap-general-information.adoc[General Information]
 ** link:chap-general-information.adoc#artifact[Artifact]
@@ -37,4 +39,7 @@
 
 
 == How-tos
+
+* link:how-tos/using-a-site-template-in-a-multi-site-setup.adoc[Using a site template in a multi-site setup]
+
 
