@@ -27,8 +27,6 @@
 ** link:importing/chap-importing-data.adoc#importing-data[WebCmsDataImportService]
 ** link:importing/chap-importing-data.adoc#installer[Using an installer]
 ** link:importing/chap-importing-data.adoc#yaml[YAML Structure]
-* link:appendices/chap-appendices.adoc[Appendix]
-* link:how-tos.md[How-tos]
 
 
 == Appendix
@@ -41,5 +39,8 @@
 == How-tos
 
 * link:how-tos/using-a-site-template-in-a-multi-site-setup.adoc[Using a site template in a multi-site setup]
+* Defining and importing custom components
+* Creating and importing a custom asset
+* Configuring a publication model
 
 
