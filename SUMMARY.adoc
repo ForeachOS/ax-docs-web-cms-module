@@ -27,6 +27,7 @@
 ** link:importing/chap-importing-data.adoc#importing-data[WebCmsDataImportService]
 ** link:importing/chap-importing-data.adoc#installer[Using an installer]
 ** link:importing/chap-importing-data.adoc#yaml[YAML Structure]
+* link:chap-performance-tuning.adoc[Performance tuning]
 
 
 == Appendix
@@ -34,6 +35,7 @@
 * link:thymeleaf-dialect.adoc[Thymeleaf dialect]
 * link:appendices/chap-appendices.adoc#appendix-default-data[Default data]
 * link:entitymodule-attributes.adoc[EntityModule attributes]
+* link:repositories-and-services.md[Repositories and services]
 
 
 == How-tos

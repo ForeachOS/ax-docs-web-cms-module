@@ -8,6 +8,12 @@ Any entity that can be attached to a particular `WebCmsDomain` should implement 
 
 All default implementations provided by WebCmsModule implement this interface.  When using one of the default base classes \(eg. `WebCmsObjectSuperClass`\), you automatically implement `WebCmsDomainBound`.
 
+---
+
+**In a multi-domain setup, entities not attached to a specific domain are shared across all domains.  Entities attached to a single domain are available only on that specific domain.**
+
+---
+
 ## Configuring multi-domain support in your application
 
 By default, multi-domain support is disabled entirely.  Entities will never be attached to a domain and - if the administration UI is active - you will not be offered any domain related management options.
@@ -164,7 +170,7 @@ Customizing the default labels can be done through the following message codes:
 
 A non-domain-bound entity is by default only available on the shared settings.  You can add a shared entity to every domain by setting the attribute `WebCmsEntityAttributes.ALLOW_PER_DOMAIN` to true on the corresponding `EntityConfiguration`.
 
-###### Example sharing WebCmsImage asset across all domains and making them selectable from all domains 
+###### Example sharing WebCmsImage asset across all domains and making them selectable from all domains
 
 ```java
 @Bean
@@ -181,11 +187,11 @@ public WebCmsMultiDomainConfiguration multiDomainConfiguration() {
 @Configuration
 class AdminUiConfiguration implements EntityConfigurer
 {
-	@Override
-	public void configure( EntitiesConfigurationBuilder entities ) {
-		entities.withType( WebCmsImage.class )
-			.attribute( WebCmsEntityAttributes.ALLOW_PER_DOMAIN, true );
-	}
+    @Override
+    public void configure( EntitiesConfigurationBuilder entities ) {
+        entities.withType( WebCmsImage.class )
+            .attribute( WebCmsEntityAttributes.ALLOW_PER_DOMAIN, true );
+    }
 }
 ```
 
@@ -211,7 +217,7 @@ This section explains how you can use the domain concept directly in your contro
 
 ### Accessing the current domain
 
-You can access the current domain or its metadata using one of the methods on the `WebCmsMultiDomainService`.  From a static context, you can directly use the `WebCmsDomainContextHolder` and `WebCmsDomainContext`. 
+You can access the current domain or its metadata using one of the methods on the `WebCmsMultiDomainService`.  From a static context, you can directly use the `WebCmsDomainContextHolder` and `WebCmsDomainContext`.
 
 Use the service wherever possible, as it will ensure correct behaviour in both a multi-domain and no-domain context.
 
@@ -236,7 +242,7 @@ public String domainSpecificMethod() {
 
 WebCmsModule adds some domain-related functions that can be used in EQL statements:
 
-* `selectedDomain() `returns the current domain of the context
+* `selectedDomain()`returns the current domain of the context
 * `visibleDomains()` returns the domain from which entities can be selected, usually this is the current domain together with non-domain bound entities
 * `accessibleDomains(ACTION, ACTION, ...)` returns the list of domains for which the user has any of the listed actions
   * action should be String representing a valid `AllowableAction`
@@ -251,6 +257,16 @@ The current domain is resolved in 2 ways:
 2. The `CookieWebCmsDomainContextResolver` is used by AdminWebModule to determine the actual domain configured in a cookie.  This will overrule any previously configured domain by the filter.
 
 You can alter the resolving mechanism by creating your own `AbstractWebCmsDomainContextFilter` implementation and registering it on the `WebCmsMultiDomainConfiguration`.
+
+## Using no-domain in a multi-domain setup
+
+no-domain = items shared
+
+type specifiers are by default shared, if you define them as domain bound and no domain is allowed, they will first be looked for in the current domain, if not found will check if there is a shared item 
+
+WebCmsTypeSpecifierService
+
+TODO: document with types.
 
 ## Manually adding multi-domain support to your entities
 
