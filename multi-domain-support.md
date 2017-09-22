@@ -260,13 +260,18 @@ You can alter the resolving mechanism by creating your own `AbstractWebCmsDomain
 
 ## Using no-domain in a multi-domain setup
 
-no-domain = items shared
+In a multi-domain setup items not attached to a specific domain are expected to be shared across all domains.  In the default configuration, type specifiers are not domain-bound but shared across all domains.  In the administration UI of per-domain management, you will only be able to modify types under Shared settings.
 
-type specifiers are by default shared, if you define them as domain bound and no domain is allowed, they will first be looked for in the current domain, if not found will check if there is a shared item 
+It's possible to define an item as domain-bound however, but at the same time making the domain optional.  This means the entity can be either shared across all domains, or attached to a specific domain.
 
-WebCmsTypeSpecifierService
+The following default behaviour will be applied:
 
-TODO: document with types.
+* if an entity is not domain-bound, it will always be looked for in the set of "no-domain" entities, regardless of any domain attached to the current context
+* if an entity is domain-bound, it will be looked for in the entities attached to the domain of the current context \(this could be "no-domain"\)
+* if an entity is domain-bound but the domain is optional, it will be looked for in the set of "no-domain" entities if no entity could be found in the set of entities attached to the domain of the current context
+  * This allows you to use entities shared across all domains, but overrule them with domain-specific versions.  This can be especially useful in the case of type specifiers.
+
+The available service beans all inspect the multi domain configuration of your application to determine which logic they should apply. This will usually be very transparent for the user \(developer\).
 
 ## Manually adding multi-domain support to your entities
 
@@ -286,6 +291,8 @@ If auto-configuration is insufficient, you will need to manually add multi-domai
 
 * Repositories are usually used in the backend - especially if you want to support both multi-domain and no-domain configurations.  Repository methods always require you to explicitly specify the domain as well.
 * Services usually use the current domain to interact with the repository, making them very easy to use in frontend business logic.
+
+See [the appendix](/repositories-and-services.md) for an overview of the available repositories and services.
 
 ## Importing domain configuration
 
