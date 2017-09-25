@@ -34,3 +34,13 @@ WebCmsModule uses some specific caches to improve performance.  It is recommende
 
 To improve overall performance of the domain model, configuring Hibernate level 2 cache is also strongly advised.
 
+| Cache name | Hints |
+| :--- | :--- |
+| com.foreach.across.modules.webcms.domain.url.WebCmsUrl | The size of your WebCmsUrl cache should be a multiple of your WebCmsEndpoint cache and a minimum of one-to-one, as there would be multiple urls per endpoint in general. |
+| com.foreach.across.modules.webcms.domain.endpoint.WebCmsEndpoint |  |
+| com.foreach.across.modules.webcms.domain.type.WebCmsTypeSpecifier | The items in your WebCmsTypeSpecifier cache should remain cached for a long duration, because they do not change often. |
+| com.foreach.across.modules.webcms.domain.asset.WebCmsAsset | The size and duration of your WebCmsAsset cache depend on how you use them. If you do not change existing assets often, you should opt for a longer duration. |
+| com.foreach.across.modules.webcms.domain.domain.WebCmsDomain | The items in your WebCmsDomain cache should remain cached for a long duration, because they do not change often. |
+
+
+
