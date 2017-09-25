@@ -29,6 +29,49 @@ include::chap-web-components-base-types.adoc[]
 Any `WebCmsObject` - this includes all assets and components themselves - can have web components linked to it.
 Enabling components for WebCmsObject implementations: wire WebCmsObjectComponentViewsConfiguration: registerComponentsAssociation
 
+== Filtering selectable WebCmsComponentType options
+To filter the dropdown options for a WebCmsComponent, the user can perform two actions. These two options are provided by the `DefaultAllowedCompontTypeFetcher`. Should you like to provide your own logic to filter the selectable options, for one or more types, you'd have to provide your own implementations of the `WebCmsAllowedComponentTypeFetcher` interface.
+
+=== Non-selectable WebCmsComponentTypes
+To prevent a `WebCmsComponentType` from showing up in the list unless explicitly specified, the user has to provide the component type with the `componentRestricted` attribute, with its value set to true. This ensures that unless the WebCmsComponentType is specified as an option for the `WebCmsObject` through a `WebCmsTypeSpecifierLink`, it will never be shown as an option.
+
+Examples of non-selectable WebCmsComponentTypes are the default placeholder, proxy and fixed-container component types.
+
+
+Example
+[source, yaml]
+----
+types:
+  component:
+    fixed-container:
+      objectId: "wcm:type:component:fixed-container"
+      name: Fixed container
+      description: Container of a fixed set of components.
+      attributes:
+        type: fixed-container
+        componentRestricted: true
+----
+- A _fixed-container_ should never be available as a selectable option unless specified (through a WebCmsTypeSpecifierLink) 
+
+=== Selectable WebCmsComponenTypes
+In the case where a component type may only contain other specific component types, the type should be provided by the `childComponentsRestricted` attribute, with its value set to true. The provided component type options will then be equal to the specified `WebCmsTypeSpecifierLink` links with link type _allowed-component_.
+
+Example
+[source, yaml]
+----
+types:
+  component:
+    partner-container:
+      name: Partners
+      attributes:
+        type: container
+        childComponentsRestricted: true
+      wcm:types:
+        - typeSpecifier: "wcm:type:component:partner"
+          linkType: allowed-component
+----
+- A _partner-container_ should only contain components of the type _partner_
+
 == Rendering components
 
 === Creating shared web components
