@@ -27,20 +27,22 @@ WebCmsModule uses some specific caches to improve performance.  It is recommende
 
 | Cache name | Description |
 | :--- | :--- |
-| WebCmsUrlCache | Maps request paths to matching `WebCmsUrl` instances. |
+| WebCmsUrlCache | Maps request paths to matching `WebCmsUrl` instances.  Only caches the url id, requires 2nd level cache enabled for optimal performance gain. |
 | WebCmsMenuCache | Caches the menu structure that should be generated from corresponding `WebCmsMenu` items. |
 
 ### Hibernate level 2 cache
 
 To improve overall performance of the domain model, configuring Hibernate level 2 cache is also strongly advised.
 
+The cache names for the Hibernate level 2 cache are always fully qualified class names.  The prefix **c.f.a.m.w.d** stands for **com.foreach.across.modules.webcms.domain**.
+
 | Cache name | Hints |
 | :--- | :--- |
-| com.foreach.across.modules.webcms.domain.url.WebCmsUrl | The size of your WebCmsUrl cache should be a multiple of your WebCmsEndpoint cache and a minimum of one-to-one, as there would be multiple urls per endpoint in general. |
-| com.foreach.across.modules.webcms.domain.endpoint.WebCmsEndpoint |  |
-| com.foreach.across.modules.webcms.domain.type.WebCmsTypeSpecifier | The items in your WebCmsTypeSpecifier cache should remain cached for a long duration, because they do not change often. |
-| com.foreach.across.modules.webcms.domain.asset.WebCmsAsset | The size and duration of your WebCmsAsset cache depend on how you use them. If you do not change existing assets often, you should opt for a longer duration. |
-| com.foreach.across.modules.webcms.domain.domain.WebCmsDomain | The items in your WebCmsDomain cache should remain cached for a long duration, because they do not change often. |
+| c.f.a.m.w.d.url.WebCmsUrl | Holds WebCmsUrl entity data.  The size of your WebCmsUrl cache should be a multiple of your WebCmsEndpoint cache and a minimum of one-to-one, as usually there are multiple urls per endpoint. |
+| c.f.a.m.w.d.endpoint.WebCmsEndpoint | References WebCmsRemoteEndpoint and WebCmsAssetEndpoint.  Size this cache according to the number of redirects or assets you expect to be frequently accessed.  Depending on your application setup a good guideline is at least the size of your `WebCmsAsset` cache.  If you use a lot of redirects, you should provide some additional space. |
+| c.f.a.m.w.d.type.WebCmsTypeSpecifier | The items in the `WebCmsTypeSpecifier` cache can usually be cached for a long time, because they do not change often. |
+| c.f.a.m.w.d.asset.WebCmsAsset | The size and duration of your `WebCmsAsset` cache depend on how you use them. If you do not change existing assets often, you should opt for a longer duration. |
+| c.f.a.m.w.d.domain.WebCmsDomain | The items in your `WebCmsDomain` cache are usually very static and are accessed frequently.  It's usually best to cache these for a very long time. |
 
 
 
