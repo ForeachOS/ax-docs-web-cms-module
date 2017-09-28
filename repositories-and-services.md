@@ -69,7 +69,8 @@ The core services are always created when WebCmsModule is enabled in your applic
 | `WebCmsDataConversionService` | Specific Spring `ConversionService` implementation used for data importing.  Contains specific converters for WebCmsModule types. |
 | `WebCmsDataImportService` | General service for importing WebCmsModule data from generic `Map<String,Object>` structures. |
 | `WebCmsDefaultComponentsService` | Service for creating default components for any `WebCmsAsset` by checking for a **contentTemplate** attached to the `WebCmsAssetType`. |
-| `WebCmsMultiDomainService` | Service for accessing the current domain context and inspecting the multi-domain configuration. |
+| `WebCmsDomainService` | Service for retrieving domains and related metadata. |
+| `WebCmsMultiDomainService` | Service for accessing the current domain context and inspecting the multi-domain configuration.  Extends the `WebCmsDomainService`. |
 | `WebCmsPlaceholderLookupService` | Request scoped service for retrieving placeholder content registered on the current request. |
 | `WebCmsPlaceholderContentModel` | Request scoped bean to set and retrieve placeholder data for the current request. |
 | `WebCmsRenderUtilityService` | Provides [utility functions](/thymeleaf-dialect.adoc) for using during output rendering. |
