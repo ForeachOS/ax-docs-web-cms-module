@@ -6,14 +6,14 @@
   },
   "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link" ],
   "pluginsConfig": {
-    "theme-api": {
-        "versions": {
+  "versions": {
             "type": "branches"
         },
         "edit-link": {
             "base": "https://github.com/ForeachOS/ax-docs-web-cms-module/edit/0.0.3-SNAPSHOT/",
             "label": "Edit This Page"
         },
+    "theme-api": {     
         "languages": [
           {
             "lang": "java",
