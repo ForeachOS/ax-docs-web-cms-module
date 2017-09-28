@@ -28,7 +28,8 @@ WebCmsModule uses some specific caches to improve performance.  It is recommende
 | Cache name | Description |
 | :--- | :--- |
 | WebCmsUrlCache | Maps request paths to matching `WebCmsUrl` instances.  Only caches the url id, requires 2nd level cache enabled for optimal performance gain. |
-| WebCmsMenuCache | Caches the menu structure that should be generated from corresponding `WebCmsMenu` items. |
+| WebCmsMenuCache | Caches the menu structure that should be generated from corresponding `WebCmsMenu` items.  Prefer to cache these for a long time if possible. |
+| WebCmsDomainCache | Relevant in a multi-domain setup.  Caches domains and their metadata.  Domain lookups happen on pratically every request so this cache is very important.  Domain settings are usually quite static, so caching for a very long time is often feasible. |
 
 ### Hibernate level 2 cache
 
