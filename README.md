@@ -2,7 +2,7 @@
 
 ###### Version
 
-[0.0.3-SNAPSHOT](/whats-new.md)
+[{{ book.moduleVersion }}](/whats-new.md)
 
 ###### Authors
 
@@ -22,5 +22,5 @@ Features provided by WebCmsModule include:
 
 A fully functional administration UI is available using AdminWebModule and EntityModule.
 
-Module website: {module-url}
+Module website: {{ book.moduleUrl }}
 
