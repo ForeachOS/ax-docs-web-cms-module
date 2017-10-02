@@ -1,7 +1,7 @@
 [[component-thymeleaf-integration]]
 === Thymeleaf integration
 
-{module-name} provides its own Thymeleaf dialect for working with components.
+WebCmsModule provides its own Thymeleaf dialect for working with components.
 It enables you to:
 
 * replace template fragments by component output
@@ -13,7 +13,7 @@ The Thymeleaf dialect is a very powerful tool to convert your static templates i
 ==== HTML attributes
 Interacting with components is done by adding attributes to your template elements.
 
-include::fragment-component-attributes.adoc[]
+{% include "fragment-component-attributes.adoc" %}
 
 Auto-creation of components from markup
 
