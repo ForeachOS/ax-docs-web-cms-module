@@ -1,10 +1,8 @@
-include::variables.adoc[]
+= Thymeleaf dialect
+The following section gives an overview of the custom Thymeleaf dialect provided by WebCmsModule.
 
-== Thymeleaf dialect
-The following section gives an overview of the custom Thymeleaf dialect provided by {module-name}.
-
-=== Expression objects
-==== Render utilities
+== Expression objects
+=== Render utilities
 The `WebCmsRenderUtilityService` is available as the `#wcm` expression object.
 
 [source,java,indent=0]
@@ -35,10 +33,10 @@ ${#wcm.member(componentName,container)}
 ${#wcm.members(container)}
 ----
 
-=== HTML attributes
+== HTML attributes
 The following HTML attributes are supported.
 
-==== Attributes for rendering components
+=== Attributes for rendering components
 {% include "./components/fragment-component-attributes.adoc" %}
 
 For more details, see the section link:/components/chap-web-components-thymeleaf.adoc[web components Thymeleaf integration].
