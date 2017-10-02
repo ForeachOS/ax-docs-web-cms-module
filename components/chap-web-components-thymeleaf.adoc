@@ -1,4 +1,3 @@
-include::../variables.adoc[]
 [[component-thymeleaf-integration]]
 === Thymeleaf integration
 
