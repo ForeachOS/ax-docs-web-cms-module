@@ -34,7 +34,7 @@
 
 * link:thymeleaf-dialect.adoc[Thymeleaf dialect]
 * link:appendices/chap-appendices.adoc#appendix-default-data[Default data]
-* link:entitymodule-attributes.adoc[EntityModule attributes]
+* link:entitymodule-attributes.md[EntityModule attributes]
 * link:repositories-and-services.md[Repositories and services]
 
 
