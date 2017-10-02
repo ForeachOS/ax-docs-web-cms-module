@@ -39,7 +39,7 @@ The following HTML attributes are supported.
 === Attributes for rendering components
 {% include "./components/fragment-component-attributes.adoc" %}
 
-For more details, see the section link:/components/chap-web-components-thymeleaf.adoc[web components Thymeleaf integration].
+For more details, see the section link:./components/chap-web-components-thymeleaf.adoc[web components Thymeleaf integration].
 
 
 
