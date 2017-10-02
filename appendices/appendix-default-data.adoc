@@ -1,15 +1,14 @@
-include::../variables.adoc[]
 [[appendix-default-data]]
-== Default data
-{module-name} installs some default assets and types when starting for the first time.
+= Default data
+WebCmsModule installs some default assets and types when starting for the first time.
 You usually want to extend or customize the default data installed.
 
 If you want to start from an entirely blank slate, you can disable the default data by setting the `webCmsModule.default-data.assets.enabled` property to `false`.
 
 This section lists the default data that will be imported.
 
-=== Default types
-_classpath:installers/{module-name}/default-types.yml_
+== Default types
+*classpath:installers/WebCmsModule/default-types.yml*
 
 [source,yaml,indent=0]
 ----
@@ -17,49 +16,61 @@ types:
   # Default component types
   component:
     proxy:
+      objectId: "wcm:type:component:proxy"
       name: Proxy component
       description: A proxy for another component that will be rendered instead.
       attributes:
         type: proxy
+        componentRestricted: true
     placeholder:
+      objectId: "wcm:type:component:placeholder"
       name: Placeholder
       description: Represents a placeholder for content provided by code or templates.
       attributes:
         type: placeholder
+        componentRestricted: true
     container:
+      objectId: "wcm:type:component:container"
       name: Container
       description: Container of multiple ordered components.
       attributes:
         type: container
     fixed-container:
+      objectId: "wcm:type:component:fixed-container"
       name: Fixed container
       description: Container of a fixed set of components.
       attributes:
         type: fixed-container
+        componentRestricted: true
     text-field:
+      objectId: "wcm:type:component:text-field"
       name: Text field
       description: A single line of plain text.
       attributes:
         type: plain-text
         multiLine: false
     plain-text:
+      objectId: "wcm:type:component:plain-text"
       name: Plain text
       description: Plain text component.
       attributes:
         type: plain-text
         rows: 1
     rich-text:
+      objectId: "wcm:type:component:rich-text"
       name: Rich text
       description: Rich text component - supporting HTML markup and default assets if enabled by other modules.
       attributes:
         type: rich-text
         profile: rich-text
     html:
+      objectId: "wcm:type:component:html"
       name: HTML
       description: A snippet of HTML.
       attributes:
         type: markup
     image:
+      objectId: "wcm:type:component:image"
       name: Image
       description: Image asset or external image link.
       attributes:
@@ -68,6 +79,7 @@ types:
   # Default article types: blog and news
   article:
     blog:
+      objectId: "wcm:type:article:blog"
       name: Blog
       wcm:components:
         # Default component name that contains the content components for this article type
@@ -87,6 +99,7 @@ types:
                     <p></p>
                   sortIndex: 0
     news:
+      objectId: "wcm:type:article:news"
       name: News
       attributes:
         # Key of the parent type from which the attributes (and component) should be inherited
@@ -95,11 +108,13 @@ types:
   # Default publication types: blog and news
   publication:
     blog:
+      objectId: "wcm:type:publication:blog"
       name: Blog
       wcm:types:
         - typeSpecifier: wcm:type:article:blog
           linkType: article
     news:
+      objectId: "wcm:type:publication:news"
       name: News
       wcm:types:
         - typeSpecifier: wcm:type:article:news
@@ -108,16 +123,21 @@ types:
   # Default page types
   page:
     default:
+      objectId: "wcm:type:page:default"
       name: Default
     template:
+      objectId: "wcm:type:page:template"
       name: Template
       attributes:
         hasEndpoint: false
         isPublishable: false
 ----
 
-=== Default assets
-_classpath:installers/{module-name}/default-assets.yml_
+== Default assets
+Some sample assets get imported if multi-domain configuration is disabled.
+In a multi-domain setup, only the default types get imported.
+
+*classpath:installers/WebCmsModule/default-assets.yml*
 
 [source,yaml,indent=0]
 ----

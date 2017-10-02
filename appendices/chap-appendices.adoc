@@ -1,5 +1,0 @@
-include::../variables.adoc[]
-:!numbered:
-= Appendices
-
-include::appendix-default-data.adoc[]
