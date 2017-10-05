@@ -32,10 +32,11 @@
 
 == Appendix
 
+* link:appendices/message-codes.md[Message codes]
 * link:thymeleaf-dialect.adoc[Thymeleaf dialect]
-* link:appendices/appendix-default-data.adoc[Default data]
 * link:entitymodule-attributes.md[EntityModule attributes]
 * link:repositories-and-services.md[Repositories and services]
+* link:appendices/appendix-default-data.adoc[Default data]
 
 
 == How-tos

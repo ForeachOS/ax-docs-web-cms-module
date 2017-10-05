@@ -1,4 +1,3 @@
-include::../variables.adoc[]
 [[defining-component-types]]
 === Defining component types
 You can easily define your own component types.
@@ -289,6 +288,9 @@ As the implementations are always queried in order, customizing an implementatio
 * providing your implementation as a bean
 * implementing `supports()` to match for all component types you want
 * ensure your bean is ordered (use `@Order` or implement `Ordered`) before any other that might also apply for that component type
+
+.Administration UI labels and descriptions
+The default administration UI for components supports configuring the labels.  See the link:/appendices/message-codes.md[appendix on message codes].
 
 .Client-side administration UI integration
 {module-name} provides a default administration UI built on AdminWebModule and EntityModule.
