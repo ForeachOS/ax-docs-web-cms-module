@@ -72,6 +72,9 @@ A metadata class must:
 ** Jackson annotations on the metadata class are supported if necessary to define (de-)serializer rules
 ** special care should be taken not to serializer any beans that might have been wired
 * implement a valid `equals()` method in order to have change detection and better import/export performance
+* be easily cloneable:
+** have either a no-arguments public constructor and provide setters/getters for all relevant properties
+** OR implement `EntityWithDto` or `Cloneable`
 
 If the administration UI is active, a form for metadata properties will automatically be generated using the EntityModule.
 This does require you to register the metadata type as an entity in the `EntityRegistry`.
