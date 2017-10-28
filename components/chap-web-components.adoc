@@ -52,7 +52,39 @@ include::chap-web-components-thymeleaf.adoc[]
 
 include::chap-web-components-defining-component-types.adoc[]
 
-:numbered:
-
 [[WebCmsComponent-import]]
 == Importing components
+
+=== Single value importing
+The `TextWebCmsComponentModel` and `ImageWebCmsComponentModel` support updating existing components using a single attribute value.
+
+This is the same as assigning the following property:
+
+[options="header", cols="2,1"]
+|================
+|Component type |Property
+|`TextWebCmsComponentModel`| _content_
+|`ImageWebCmsComponentModel`| _image_
+|================
+
+.Example: the following 2 import blocks would be equivalent
+[source,yaml,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
+assets:
+  article:
+    - title: My article
+      wcm:components:
+        body:
+          content: Update the article body text
+          
+---
+
+assets:
+  article:
+    - title: My article
+      wcm:components:
+        body: Update the article body text
+----
+
+
