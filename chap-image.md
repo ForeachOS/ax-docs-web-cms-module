@@ -36,6 +36,9 @@ webCmsModule:
       cloudName: yourCloudName
       apiKey: 123456789
       apiSecret: secret
+      # Optionally specify additional settings
+      settings:
+        secure: true
 ```
 
 When setting **webCmsModule.images.cloudinary.enabled** to `true`, WebCmsModule will create its own `Cloudinary` instance with the specified values.  If your application creates a `Cloudinary` bean manually however, there is no need to specify the properties as WebCmsModule will automatically detect it and create the corresponding `WebCmsImageConnector`.
@@ -70,7 +73,7 @@ webCmsModule:
       accessToken: secureApiAccessToken
 ```
 
-If not using a **hashToken**, retrieving the resolution **0x0** should be allowed in order to retrieve the original image.
+When not using a **hashToken**, retrieving the resolution **0x0** should be allowed in order to retrieve the original image.
 
 When setting **webCmsModule.images.imageServer.enabled** to `true`, WebCmsModule will create its own `ImageServerClient` instance with the specified values.  If your application creates an `ImageServerClient` bean manually however, there is no need to specify the properties as WebCmsModule will automatically detect it and create the corresponding `WebCmsImageConnector`.
 
