@@ -11,7 +11,7 @@ The different paths are the `WebCmsUrl` members of the endpoint (property `urls`
 
 [[Redirect-import]]
 == Importing a redirect
-One can import a redirect and its associated urlsby using the import infrastructure provided by the import functionality of WebCms.
+One can import a redirect and its associated urls by using the import infrastructure provided by the import functionality of WebCms.
 [source,yaml]
 ----
 redirects: // <1>
