@@ -41,7 +41,7 @@ Enabling components for WebCmsObject implementations: wire WebCmsObjectComponent
 |Name|String|Yes|The unique identifier with which you can approach the component in your Thymeleaf template. Should be unique, and can be auto-generated based on Title|None
 |================
 === Using components in your controllers
-`WebCmsComponentModelHierarchy`
+A `WebCmsComponentModelHierarchy` is attached to the WebApplicationContext of the current request and allows components to be looked up in the various scopes. By default the `global` and `domain` scope are registered. Using the WebCmsComponentModelHierarcyh, it is possible to register additional scopes, attach/replace/remove components to a scope and define aliases for a scope.
 
 === Placeholders
 `WebCmsPlaceholderContentModel`
