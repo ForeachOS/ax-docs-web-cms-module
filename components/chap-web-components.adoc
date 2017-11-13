@@ -56,7 +56,7 @@ public class MyController {
   
   private final WebCmsComponentModelHierarchy componentModelHierarchy;
   
-  @WebCmsArticleMapping(publicationType="blogs")
+  @WebCmsArticleMapping(articleType="blog")
   public void myHandler(Model model){
     WebCmsComponentModelSet componentModelSet = new WebCmsComponentModelSet();
     TextWebCmsComponentModel text = new TextWebCmsComponentModel();
