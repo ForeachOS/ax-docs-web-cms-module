@@ -47,7 +47,7 @@ The `WebCmsComponentModelHierarchy` is used to retrieve components in the thymel
 
 Note: The `WebCmsComponentModelHiercharchy` is a request scoped bean, so it can simply be autowired. It should however not be wired inside a controller handler method as it has a parameterless constructor.
 
-
+Example of registering a custom component to the `asset` scope:
 [source, java]
 ----
 @Controller
