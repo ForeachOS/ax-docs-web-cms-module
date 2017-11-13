@@ -66,11 +66,12 @@ assets:
 ----
 
 === Root key values
-By default, {module-name} supports 3 top-level keywords:
+By default, {module-name} supports 4 top-level keywords:
 
 * `assets`: specifies the children define `WebCmsAsset` import data
 * `types`: specifies the children define `WebCmsTypeSpecifier` import data
 * `menus`: specifies the children define `WebCmsMenu` import data
+*  `redirects` : specifies the children define `WebCmsRemoteEndpoint` import data
 
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
@@ -109,6 +110,10 @@ These links are mapped using the `WebCmsTypeSpecifierLink` and `WebCmsTypeSpecif
 |Can be used on any data block representing a `WebCmsAsset`.
  Will create menu items for that asset provided that there is a `WebCmsAssetEndpoint` available as well.
 See <<WebCmsPage-import,page importing>> for examples.
+
+|`wcm:urls`
+|Can be used on any data block representing a `WebCmsAsset`.
+Will create urls for the asset provided that there is a `WebCmsAssetEndpoint` available.
 
 |===
 
