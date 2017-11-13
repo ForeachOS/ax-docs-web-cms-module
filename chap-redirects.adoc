@@ -8,3 +8,18 @@ A specific HTTP status code can be configured for every path.
 
 In the domain model, a redirect is implemented as `WebCmsRemoteEndpoint`.
 The different paths are the `WebCmsUrl` members of the endpoint (property `urls`).
+
+[[Redirect-import]]
+== Importing a redirect
+One can import a redirect and its associated urlsby using the import infrastructure provided by the import functionality of WebCms.
+[source,yaml]
+----
+redirects: // <1>
+ - targetUrl: "http://google.com"
+   wcm:urls: <2>
+    - path: /path-that-should-redirect
+      httpStatus: 301
+----
+<1> The root element `redirects` indicates that the next item is going to be one (or many) `WebCmsRemoteEndpoints`.
+<2> Starts the collection of the attached urls.
+
