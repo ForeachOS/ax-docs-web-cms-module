@@ -23,6 +23,8 @@ By default an asset has a concept of being published or not.
 
 The repository for working with the abstract `WebCmsAsset` is `WebCmsAssetRepository`.
 
+WebCmsAssets also have a sortIndex, which will initially be set to 1000. Should you create your own `WebCmsAsset` implementation, do note that if you use a `Builder` pattern, that you will need to provide the logic to set the sortIndex to 1000. (e.g. override the default value inside the builder.)
+
 == WebCmsTypeSpecifier
 
 The base class for a type is `WebCmsTypeSpecifier`.
