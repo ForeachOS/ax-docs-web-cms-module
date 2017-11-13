@@ -41,7 +41,34 @@ Enabling components for WebCmsObject implementations: wire WebCmsObjectComponent
 |Name|String|Yes|The unique identifier with which you can approach the component in your Thymeleaf template. Should be unique, and can be auto-generated based on Title|None
 |================
 === Using components in your controllers
-A `WebCmsComponentModelHierarchy` is attached to the WebApplicationContext of the current request and allows components to be looked up in the various scopes. By default the `global` and `domain` scope are registered. Using the WebCmsComponentModelHierarcyh, it is possible to register additional scopes, attach/replace/remove components to a scope and define aliases for a scope.
+A `WebCmsComponentModelHierarchy` is attached to the `ApplicationContext` of the current request and allows components to be looked up in the various scopes. By default the `global` and `domain` scope are registered. Using the `WebCmsComponentModelHierarchy`, it is possible to register additional scopes, attach/replace/remove components to a scope and define aliases for a scope.
+
+The `WebCmsComponentModelHierarchy` is used to retrieve components in the thymeleaf dialect and is used to search for components in various scopes.
+
+Note: The `WebCmsComponentModelHiercharchy` is a request scoped bean, so it can simply be autowired. It should however not be wired inside a controller handler method as it has a parameterless constructor.
+
+
+[source, java]
+----
+@Controller
+@RequiredArgsConstructor
+public class MyController {
+  
+  private final WebCmsComponentModelHierarchy componentModelHierarchy;
+  
+  @WebCmsArticleMapping(publicationType="blogs")
+  public void myHandler(Model model){
+    WebCmsComponentModelSet componentModelSet = new WebCmsComponentModelSet();
+    TextWebCmsComponentModel text = new TextWebCmsComponentModel();
+    text.setContent("some text");
+    text.setName("my-custom-component");
+    componentModelSet.add(text);
+    componentModelHierarchy.registerComponentsForScope(componentModelSet, "asset");
+  }
+}
+----
+
+
 
 === Placeholders
 `WebCmsPlaceholderContentModel`
