@@ -101,6 +101,11 @@ See <<importing-action,the chapter on import actions>> for more details.
 |Can be used on any data block representing a `WebCmsObject`.
 Specifies that the child data represents components owned by the parent `WebCmsObject`.
 
+|`wcm:assets`
+|Can be used on any data block representing a `WebCmsObject`.
+Specifies that the child data represents links between the parent `WebCmsObject` and a `WebCmsAsset`. 
+These links are mapped using `WebCmsAssetLink` and `WebCmsAssetLinkRepository`
+
 |`wcm:types`
 |Can be used on any data block representing a `WebCmsObject`.
 Specifies that the child data represents links between the parent `WebCmsObject` and a `WebCmsTypeSpecifier`.
