@@ -11,6 +11,7 @@
   * message codes can be used to [configure descriptions and labels for component types](/appendices/message-codes.md)
   * text components \(rich-text/markup\) can have a [custom profile configured](/components/chap-web-components-defining-component-types.adoc#component-profiles) - default implementations support TinyMCE and CodeMirror profiles
 * `WebCmsAsset`s now have a sortIndex which by default is set to 1000.
+* It is now possible to create and import `WebCmsAssetLinks`
 * It is now possible to import \`[WebCmsUrls](/urls/chap-endpoint-url.adoc)\` and \`[Redirects](/chap-redirects.adoc)\`
 
 ## 0.0.2-SNAPSHOT
