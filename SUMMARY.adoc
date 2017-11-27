@@ -43,7 +43,7 @@
 
 * link:how-tos/using-a-site-template-in-a-multi-site-setup.adoc[Using a site template in a multi-site setup]
 * Defining and importing custom components
-* Creating and importing a custom asset
+* link:how-tos/creating-and-importing-a-custom-asset.md[Creating and importing a custom asset]
 * Configuring a publication model
 
 
