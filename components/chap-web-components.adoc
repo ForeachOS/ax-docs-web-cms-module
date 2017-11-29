@@ -41,7 +41,34 @@ Enabling components for WebCmsObject implementations: wire WebCmsObjectComponent
 |Name|String|Yes|The unique identifier with which you can approach the component in your Thymeleaf template. Should be unique, and can be auto-generated based on Title|None
 |================
 === Using components in your controllers
-`WebCmsComponentModelHierarchy`
+A `WebCmsComponentModelHierarchy` is attached to the `ApplicationContext` of the current request and allows components to be looked up in the various scopes. By default the `global` and `domain` scope are registered. Using the `WebCmsComponentModelHierarchy`, it is possible to register additional scopes, attach/replace/remove components to a scope and define aliases for a scope.
+
+The `WebCmsComponentModelHierarchy` is used to retrieve components in the thymeleaf dialect and is used to search for components in various scopes.
+
+Note: The `WebCmsComponentModelHiercharchy` is a request scoped bean, so it can simply be autowired. It should however not be wired inside a controller handler method as it has a parameterless constructor.
+
+Example of registering a custom component to the `asset` scope:
+[source, java]
+----
+@Controller
+@RequiredArgsConstructor
+public class MyController {
+  
+  private final WebCmsComponentModelHierarchy componentModelHierarchy;
+  
+  @WebCmsArticleMapping(articleType="blog")
+  public void myHandler(){
+    WebCmsComponentModelSet componentModelSet = new WebCmsComponentModelSet();
+    TextWebCmsComponentModel text = new TextWebCmsComponentModel();
+    text.setContent("some text");
+    text.setName("my-custom-component");
+    componentModelSet.add(text);
+    componentModelHierarchy.registerComponentsForScope(componentModelSet, "asset");
+  }
+}
+----
+
+
 
 === Placeholders
 `WebCmsPlaceholderContentModel`
@@ -52,7 +79,39 @@ include::chap-web-components-thymeleaf.adoc[]
 
 include::chap-web-components-defining-component-types.adoc[]
 
-:numbered:
-
 [[WebCmsComponent-import]]
 == Importing components
+
+=== Single value importing
+The `TextWebCmsComponentModel` and `ImageWebCmsComponentModel` support updating existing components using a single attribute value.
+
+This is the same as assigning the following property:
+
+[options="header", cols="2,1"]
+|================
+|Component type |Property
+|`TextWebCmsComponentModel`| _content_
+|`ImageWebCmsComponentModel`| _image_
+|================
+
+.Example: the following 2 import blocks would be equivalent
+[source,yaml,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
+assets:
+  article:
+    - title: My article
+      wcm:components:
+        body:
+          content: Update the article body text
+          
+---
+
+assets:
+  article:
+    - title: My article
+      wcm:components:
+        body: Update the article body text
+----
+
+

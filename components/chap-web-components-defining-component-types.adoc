@@ -1,11 +1,11 @@
-include::../variables.adoc[]
 [[defining-component-types]]
-=== Defining component types
+== Defining component types
+
 You can easily define your own component types.
 Depending on your needs you can <<extending-base-types,extend one of the base types>> or create a <<custom-component-type,fully custom implementation>>.
 
 [[extending-base-types]]
-==== Extending the base types
+=== Extending the base types
 You can add a custom `WebCmsComponentType` by importing it via YAML or by adding it via the `WebCmsComponentTypeRepository`.
 Component types to import should be defined in the section *types - component* where the key of a component type definition is the`unique `WebCmsComponentType` `typeKey`.
 
@@ -73,6 +73,9 @@ A metadata class must:
 ** Jackson annotations on the metadata class are supported if necessary to define (de-)serializer rules
 ** special care should be taken not to serializer any beans that might have been wired
 * implement a valid `equals()` method in order to have change detection and better import/export performance
+* be easily cloneable:
+** have either a no-arguments public constructor and provide setters/getters for all relevant properties
+** OR implement `EntityWithDto` or `Cloneable`
 
 If the administration UI is active, a form for metadata properties will automatically be generated using the EntityModule.
 This does require you to register the metadata type as an entity in the `EntityRegistry`.
@@ -97,7 +100,7 @@ NOTE: The *componentTemplate* should have the same class implementation as the c
 For example when creating a *fixed-container*, the *componentTemplate* must implement `ContainerWebCmsComponentModel`.
 Providing custom metadata is not supported on the template component, the metadata will be reset when creating a new component.
 
-===== Example: custom container component
+==== Example: custom container component
 This is an example of a custom component that is a fixed container with 2 member components.
 A custom metadata class allows configuring the position of the members (left or right), the custom template uses the metadata to determine what the output should be.
 
@@ -190,8 +193,56 @@ See <<custom-component-type,create a custom component type>> for more informatio
 The Thymeleaf template inspects the metadata `layout` property and renders members _one_ and _two_ in a fixed location.
 As a `WebCmsComponentModel` is a `ViewElement` using an _across:view_ node takes care of rendering the member components.
 
+=== Filtering selectable WebCmsComponentType options
+To filter the provided dropdown options for a WebCmsComponent, the user can perform two actions:
+
+- options that should never be present by default
+- selected set of options that should be present.
+
+These actions are provided through the `DefaultAllowedComponentTypeFetcher`. Should you like to provide your own logic to filter the selectable options, for one or more types, you will have to provide your own implementations of the `WebCmsAllowedComponentTypeFetcher` interface.
+
+==== Non-selectable WebCmsComponentTypes
+To prevent a `WebCmsComponentType` from showing up in the list unless explicitly specified, the user has to provide the component type with the `componentRestricted` attribute, with its value set to true. This ensures that unless the WebCmsComponentType is specified as an option for the `WebCmsObject` through a `WebCmsTypeSpecifierLink`, it will never be shown as an option.
+
+Examples of non-selectable WebCmsComponentTypes are the default placeholder, proxy and fixed-container component types.
+
+
+Example
+[source, yaml]
+----
+types:
+  component:
+    fixed-container:
+      objectId: "wcm:type:component:fixed-container"
+      name: Fixed container
+      description: Container of a fixed set of components.
+      attributes:
+        type: fixed-container
+        componentRestricted: true
+----
+- A _fixed-container_ should never be available as a selectable option unless specified (through a `WebCmsTypeSpecifierLink`) 
+
+==== Selectable WebCmsComponentType options
+In the case where a component type may only contain other specific component types, the type should be provided by the `childComponentsRestricted` attribute, with its value set to true. The provided component type options will then be equal to the specified `WebCmsTypeSpecifierLink` links with link type _allowed-component_.
+
+Example
+[source, yaml]
+----
+types:
+  component:
+    partner-container:
+      name: Partners
+      attributes:
+        type: container
+        childComponentsRestricted: true
+      wcm:types:
+        - typeSpecifier: "wcm:type:component:partner"
+          linkType: allowed-component
+----
+- A _partner-container_ should only contain components of the type _partner_
+
 [[custom-component-type]]
-== Custom component type
+=== Custom component type
 Apart from extending one of the base types and using a custom template or metadata class, you can also pretty much customize any part of the component related infrastructure by providing specific interface implementations.
 This allows you to create a fully custom component type and read/write/render or manage it in whichever way you like.
 
@@ -242,15 +293,100 @@ As the implementations are always queried in order, customizing an implementatio
 * implementing `supports()` to match for all component types you want
 * ensure your bean is ordered (use `@Order` or implement `Ordered`) before any other that might also apply for that component type
 
-.Client-side administration UI integration
-{module-name} provides a default administration UI built on AdminWebModule and EntityModule.
-You can customize the forms being rendered by providing custom `xAdminRenderer` implementations.
+=== Customizing the components administration UI
+WebCmsModule provides a default administration UI built on AdminWebModule and EntityModule.  
 
-The default administration UI uses a form of tabs to display the different sections (eg. content, members, metadata) of a component.
+The default administration UI uses a form of tabs to display the different sections (eg. content, members, metadata) of a component.  Only sections relevant for the component type will be shown to the user.
 
-.Detecting tab switching
+==== Administration UI labels and descriptions
+The default administration UI for components supports configuring the labels.  See the link:/appendices/message-codes.md[appendix on message codes].
+
+==== Creating custom component forms
+You can customize the forms being rendered by providing custom `xAdminRenderer` implementations.  This allows you to build 
+
+[[component-profiles]]
+==== Configuring rich-text and markup components
+
+WebCmsModule supports rich text components and HTML components out of the box, using TinyMCE and CodeMirror respectively.  Rich-text components are identified with the base type `rich-text`, markup with `markup`.  
+
+.YAML definition of default Rich text and HTML component types
+[source,yaml]
+----
+rich-text:
+  objectId: "wcm:type:component:rich-text"
+  name: Rich text
+  description: Rich text component - supporting HTML markup and default assets if enabled by other modules.
+  attributes:
+    type: rich-text
+    profile: rich-text
+html:
+  objectId: "wcm:type:component:html"
+  name: HTML
+  description: A snippet of HTML.
+  attributes:
+    type: markup
+----
+
+In addition to the base type, a component type can define a *profile* attribute value, denoting a custom profile that should be used to initialize the editor for that component type.
+The default rich-text component type uses a profile called `rich-text` as well.
+
+You can customize the profile configuration using Javascript.  This is done by registering profiles on the `WebCmsComponentProfileRegistry`.  A profile registration requires the following three attributes:
+* *componentType*: this is the base type of the component (eg. `rich-text` or `markup`)
+* *profileName*: a unique profile name
+* *profile*: JSON object that holds the actual profile data (for example the TinyMCE configuration object)
+
+Profiles can be inherited.  If your profile data has a *_parentProfile* attribute, the value is expected to be the name of another profile for the same component type.  The final profile will be the data of the parent profile merged together with the requested profile.  Values from the parent will be replaced by values from the requested profile. Every profile can have a (optional) single parent.
+
+.Example registration of custom rich-text type
+[source,javascript]
+----
+(function ( $ ) {
+  /**
+   * Limited rich-text profile: inherit from the _base profile 
+   * and only show bold/italic buttons.
+   */
+  WebCmsComponentProfileRegistry.registerProfileForComponentType( 
+    'rich-text', /* component type */
+    'limited', /* profile name */
+    {
+      _parentProfile: '_base', 
+      toolbar1: 'bold italic' 
+    }
+  );
+})(jQuery);
+----
+
+NOTE: Custom profiles must be registered in Javascript.  This usually happens before initialization of form elements (as the profiles should already be registered when that happens), but it must happen after the inclusion of the `TextWebCmsComponentAdminResources` package and in the javascript page end phase. The reason for this is that the profile registry and the default profiles are defined during `JAVASCRIPT_PAGE_END` of the WebCmsModule resources.
+
+===== Default profiles
+The following default profiles are available:
+
+[cols=3, options=header]
+|===
+|Component type
+|Profile name
+|Usage
+
+|`rich-text`
+|`_base`
+|Base profile for technical configuration of TinyMCE.  Sets up things like the image picket configuration, toolbar behaviour etc.  It's probably best to have your custom profiles inherit from this one.
+
+|`rich-text`
+|`default`
+|Default profile for a TinyMCE editor: configures default plugins and toolbars.  Extends `_base`.
+
+|`rich-text`
+|`rich-text`
+|Actual profile used by the default Rich text component.  Inherits from `default` but adds no custom settings - as such is identical to `default` out of the box.
+
+|`markup`
+|`default`
+|Default CodeMirror configuration used by the HTML component.  Inherits from a `_base` profile even though no `_base` is defined.  You can either replace `default` with your custom settings or register the `_base` profile to extend `default` indirectly.
+|===
+
+==== Detecting tab switching
 Sometimes tab switching needs to be detected in order to re-render the client-side interface.
-Any element that has data attribute *data-wcm-component-refresh* set will receive the _wcm:componentRefresh_ event whenever a component tab is being activate.
+Any element that has data attribute *data-wcm-component-refresh* set will receive the _wcm:componentRefresh_ event whenever a component tab is being activated.
 
 [source,javascript,indent=0]
 [subs="verbatim,attributes"]

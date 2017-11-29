@@ -20,12 +20,6 @@ Map<String, Object> data = (Map<String, Object>) yaml.load( inputStream );
 dataImportService.importData( data );
 ----
 
-NOTE: The default implementation of `WebCmsDataImportService` requires either a `UnitOfWorkFactory` to be present or your import to run within a single transaction.
-If neither is present, lazy initialisation of entities might not work and imports will fail.
-If a `UnitOfWorkFactory` is present, a data import will execute as a single unit of work. +
- +
-See the {hibernate-jpa-unit-of-work-factory}[AcrossHibernateJpaModule reference documentation] for how to set up a `UnitOfWorkFactory`.
-
 [[installer]]
 == Using an installer
 The `AbstractWebCmsDataInstaller` is a base class for an installer that imports one or more YAML files using the `WebCmsDataImportService`.
@@ -72,11 +66,12 @@ assets:
 ----
 
 === Root key values
-By default, {module-name} supports 3 top-level keywords:
+By default, {module-name} supports 4 top-level keywords:
 
 * `assets`: specifies the children define `WebCmsAsset` import data
 * `types`: specifies the children define `WebCmsTypeSpecifier` import data
 * `menus`: specifies the children define `WebCmsMenu` import data
+*  `redirects` : specifies the children define `WebCmsRemoteEndpoint` import data
 
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
@@ -106,6 +101,11 @@ See <<importing-action,the chapter on import actions>> for more details.
 |Can be used on any data block representing a `WebCmsObject`.
 Specifies that the child data represents components owned by the parent `WebCmsObject`.
 
+|`wcm:assets`
+|Can be used on any data block representing a `WebCmsObject`.
+Specifies that the child data represents links between the parent `WebCmsObject` and a `WebCmsAsset`. 
+These links are mapped using `WebCmsAssetLink` and `WebCmsAssetLinkRepository`
+
 |`wcm:types`
 |Can be used on any data block representing a `WebCmsObject`.
 Specifies that the child data represents links between the parent `WebCmsObject` and a `WebCmsTypeSpecifier`.
@@ -115,6 +115,10 @@ These links are mapped using the `WebCmsTypeSpecifierLink` and `WebCmsTypeSpecif
 |Can be used on any data block representing a `WebCmsAsset`.
  Will create menu items for that asset provided that there is a `WebCmsAssetEndpoint` available as well.
 See <<WebCmsPage-import,page importing>> for examples.
+
+|`wcm:urls`
+|Can be used on any data block representing a `WebCmsAsset`.
+Will create urls for the asset provided that there is a `WebCmsAssetEndpoint` available.
 
 |===
 
@@ -136,3 +140,27 @@ This is the default value if no action is specified.
 |replace|If the item exists, overwrite it entirely with the new data.
 This replaces the existing object but keeps the same identity (primary key).
 |===
+
+=== Creating a custom importer
+To create a custom object importer, simply implement the `WebCmsDataImporter` interface and provide your instances as beans.
+
+The `AbstractWebCmsDataImporter` is a generic base class that provides useful hooks for implementing import logic, as well as logging and exception handling in line with the default importers.
+
+If you want to import a custom `WebCmsAsset`, the `AbstractWebCmsAssetImporter` is a more specialized base class.
+
+==== Importing custom properties
+You can easily define custom properties to import as long as you namespace them (eg. *mynamespace:*).
+These properties will not be handled by the default value to object converters.
+
+NOTE The *wcm:* namespace is for WebCmsModule itself, example properties are *wcm:components* and *wcm:menu-items*.
+
+Provide your own property importer by implementing `WebCmsPropertyDataImporter` and creating your implementation as a bean.
+The `AbstractWebCmsPropertyDataImporter` is a useful base class for common implementations.
+
+=== Debugging imports
+Receiving debug information on data imports can be done by setting the log levels for `WebCmsDataImporter` and `WebCmsPropertyDataImporter` implementations to *TRACE*.
+
+
+
+
+

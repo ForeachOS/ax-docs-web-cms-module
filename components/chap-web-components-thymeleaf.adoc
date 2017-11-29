@@ -1,8 +1,7 @@
-include::../variables.adoc[]
 [[component-thymeleaf-integration]]
 === Thymeleaf integration
 
-{module-name} provides its own Thymeleaf dialect for working with components.
+WebCmsModule provides its own Thymeleaf dialect for working with components.
 It enables you to:
 
 * replace template fragments by component output
@@ -14,7 +13,7 @@ The Thymeleaf dialect is a very powerful tool to convert your static templates i
 ==== HTML attributes
 Interacting with components is done by adding attributes to your template elements.
 
-include::fragment-component-attributes.adoc[]
+{% include "fragment-component-attributes.adoc" %}
 
 Auto-creation of components from markup
 
@@ -30,8 +29,13 @@ Auto-creation of components from markup
 Special scopes:
 
 - *default*: always refers to the lowest level - first one to perform the lookup (usually asset) - you would not normally use this scope name as it is the default if a scope name is omitted
-- *global*: always refers to the global scope, components that have no owner
+- *asset*: components attached to the current asset being rendered, usually an asset specific name (e.g. *article*) will be available as well, but both will refer to the same components
+- *global*: always refers to the global scope, components that have no owner and are shared across domain
+- *domain*: components that have no owner but are only available on the specific domain
 - *container*: this is a reserved scope name that ensures the component is added as a container member - you would not normally use this scope name as it is the default if omitted inside a container component
+
+*NOTE*
+In a single domain configuration, scope *domain* will always be the same as scope *global*.
 
 ==== Examples
 

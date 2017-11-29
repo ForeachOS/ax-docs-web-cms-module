@@ -23,6 +23,13 @@ By default an asset has a concept of being published or not.
 
 The repository for working with the abstract `WebCmsAsset` is `WebCmsAssetRepository`.
 
+WebCmsAssets also have a sortIndex, which will initially be set to 1000. Should you create your own `WebCmsAsset` implementation, do note that if you use a `Builder` pattern, that you will need to provide the logic to set the sortIndex to 1000. (e.g. override the default value inside the builder.)
+
+== Linking assets
+
+A generic `WebCmsAssetLink`object is available to link a `WebCmsAsset` to any `WebCmsObject` with a specific `linkType` demarcation. 
+These links are mapped using `WebCmsAssetLink`and `WebCmsAssetLinkRepository`
+
 == WebCmsTypeSpecifier
 
 The base class for a type is `WebCmsTypeSpecifier`.
@@ -39,3 +46,4 @@ These are simple key/value pairs of strings that can be used for configuration a
 
 A generic `WebCmsTypeSpecifierLink` object is available to link a `WebCmsTypeSpecifier` to any `WebCmsObject` with a specific `linkType` demarcation.
 These links are mapped using the `WebCmsTypeSpecifierLink` and `WebCmsTypeSpecifierLinkRepository`.
+

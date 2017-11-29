@@ -36,9 +36,6 @@ include::variables.adoc[]
 
 |===
 
-WARNING: {module-name} requires the presence of a `UnitOfWorkFactory` for default data importing.
-See the {hibernate-jpa-unit-of-work-factory}[AcrossHibernateJpaModule reference documentation] for how to set up a `UnitOfWorkFactory`.
-
 [[module-settings]]
 == Module settings
 

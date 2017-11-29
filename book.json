@@ -1,7 +1,19 @@
 {
-  "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link"],
+  "variables": {
+        "moduleVersion": "0.0.3.RELEASE",
+        "moduleUrl": "https://foreach.atlassian.net/wiki/display/AX/WebCmsModule",
+        "javadoc": "http://across.foreach.be/docs/across-standard-modules/WebCmsModule/0.0.3.RELEASE/javadoc"
+  },
+  "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link" ],
   "pluginsConfig": {
-    "theme-api": {
+    "versions": {
+      "type": "branches"
+    },
+    "edit-link": {
+      "base": "https://github.com/ForeachOS/ax-docs-web-cms-module/edit/master/",
+      "label": "Edit This Page"
+    },
+    "theme-api": {     
         "languages": [
           {
             "lang": "java",
@@ -17,13 +29,7 @@
             "name": "YAML"
           }
          ]
-    },
-    "versions": {
-        "type": "branches"
-    },
-    "edit-link": {
-        "base": "https://github.com/rceuls/doc-webcmsmodule/edit/master/",
-        "label": "Edit This Page"
     }
   }
 }
+

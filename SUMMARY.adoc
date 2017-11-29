@@ -1,11 +1,13 @@
 = Summary
 
-* link:README.adoc[Introduction]
+== Reference documentation
+
+* link:README.md[Introduction]
 * link:chap-general-information.adoc[General Information]
 ** link:chap-general-information.adoc#artifact[Artifact]
 ** link:chap-general-information.adoc#module-dependencies[Module dependencies]
 ** link:chap-general-information.adoc#module-settings[Module settings]
-* link:chap-whats-new.adoc[What’s new in this version]
+* link:whats-new.md[What’s new in this version]
 * link:chap-placeholder.adoc[Domain model]
 ** link:chap-asset-model.adoc[Asset model]
 ** link:pages/chap-web-page.adoc[Page model]
@@ -14,6 +16,7 @@
 ** link:chap-redirects.adoc[Redirects]
 ** link:menu/chap-menu.adoc[Menu]
 ** link:chap-image.md[Images]
+** link:multi-domain-support.md[Multi-domain support]
 * link:chap-placeholder.adoc[Web Components]
 ** link:components/chap-web-components.adoc#overview[Web Component Model]
 ** link:components/chap-web-components-base-types.adoc#overview[Default component types]
@@ -24,9 +27,23 @@
 ** link:importing/chap-importing-data.adoc#importing-data[WebCmsDataImportService]
 ** link:importing/chap-importing-data.adoc#installer[Using an installer]
 ** link:importing/chap-importing-data.adoc#yaml[YAML Structure]
-* link:appendices/chap-appendices.adoc[Appendix]
-** link:thymeleaf-dialect.adoc[Thymeleaf dialect]
-** link:appendices/chap-appendices.adoc#appendix-default-data[Default data]
-* link:how-tos.md[How-tos]
+* link:chap-performance-tuning.md[Performance tuning]
+
+
+== Appendix
+
+* link:appendices/message-codes.md[Message codes]
+* link:thymeleaf-dialect.adoc[Thymeleaf dialect]
+* link:entitymodule-attributes.md[EntityModule attributes]
+* link:repositories-and-services.md[Repositories and services]
+* link:appendices/appendix-default-data.adoc[Default data]
+
+
+== How-tos
+
+* link:how-tos/using-a-site-template-in-a-multi-site-setup.adoc[Using a site template in a multi-site setup]
+* Defining and importing custom components
+* link:how-tos/creating-and-importing-a-custom-asset.md[Creating and importing a custom asset]
+* Configuring a publication model
 
 
