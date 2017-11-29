@@ -14,7 +14,7 @@
 * It is now possible to create and import `WebCmsAssetLinks`
 * It is now possible to import \`[WebCmsUrls](/urls/chap-endpoint-url.adoc)\` and \`[Redirects](/chap-redirects.adoc)\`
 
-## 0.0.2-SNAPSHOT
+## 0.0.2.RELEASE
 
 Initial public release available on [Maven central](http://search.maven.org).
 
