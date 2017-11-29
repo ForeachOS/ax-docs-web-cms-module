@@ -1,8 +1,8 @@
 {
   "variables": {
-        "moduleVersion": "0.0.3-SNAPSHOT",
+        "moduleVersion": "0.0.3.RELEASE",
         "moduleUrl": "https://foreach.atlassian.net/wiki/display/AX/WebCmsModule",
-        "javadoc": "http://across.foreach.be/docs/across-standard-modules/WebCmsModule/0.0.3-SNAPSHOT/javadoc"
+        "javadoc": "http://across.foreach.be/docs/across-standard-modules/WebCmsModule/0.0.3.RELEASE/javadoc"
   },
   "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link" ],
   "pluginsConfig": {
@@ -10,7 +10,7 @@
       "type": "branches"
     },
     "edit-link": {
-      "base": "https://github.com/ForeachOS/ax-docs-web-cms-module/edit/0.0.3-SNAPSHOT/",
+      "base": "https://github.com/ForeachOS/ax-docs-web-cms-module/edit/master/",
       "label": "Edit This Page"
     },
     "theme-api": {     

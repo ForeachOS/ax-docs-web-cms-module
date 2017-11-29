@@ -1,6 +1,6 @@
 # What's new in this version?
 
-## 0.0.3-SNAPSHOT
+## 0.0.3.RELEASE
 
 * [multi-domain/multi-site support](/multi-domain-support.md) has been added
 * it is now possible to filter the component types that can be created on a global level or added as members of a container
