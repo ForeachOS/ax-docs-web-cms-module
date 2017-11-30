@@ -130,7 +130,7 @@ If unspecified the default resources of any present `@AcrossApplication` will be
 
 |images.imageServer.access-token
 |`String`
-| Access token that should be for secure operations (eg. file upload).
+| Access token that should be used for secure operations (eg. file upload).
 |
     
 |===
