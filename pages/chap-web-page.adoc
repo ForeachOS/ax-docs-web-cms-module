@@ -31,7 +31,7 @@ There are two configurable subsections, one for URL settings and one for publica
 |Canonical path|String|Yes|FQDN of the page. Must be unique within the application.|None
 |===
 
-Both of these can be generated manually or automatically, depending on the title and parent (and grandparent, and ...) of the page by clicking the relevant checkboxes.
+Both of these can be generated manually or automatically, depending on the title and parent (and grandparent, and ...) of the page by checking the relevant checkboxes.
 
 ==== Publish settings
 
