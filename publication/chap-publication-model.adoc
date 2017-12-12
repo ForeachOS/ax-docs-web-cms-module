@@ -1,7 +1,7 @@
 [[PublicationModel-overview]]
 = Publication model
 
-{module-name} contains a default publication model for articles.
+{{book.moduleName}} contains a default publication model for articles.
 An article can typically be pretty much any type of content, but usually it is something like a piece of news or a blog article.
 
 * An article is of a specific article type and belongs to a single publication.
