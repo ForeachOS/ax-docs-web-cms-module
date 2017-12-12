@@ -21,15 +21,15 @@
 |===
 |Module |Type |Description
 
-|{hibernate-jpa-module-url}[AcrossHibernateJpaModule]
+|{{book.hibernateJpaModuleUrl}}[AcrossHibernateJpaModule]
 |required
 |Required for the JPA domain model.
 
-|{entity-module-url}[EntityModule]
+|{{book.entityModuleUrl}}[EntityModule]
 |optional
 |In combination with `AdminWebModule` this enables the management forms in the administration UI.
 
-|{admin-web-module-url}[AdminWebModule]
+|{{book.adminWebModule}}[AdminWebModule]
 |optional
 |In combination with `EntityModule` this enables the management forms in the administration UI.
 
