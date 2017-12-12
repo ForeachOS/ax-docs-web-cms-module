@@ -29,7 +29,7 @@
 |optional
 |In combination with `AdminWebModule` this enables the management forms in the administration UI.
 
-|{{book.adminWebModule}}[AdminWebModule]
+|{{book.adminWebModuleUrl}}[AdminWebModule]
 |optional
 |In combination with `EntityModule` this enables the management forms in the administration UI.
 
