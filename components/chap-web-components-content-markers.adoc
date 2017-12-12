@@ -67,4 +67,4 @@ Examples:
 ** will search for _my.component_ in the container members - only relevant in the context of a `ContainerWebCmsComponentModel` being rendered
 
 ===== Creating custom content markers
-See <<thymeleaf-content-markers,{module-name} Thymeleaf dialect>> on how to add content marker support for component rendering.
+See <<thymeleaf-content-markers,{{book.moduleName}} Thymeleaf dialect>> on how to add content marker support for component rendering.
