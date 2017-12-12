@@ -9,8 +9,7 @@
         "hibernateJpaUnitOfWorkFactory": "https://across-docs.foreach.be/across-standard-modules/AcrossHibernateModule/2.0.1.RELEASE/reference/#unitofworkfactory",
         "adminWebModuleUrl":"https://across.foreach.be/modules/adminwebmodule",
         "entityModuleUrl":"https://across.foreach.be/modules/entitymodule",
-        "ehcacheModuleUrl": "https://across.foreach.be/modules/ehcachemodule",
-        
+        "ehcacheModuleUrl": "https://across.foreach.be/modules/ehcachemodule"        
   },
   "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link" ],
   "pluginsConfig": {
