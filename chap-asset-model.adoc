@@ -1,7 +1,6 @@
-include::variables.adoc[]
 = Asset model
 
-{module-name} provides a basic model for mapping assets and types.
+{{book.moduleName}} provides a basic model for mapping assets and types.
 Example assets provided by default are `WebCmsArticle` and `WebCmsPage`.
 Related types would be `WebCmsArticleType` and `WebCmsPageType`.
 

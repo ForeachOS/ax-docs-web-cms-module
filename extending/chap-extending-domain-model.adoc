@@ -1,4 +1,3 @@
-include::../variables.adoc[]
 = Extending {module-name}
 
 customize configuration

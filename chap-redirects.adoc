@@ -1,4 +1,3 @@
-include::variables.adoc[]
 
 [[Redirects-overview]]
 = Redirects

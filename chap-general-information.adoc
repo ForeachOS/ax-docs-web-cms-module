@@ -1,4 +1,3 @@
-include::variables.adoc[]
 = General information
 
 [[artifact]]
@@ -9,8 +8,8 @@ include::variables.adoc[]
 	<dependencies>
 		<dependency>
 			<groupId>com.foreach.across.modules</groupId>
-			<artifactId>{module-artifact}</artifactId>
-			<version>{module-version}</version>
+			<artifactId>{{book.moduleArtifact}}</artifactId>
+			<version>{{book.moduleVersion}}</version>
 		</dependency>
 	</dependencies>
 ----
