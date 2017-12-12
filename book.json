@@ -2,7 +2,15 @@
   "variables": {
         "moduleVersion": "0.0.3.RELEASE",
         "moduleUrl": "https://foreach.atlassian.net/wiki/display/AX/WebCmsModule",
-        "javadoc": "http://across.foreach.be/docs/across-standard-modules/WebCmsModule/0.0.3.RELEASE/javadoc"
+        "javadoc": "http://across.foreach.be/docs/across-standard-modules/WebCmsModule/0.0.3.RELEASE/javadoc",
+        "moduleName": "WebCmsModule",
+        "moduleArtifact": "web-cms-module",
+        "hibernateJpaModuleUrl": "https://foreach.atlassian.net/wiki/display/AX/AcrossHibernateModule",
+        "hibernateJpaUnitOfWorkFactory": "https://across.foreach.be/docs/across-standard-modules/AcrossHibernateModule/2.0.0.RELEASE/reference/#unitofworkfactory",
+        "adminWebModuleUrl":"https://foreach.atlassian.net/wiki/display/AX/AdminWebModule",
+        "entityModuleUrl":"https://foreach.atlassian.net/wiki/display/AX/EntityModule",
+        "ehcacheModuleUrl": "https://foreach.atlassian.net/wiki/display/AX/EhcacheModule",
+        
   },
   "plugins": [ "theme-api",  "asciidoc-include", "asciidoc-admonition-icons", "versions", "edit-link" ],
   "pluginsConfig": {
