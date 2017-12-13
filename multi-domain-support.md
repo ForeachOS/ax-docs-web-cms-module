@@ -121,7 +121,7 @@ In many cases the auto-configuration will be just what you need and there won't 
 
 ##### Auto-configuration related attributes
 
-Domain auto-configuration is performed during a post-processing of all entity configurations.  Custom attributes allow you to skip parts of the auto-configuration or to tweak auto-configuration settings.  For all WebCmsModule related entity attirbutes, see [the relevant appendix](/entitymodule-attributes.adoc).
+Domain auto-configuration is performed during a post-processing of all entity configurations.  Custom attributes allow you to skip parts of the auto-configuration or to tweak auto-configuration settings.  For all WebCmsModule related entity attirbutes, see [the relevant appendix](/entitymodule-attributes.md).
 
 ###### Skipping automatic list view adjustment
 
