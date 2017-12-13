@@ -1,5 +1,6 @@
 
 [[importing-data]]
+[#importing-data]
 = Importing data
 {{book.moduleName}} provides infrastructure for easy importing of data using YAML files.
 The data import services are also the ones used for the default data of {{book.moduleName}}, see the <<appendix-default-data,appendix>> for the YAML version of the default types and assets.
@@ -40,6 +41,7 @@ public class TestDataInstaller extends AbstractWebCmsDataInstaller
 ----
 
 [[yaml]]
+[#importing-data-yaml]
 == YAML structure
 NOTE: In this chapter we focus on the key structure for importing data and use YAML examples.
 The `WebCmsDataImportService` acts on `Map`/`Collection` data structures however, so JSON, XML or native structures could be used as well.
@@ -75,7 +77,7 @@ By default, {{book.moduleName}} supports 4 top-level keywords:
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
 === Data importers
-{module-name} provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
+{{book.moduleName}} provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
 
 See the relevant chapters for examples and more details:
 

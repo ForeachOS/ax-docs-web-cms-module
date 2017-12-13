@@ -18,7 +18,7 @@ Features provided by WebCmsModule include:
 * an extensible [Domain Model](/chap-domain-model.adoc) with common asset types like [pages](/pages/chap-web-page.adoc), [articles](/publication/chap-publication-model.adoc) and [redirects](/chap-redirects.adoc)
 * a way to manage the [URLs for these assets](/urls/chap-endpoint-url.adoc)
 * a [powerful component model](/components/chap-web-components.adoc#overview) for building templates and managing dynamic content
-* an easy way to [import data using YAML files](/chap-placeholder.adoc)
+* an easy way to [import data using YAML files](/importing/chap-importing-data.adoc#importing-data-yaml)
 
 A fully functional administration UI is available using AdminWebModule and EntityModule.
 
