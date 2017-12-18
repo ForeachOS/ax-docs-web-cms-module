@@ -3,7 +3,7 @@
 [#importing-data]
 = Importing data
 {{book.moduleName}} provides infrastructure for easy importing of data using YAML files.
-The data import services are also the ones used for the default data of {{book.moduleName}}, see the <<appendix-default-data,appendix>> for the YAML version of the default types and assets.
+The data import services are also the ones used for the default data of {{book.moduleName}}, see the link:../appendices/appendix-default-data.adoc#appendix-default-data[appendix] for the YAML version of the default types and assets.
 
 == WebCmsDataImportService
 The `WebCmsDataImportService` allows importing data from `Map` structures.
@@ -81,10 +81,10 @@ For `assets` and `types` the child key (eg. `page`) determines the sub-type that
 
 See the relevant chapters for examples and more details:
 
-* <<WebCmsMenu-import,importing menus>>
-* <<WebCmsComponent-import,importing web components>>
-* <<WebCmsPage-import,importing pages>>
-* <<WebCmsArticle-import,importing publications and articles>>
+* link:../menu/chap-menu.adoc#WebCmsMenu-import[importing menus]
+* link:../components/chap-web-components.adoc#WebCmsComponent-import[importing web components]
+* link:../pages/chap-web-page.adoc#WebCmsPage-import[importing pages]
+* link:../publication/chap-publication-model.adoc#WebCmsArticle-import[importing publications and articles]
 
 === Generic importers
 {{book.moduleName}} has some generic importers that can be used in multiple situations.
@@ -115,7 +115,7 @@ These links are mapped using the `WebCmsTypeSpecifierLink` and `WebCmsTypeSpecif
 |`wcm:menu-items`
 |Can be used on any data block representing a `WebCmsAsset`.
  Will create menu items for that asset provided that there is a `WebCmsAssetEndpoint` available as well.
-See <<WebCmsPage-import,page importing>> for examples.
+See link:../pages/chap-web-page.adoc#WebCmsPage-import[page importing] for examples.
 
 |`wcm:urls`
 |Can be used on any data block representing a `WebCmsAsset`.

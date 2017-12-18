@@ -1,9 +1,8 @@
-include::../variables.adoc[]
 = Page model
 [[WebCmsPage-overview]]
 == Overview
 
-A `WebCmsPage` is a component that represents a single page in the application. It differs from an <<PublicationModel-overview, article>> in that the page is stand-alone,
+A `WebCmsPage` is a component that represents a single page in the application. It differs from an link:../publication/chap-publication-model.adoc#PublicationModel-overview[ article] in that the page is stand-alone,
 i.e. you have more control regarding the layout and the components of the page. One can use this, for example, to create _about_ or _faq_ pages. It is related to the publication model
  in that an article is contained in a page: the data is contained in the article component, but how the article is rendered is handled by the page.
 
@@ -58,7 +57,7 @@ If the `WebCmsPageType` does not specify a template either, the value of module 
 A page template will usually be resolved by the configured Spring MVC `ViewResolver` beans.
 By default page templates are expected to be Thymeleaf template files.
 
-At startup of the application, {module-name} will attempt to determine the default template path of the current application.
+At startup of the application, WebCmsModule will attempt to determine the default template path of the current application.
 Any relative template will then be automatically prefixed with the default template path.
 Only templates with a specified prefix (eg. _th/_) are considered absolute and will be left untouched.
 
@@ -71,11 +70,11 @@ _Example:_
 * template `th/other-module/my-template` would be resolved as `th/other-module/my-template`
 
 NOTE: You can manually specify the default template prefix using property `webCmsModule.pages.template-prefix`.
-See the <<module-settings,module settings>> for all options you can configure if you want to change the default template resolving behaviour.
+See the link:../chap-general-information#module-settings[module settings] for all options you can configure if you want to change the default template resolving behaviour.
 
 === Web Components
 
-A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the building blocks of the pages. For further information, please check the <<WebCmsComponents-overview, chapter>> on components.
+A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the building blocks of the pages. For further information, please check the link:../components/chap-web-components.adoc#WebCmsComponents-overview[chapter] on components.
 
 === URLs
 
@@ -83,7 +82,7 @@ A `WebCmsPage` can be referred to by different URLs. Please see the respective <
 
 [[WebCmsPage-import]]
 === Importing a page
-One can import a page by using the import infrastructure provided by the import functionality of {module-name}.
+One can import a page by using the import infrastructure provided by the import functionality of {{book.moduleName}}.
 
 ==== Examples
 
@@ -139,7 +138,7 @@ page:
 |objectId|-|
 |isPublished|Published|
 |publicationDate|Publication Date|
-|wcm:menu-items|<<WebCmsMenu-import,Menu manipulation>>
+|wcm:menu-items| link:../menu/chap-menu.adoc#WebCmsMenu-import[Menu manipulation]
 |================
 
 [[WebCmsPageType-overview]]
@@ -158,7 +157,7 @@ A WebCmsPageType is used for assigning a certain type of page to a <<WebCmsPage-
 |wcm:components|No|Components|The components that are automatically generated when creating a page that uses this page type.|None
 |===
 
-*_Attributes_*[[WebCmsPageType-attributes]]
+*_Attributes_* [[WebCmsPageType-attributes]]
 [options="header", cols="1,4"]
 |===
 |Attribute|Description
