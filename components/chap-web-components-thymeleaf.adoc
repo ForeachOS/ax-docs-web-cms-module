@@ -194,7 +194,7 @@ In the example above the placeholder content would be: `<div>Placeholder content
 The presence of _wcm:parse-placeholders_ ensures that placeholder content will be processed and made available during rendering.
 Rendering the actual placeholder however is always up to the component.
 
-Markup components can render placeholders by using <<placeholder-content-markers,placeholder content markers>>.
+Markup components can render placeholders by using link:chap-web-components-content-markers.adoc#placeholder-content-markers[placeholder content markers].
 
 Assume _my-component_ is a `TextWebCmsComponentModel` with the following content:
 
@@ -242,7 +242,7 @@ Template content...
 
 ==== Nesting components
 
-Like with placeholders, a markup component can include other components using <<component-content-markers,component content markers>>.
+Like with placeholders, a markup component can include other components using link:chap-web-components-content-markers.adoc#component-content-markers[component content markers].
 
 Assume you have a `TextWebCmsComponentModel` with the following content: `My component: @@wcm:component(header,global,false)@@`. +
 And on the global level the _header_ component is a `TextWebCmsComponentModel` with content `my header`.
@@ -337,7 +337,7 @@ No additional _wcm:auto-create_ attributs are required as all nested components 
 
 ==== Using placeholders in containers
 Much like a regular markup component, a container can also use placeholders that are defined in the template.
-Where a markup component uses a <<placeholder-content-markers,placeholder content marker>> to render the placeholder content, a `ContainerWebCmsComponentModel` will get a member component of type `PlaceholderWebCmsComponentModel` instead.
+Where a markup component uses a link:chap-web-components-content-markers.adoc#placeholder-content-markers[placeholder content markers] to render the placeholder content, a `ContainerWebCmsComponentModel` will get a member component of type `PlaceholderWebCmsComponentModel` instead.
 
 [source,html,indent=0]
 [subs="verbatim,quotes,attributes"]
