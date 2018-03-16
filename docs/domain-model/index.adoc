@@ -1,5 +1,5 @@
 // Asset model - general explanation
-include::chap-asset-model.adoc[]
+include::assets/chap-asset-model.adoc[]
 
 // Page model
 include::pages/chap-web-page.adoc[]
@@ -12,7 +12,10 @@ include::publication/chap-publication-model.adoc[]
 // Endpoints & urls
 include::urls/chap-endpoint-url.adoc[]
 
-include::chap-redirects.adoc[]
+include::redirects/chap-redirects.adoc[]
 
 // Menu
 include::menu/chap-menu.adoc[]
+
+// Domain / multi-site
+include::multi-domain-support.md[]

@@ -2,7 +2,7 @@
 
 ## 0.0.3.RELEASE
 
-* [multi-domain/multi-site support](/docs/multi-domain-support.md) has been added
+* [multi-domain/multi-site support](/docs/domain-model/multi-domain/multi-domain-support.md) has been added
 * it is now possible to filter the component types that can be created on a global level or added as members of a container
   * `componentRestricted` attribute on `WebCmsComponentType` to indicate a component cannot be added implicitly
   * `childComponentsRestricted` attribute on `WebCmsTypeSpecifier` to indicate only linked component types should be available for adding
@@ -12,7 +12,7 @@
   * text components \(rich-text/markup\) can have a [custom profile configured](/docs/components/chap-web-components-defining-component-types.adoc#component-profiles) - default implementations support TinyMCE and CodeMirror profiles
 * `WebCmsAsset`s now have a sortIndex which by default is set to 1000.
 * It is now possible to create and import `WebCmsAssetLinks`
-* It is now possible to import \`[WebCmsUrls](/docs/domain-model/urls/chap-endpoint-url.adoc)\` and \`[Redirects](/docs/domain-model/chap-redirects.adoc)\`
+* It is now possible to import \`[WebCmsUrls](/docs/domain-model/urls/chap-endpoint-url.adoc)\` and \`[Redirects](/docs/domain-model/redirects/chap-redirects.adoc)\`
 
 ## 0.0.2.RELEASE
 

@@ -8,4 +8,4 @@
 :docinfo1:
 include::variables.adoc[]
 
-include::performace-tuning/index.adoc[]
+include::performance-tuning/index.adoc[]

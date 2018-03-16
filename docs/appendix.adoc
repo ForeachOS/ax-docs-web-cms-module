@@ -8,4 +8,4 @@
 :docinfo1:
 include::variables.adoc[]
 
-include::appendix/index.adoc[]
+include::appendices/index.adoc[]
