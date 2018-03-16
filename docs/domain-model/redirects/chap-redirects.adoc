@@ -1,5 +1,5 @@
 
-[[Redirects-overview]]
+[[redirects-redirects-overview]]
 = Redirects
 Redirects offer you a way to specify one or more request paths that should be redirected to another path or an external url.
 A redirect has a destination URL and one ore more paths that should redirect to the destination.

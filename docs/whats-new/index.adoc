@@ -1,1 +1,1 @@
-include::whats-new.md[]
+include::whats-new.adoc[]

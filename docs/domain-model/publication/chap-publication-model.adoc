@@ -1,4 +1,4 @@
-[[PublicationModel-overview]]
+[[urls-publication-model-overview]]
 = Publication model
 
 {{book.moduleName}} contains a default publication model for articles.

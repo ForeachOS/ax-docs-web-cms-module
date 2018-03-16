@@ -1,0 +1,20 @@
+= What's new in this version?
+
+== 0.0.3.RELEASE
+
+* <<{doc-domain-model}#multi-domain-multi-domain-and-site-support,multi-domain/multi-site support>> has been added
+* it is now possible to filter the component types that can be created on a global level or added as members of a container
+  * `componentRestricted` attribute on `WebCmsComponentType` to indicate a component cannot be added implicitly
+  * `childComponentsRestricted` attribute on `WebCmsTypeSpecifier` to indicate only linked component types should be available for adding
+  * see chapters in <<{doc-components}#components-defining-component-types,Defining component types>> for more information
+* component administration UI improvements
+  * message codes can be used to <<{doc-appendix}#message-codes,configure descriptions and labels for component types>>
+  * text components (rich-text/markup) can have a <<{doc-components}#components-component-profiles,custom profile configured>> - default implementations support TinyMCE and CodeMirror profiles
+* `WebCmsAsset`s now have a sortIndex which by default is set to 1000.
+* It is now possible to create and import `WebCmsAssetLinks`
+* It is now possible to import `<<{doc-domain-model}#urls-publication-model-overview,WebCmsUrls>>` and `<<{doc-domain-model}#redirects-redirects-overview,Redirects>>`
+
+== 0.0.2.RELEASE
+
+Initial public release available on [Maven central](http://search.maven.org).
+

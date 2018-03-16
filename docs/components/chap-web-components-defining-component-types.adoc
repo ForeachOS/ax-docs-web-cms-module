@@ -1,4 +1,4 @@
-[[defining-component-types]]
+[[components-defining-component-types]]
 == Defining component types
 
 You can easily define your own component types.
@@ -304,7 +304,7 @@ The default administration UI for components supports configuring the labels.  S
 ==== Creating custom component forms
 You can customize the forms being rendered by providing custom `xAdminRenderer` implementations.  This allows you to build 
 
-[[component-profiles]]
+[[components-component-profiles]]
 ==== Configuring rich-text and markup components
 
 WebCmsModule supports rich text components and HTML components out of the box, using TinyMCE and CodeMirror respectively.  Rich-text components are identified with the base type `rich-text`, markup with `markup`.  

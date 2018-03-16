@@ -10,12 +10,14 @@ include::publication/chap-publication-model.adoc[]
 // Images TODO
 
 // Endpoints & urls
-include::urls/chap-endpoint-url.adoc[]
+//  chap-endpiont-url is equal to chap-publiction-model
+//include::urls/chap-endpoint-url.adoc[]
 
 include::redirects/chap-redirects.adoc[]
 
 // Menu
 include::menu/chap-menu.adoc[]
+
 
 // Domain / multi-site
 include::multi-domain-support.md[]

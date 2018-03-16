@@ -1,4 +1,4 @@
-[#whats-new]
+[[whats-new]]
 = WebCmsModule - Release notes
 :toc: left
 :toc-title: Release notes
