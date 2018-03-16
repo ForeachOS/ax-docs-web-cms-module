@@ -1,5 +1,5 @@
 = Page model
-[[WebCmsPage-overview]]
+[#pages-web-cms-page-overview]
 == Overview
 
 A `WebCmsPage` is a component that represents a single page in the application. It differs from an link:../publication/chap-publication-model.adoc#PublicationModel-overview[ article] in that the page is stand-alone,
@@ -80,7 +80,7 @@ A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the bu
 
 A `WebCmsPage` can be referred to by different URLs. Please see the respective <<WebCmsUrl-pages, chapter>> for more information.
 
-[[WebCmsPage-import]]
+[[pages-web-cms-page-import]]
 === Importing a page
 One can import a page by using the import infrastructure provided by the import functionality of {{book.moduleName}}.
 
@@ -141,7 +141,7 @@ page:
 |wcm:menu-items| link:../menu/chap-menu.adoc#WebCmsMenu-import[Menu manipulation]
 |================
 
-[[WebCmsPageType-overview]]
+[[pages-web-cms-page-type-overview]]
 == WebCmsPageType
 
 A WebCmsPageType is used for assigning a certain type of page to a <<WebCmsPage-overview, WebCmsPage>>. The default page type is controlled via the `webCmsModule.pages.default-page-type` parameter in the configuration.
@@ -242,7 +242,7 @@ tabbed-page:
 <1> Pre-filled content. When a page is created using this template, this data will be filled in (but can be changed by the user).
 <2> You need to manually set the sort order, or otherwise the default value (i.e. 0) will be filled in.
 
-[[page-web-model]]
+[[pages-page-web-model]]
 == Web infrastructure
 
 Any `WebCmsPage` will automatically create a `WebCmsAssetEndpoint` with generated URL values.

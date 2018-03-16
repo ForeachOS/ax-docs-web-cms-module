@@ -9,6 +9,9 @@
 :admin-web-module-url: https://across.foreach.be/modules/adminwebmodule
 :entity-module-url: https://across.foreach.be/modules/entitymodule
 :ehcache-module-url: https://across.foreach.be/modules/ehcachemodule
+:git-across-docs: https://github.com/ForeachOS/ax-docs-web-cms-module
+
+// Links to the various documentation pages, can be followed by # to navigate to a specific section
 :doc-domain-model: domain-model.adoc
 :doc-components: components.adoc
 :doc-appendix: appendix.adoc

@@ -1,12 +1,12 @@
 
 = Menu
-[[WebCmsMenu-overview]]
+[[menu-web-cms-menu-overview]]
 == Overview
 A `WebCmsMenu` is a construct that can be used to render content resembling a menu. A single menu can have zero or more `WebCmsMenuItem` assets. 
 A `WebCmsMenuItem` represents a link from a path in the menu to an endpoint. 
 Like everything in WebCmsModule you need to manually define where and how you want to display the menu; there is no automatic display provided nor is there a default menu.
 
-[[WebCmsMenu-programatically]]
+[[menu-web-cms-menu-programatically]]
 == Building a menu
 A menu is always built using the `MenuFactory` from AcrossWebModule.
 The WebCmsModule will intercept any menu being built, will check if there is a `WebCmsMenu` with that menu name, and will add all menu items if that is the case.
@@ -93,7 +93,7 @@ the menu item. This can used in the Thymeleaf template to render the items in a 
 |Update automatically|Boolean|Yes|If checked and the linked endpoint gets updated, any updates will be reflected in this menu item.|False
 |================
 
-[[WebCmsMenu-import]]
+[[menu-web-cms-menu-import]]
 == Importing a menu item
 One can import a menu and its associated items by using the import infrastructure provided by the import functionality of WebCms.
 [source,yaml]

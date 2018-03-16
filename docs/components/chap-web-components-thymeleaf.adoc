@@ -1,4 +1,4 @@
-[[component-thymeleaf-integration]]
+[[components-thymeleaf-integration]]
 === Thymeleaf integration
 
 WebCmsModule provides its own Thymeleaf dialect for working with components.

@@ -1,4 +1,4 @@
-[[default-component-types]]
+[[components-default-component-types]]
 === Default component types
 
 {{book.moduleName}} contains a number of default component types, backed by a set of default `WebCmsComponentModel` implementations.

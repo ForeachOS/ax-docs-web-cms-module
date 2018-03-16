@@ -12,7 +12,7 @@
   * text components (rich-text/markup) can have a <<{doc-components}#components-component-profiles,custom profile configured>> - default implementations support TinyMCE and CodeMirror profiles
 * `WebCmsAsset`s now have a sortIndex which by default is set to 1000.
 * It is now possible to create and import `WebCmsAssetLinks`
-* It is now possible to import `<<{doc-domain-model}#urls-publication-model-overview,WebCmsUrls>>` and `<<{doc-domain-model}#redirects-redirects-overview,Redirects>>`
+* It is now possible to import `<<{doc-domain-model}#publication-model-overview,WebCmsUrls>>` and `<<{doc-domain-model}#redirects-redirects-overview,Redirects>>`
 
 == 0.0.2.RELEASE
 

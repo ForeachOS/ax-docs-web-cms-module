@@ -1,4 +1,4 @@
-[#web-components]
+[#domain-model]
 = WebCmsModule - Domain Model
 :toc: left
 :toc-title: Domain Model

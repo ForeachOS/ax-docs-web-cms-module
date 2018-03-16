@@ -1,4 +1,4 @@
-[[content-markers]]
+[[components-content-markers]]
 ==== Content markers
 
 {{book.moduleName}} provides content marker infrastructure to work with special marker snippets inside textual content.
@@ -39,14 +39,14 @@ Default rendering support is available for Thymeleaf templates, see the link:../
 
 Content markers are supported in all link:../chap-web-components-base-types.adoc#default-component-types[default component types].
 
-[[placeholder-content-markers]]
+[[components-placeholder-content-markers]]
 ===== Placeholder content markers
 A placeholder content marker indicates that placeholder content should be rendered at the marker's location.
 The key is _wcm:placeholder_ and the parameter is the name of the placeholder whose content should be rendered.
 
 Example: `@@wcm:placeholder(some.placeholder)@@`
 
-[[component-content-markers]]
+[[components-component-content-markers]]
 ===== Component content markers
 A component content marker indicates a component should be rendered at the location of the marker.
 The key is _wcm:component_ and 3 parameters are required:

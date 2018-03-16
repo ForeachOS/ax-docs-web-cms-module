@@ -4,7 +4,7 @@
 You can easily define your own component types.
 Depending on your needs you can <<extending-base-types,extend one of the base types>> or create a <<custom-component-type,fully custom implementation>>.
 
-[[extending-base-types]]
+[[components-extending-base-types]]
 === Extending the base types
 You can add a custom `WebCmsComponentType` by importing it via YAML or by adding it via the `WebCmsComponentTypeRepository`.
 Component types to import should be defined in the section *types - component* where the key of a component type definition is the`unique `WebCmsComponentType` `typeKey`.
@@ -241,7 +241,7 @@ types:
 ----
 - A _partner-container_ should only contain components of the type _partner_
 
-[[custom-component-type]]
+[[components-custom-component-type]]
 === Custom component type
 Apart from extending one of the base types and using a custom template or metadata class, you can also pretty much customize any part of the component related infrastructure by providing specific interface implementations.
 This allows you to create a fully custom component type and read/write/render or manage it in whichever way you like.

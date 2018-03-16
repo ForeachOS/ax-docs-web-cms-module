@@ -1,9 +1,9 @@
 
-[[importing-data]]
-[#importing-data]
+[[importing-importing-data]]
+[#importing-importing-data]
 = Importing data
-{{book.moduleName}} provides infrastructure for easy importing of data using YAML files.
-The data import services are also the ones used for the default data of {{book.moduleName}}, see the link:../appendices/appendix-default-data.adoc#appendix-default-data[appendix] for the YAML version of the default types and assets.
+{module-name} provides infrastructure for easy importing of data using YAML files.
+The data import services are also the ones used for the default data of {module-name}, see the <<{doc-appendix}#appendix-default-data,appendix>> for the YAML version of the default types and assets.
 
 == WebCmsDataImportService
 The `WebCmsDataImportService` allows importing data from `Map` structures.
@@ -20,7 +20,7 @@ Map<String, Object> data = (Map<String, Object>) yaml.load( inputStream );
 dataImportService.importData( data );
 ----
 
-[[installer]]
+[[importing-installer]]
 == Using an installer
 The `AbstractWebCmsDataInstaller` is a base class for an installer that imports one or more YAML files using the `WebCmsDataImportService`.
 The files specified will be imported in registration order.
@@ -40,8 +40,8 @@ public class TestDataInstaller extends AbstractWebCmsDataInstaller
 }
 ----
 
-[[yaml]]
-[#importing-data-yaml]
+[[importing-yaml]]
+[#importing-yaml]
 == YAML structure
 NOTE: In this chapter we focus on the key structure for importing data and use YAML examples.
 The `WebCmsDataImportService` acts on `Map`/`Collection` data structures however, so JSON, XML or native structures could be used as well.
@@ -67,7 +67,7 @@ assets:
 ----
 
 === Root key values
-By default, {{book.moduleName}} supports 4 top-level keywords:
+By default, {module-name} supports 4 top-level keywords:
 
 * `assets`: specifies the children define `WebCmsAsset` import data
 * `types`: specifies the children define `WebCmsTypeSpecifier` import data
@@ -77,17 +77,17 @@ By default, {{book.moduleName}} supports 4 top-level keywords:
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
 === Data importers
-{{book.moduleName}} provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
+{module-name} provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
 
 See the relevant chapters for examples and more details:
 
-* link:../menu/chap-menu.adoc#WebCmsMenu-import[importing menus]
-* link:../components/chap-web-components.adoc#WebCmsComponent-import[importing web components]
-* link:../pages/chap-web-page.adoc#WebCmsPage-import[importing pages]
-* link:../publication/chap-publication-model.adoc#WebCmsArticle-import[importing publications and articles]
+* <<{doc-domain-model}#menu-web-cms-menu-import,importing menus>>
+* <<{doc-components}#components-web-cms-component-import,importing web components>>
+* <<{doc-domain-model}#pages-web-cms-page-import,importing pages>>
+* <<{doc-domain-model}#publication-web-cms-article-import,importing publications and articles>>
 
 === Generic importers
-{{book.moduleName}} has some generic importers that can be used in multiple situations.
+{module-name} has some generic importers that can be used in multiple situations.
 These importers act on a specific prefixed keyword.
 
 .Generic importer keywords
@@ -96,7 +96,7 @@ These importers act on a specific prefixed keyword.
 
 |`wcm:action`
 |Can be used on pretty much any data block and defines the action that should be performed with that data.
-See <<importing-action,the chapter on import actions>> for more details.
+See <<importing-importing-action,the chapter on import actions>> for more details.
 
 |`wcm:components`
 |Can be used on any data block representing a `WebCmsObject`.
@@ -115,7 +115,7 @@ These links are mapped using the `WebCmsTypeSpecifierLink` and `WebCmsTypeSpecif
 |`wcm:menu-items`
 |Can be used on any data block representing a `WebCmsAsset`.
  Will create menu items for that asset provided that there is a `WebCmsAssetEndpoint` available as well.
-See link:../pages/chap-web-page.adoc#WebCmsPage-import[page importing] for examples.
+See <<{doc-domain-model}#pages-web-cms-page-import,page importing>> for examples.
 
 |`wcm:urls`
 |Can be used on any data block representing a `WebCmsAsset`.
@@ -123,7 +123,7 @@ Will create urls for the asset provided that there is a `WebCmsAssetEndpoint` av
 
 |===
 
-[[importing-action]]
+[[importing-importing-action]]
 === Import action
 The optional `wcm:action` represents the import action that should be performed with a data block (insert, update etc).
 If the parent data contains a wcm:action and the child doesn't, the child action is the same as the parent one.

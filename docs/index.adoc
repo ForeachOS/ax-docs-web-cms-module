@@ -21,10 +21,10 @@ Building a simple website is very easy and requires very little development.
 
 Features provided by WebCmsModule include:
 
-* an extensible [Domain Model](/docs/chap-domain-model.adoc) with common asset types like [pages](/docs/pages/chap-web-page.adoc), [articles](/docs/publication/chap-publication-model.adoc) and [redirects](/docs/chap-redirects.adoc)
-* a way to manage the [URLs for these assets](/docs/urls/chap-endpoint-url.adoc)
-* a [powerful component model](/docs/components/chap-web-components.adoc#overview) for building templates and managing dynamic content
-* an easy way to [import data using YAML files](/docs/importing/chap-importing-data.adoc#importing-data-yaml)
+* an extensible <<{doc-domain-model}#domain-model,Domain Model>> with common asset types like <<{doc-domain-model}#pages-web-cms-page-overview,pages>>, <<{doc-domain-model}#publication-model-overview,articles>> and <<{doc-domain-model}#redirects-redirects-overview,redirects>>
+* a way to manage the <<{doc-domain-model}#publication-model-overview,URLs for these assets>>
+* a <<{doc-components}#components-overview,powerful component model>> for building templates and managing dynamic content
+* an easy way to <<{doc-importing-data}#importing-yaml,import data using YAML files>>
 
 A fully functional administration UI is available using AdminWebModule and EntityModule.
 
@@ -34,12 +34,12 @@ The reference documentation is split up into several parts:
 * <<whats-new.adoc#whats-new, What's new in this version>> lists the release notes of WebCmsModule
 * <<general-information.adoc#general-information, Getting started>> explains how to start using WebCmsModule
 * <<components.adoc#web-components,Web Components>> talk about the fundamentals of how to use web components
-* <<importing-data.adoc#importing-data,Importing data>> explains the fundamentals of importing data.
+* <<importing-data.adoc#importing-data,Importing data>> explains how to import assets, components and types based on configuration files.
 * <<performance-tuning.adoc#performance-tuning,Performance tuning>> provides information on how to improve general performance when using WebCmsModule.
 * <<appendix.adoc#appendices,Appendices>>
 * <<how-tos.adoc#how-tos,How-tos>> provides a different approach to learning Across through some general tutorials
 
-Module website: {{ book.moduleUrl }}
+Module website: link:{module-url}[]
 
 '''
 .About the reference documentation
