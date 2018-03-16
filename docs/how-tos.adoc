@@ -1,0 +1,11 @@
+[[how-tos]]
+= WebCmsModule - How-tos
+:toc: left
+:toc-title: How-tos
+:toclevels: 2
+:sectnums:
+:chapter-number: 0
+:docinfo1:
+include::variables.adoc[]
+
+include::how-tos/index.adoc[]

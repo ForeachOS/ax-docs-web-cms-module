@@ -1,0 +1,11 @@
+[#performance-tuning]
+= WebCmsModule - Performance tuning
+:toc: left
+:toc-title: Performance tuning
+:toclevels: 2
+:sectnums:
+:chapter-number: 0
+:docinfo1:
+include::variables.adoc[]
+
+include::performace-tuning/index.adoc[]

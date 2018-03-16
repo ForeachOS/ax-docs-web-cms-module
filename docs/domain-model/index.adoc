@@ -1,7 +1,3 @@
-include::variables.adoc[]
-[[domain-model]]
-== Domain model
-
 // Asset model - general explanation
 include::chap-asset-model.adoc[]
 

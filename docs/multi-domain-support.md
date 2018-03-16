@@ -121,7 +121,7 @@ In many cases the auto-configuration will be just what you need and there won't 
 
 ##### Auto-configuration related attributes
 
-Domain auto-configuration is performed during a post-processing of all entity configurations.  Custom attributes allow you to skip parts of the auto-configuration or to tweak auto-configuration settings.  For all WebCmsModule related entity attirbutes, see [the relevant appendix](/docs/entitymodule-attributes.md).
+Domain auto-configuration is performed during a post-processing of all entity configurations.  Custom attributes allow you to skip parts of the auto-configuration or to tweak auto-configuration settings.  For all WebCmsModule related entity attirbutes, see [the relevant appendix](/docs/appendices/entitymodule-attributes.md).
 
 ###### Skipping automatic list view adjustment
 
@@ -292,11 +292,11 @@ If auto-configuration is insufficient, you will need to manually add multi-domai
 * Repositories are usually used in the backend - especially if you want to support both multi-domain and no-domain configurations.  Repository methods always require you to explicitly specify the domain as well.
 * Services usually use the current domain to interact with the repository, making them very easy to use in frontend business logic.
 
-See [the appendix](/docs/repositories-and-services.md) for an overview of the available repositories and services.
+See [the appendix](/docs/appendices/repositories-and-services.md) for an overview of the available repositories and services.
 
 ## Importing domain configuration
 
-`WebCmsDomain` is a `WebCmsObject` like most other entities provided by WebCmsModule.  It has full support for being imported using YAML \(or another format - see the section [Importing Data](/docs/chap-placeholder.adoc) for more information\).
+`WebCmsDomain` is a `WebCmsObject` like most other entities provided by WebCmsModule.  It has full support for being imported using YAML \(or another format - see the section [Importing Data](/docs/domain-model/chap-placeholder.adoc) for more information\).
 
 ###### Example importing a WebCmsDomain with WebCmsSiteConfiguration metadata
 

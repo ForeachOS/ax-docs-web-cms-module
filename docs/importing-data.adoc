@@ -1,0 +1,11 @@
+[#importing-data]
+= WebCmsModule - Importing data
+:toc: left
+:toc-title: How-tos
+:toclevels: 2
+:sectnums:
+:chapter-number: 0
+:docinfo1:
+include::variables.adoc[]
+
+include::importing/index.adoc[]

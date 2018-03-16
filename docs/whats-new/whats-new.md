@@ -12,7 +12,7 @@
   * text components \(rich-text/markup\) can have a [custom profile configured](/docs/components/chap-web-components-defining-component-types.adoc#component-profiles) - default implementations support TinyMCE and CodeMirror profiles
 * `WebCmsAsset`s now have a sortIndex which by default is set to 1000.
 * It is now possible to create and import `WebCmsAssetLinks`
-* It is now possible to import \`[WebCmsUrls](/docs/urls/chap-endpoint-url.adoc)\` and \`[Redirects](/docs/chap-redirects.adoc)\`
+* It is now possible to import \`[WebCmsUrls](/docs/domain-model/urls/chap-endpoint-url.adoc)\` and \`[Redirects](/docs/domain-model/chap-redirects.adoc)\`
 
 ## 0.0.2.RELEASE
 

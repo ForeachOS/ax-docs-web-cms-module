@@ -1,3 +1,4 @@
+[#general-information]
 = General information
 
 [[artifact]]

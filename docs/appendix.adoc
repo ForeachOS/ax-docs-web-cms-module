@@ -1,0 +1,11 @@
+[#appendices]
+= WebCmsModule - Appendices
+:toc: left
+:toc-title: Appendices
+:toclevels: 2
+:sectnums:
+:chapter-number: 0
+:docinfo1:
+include::variables.adoc[]
+
+include::appendix/index.adoc[]
