@@ -1,1 +1,2 @@
+= Using a site template in a multi site setup
 Describes how to configure your application so default assets and types get imported from a yaml file when creating a new domain.
