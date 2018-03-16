@@ -89,7 +89,7 @@ You can easily create a connector for a different type of image store.  Simply p
 
 Rendering images is done by generating an url to the image from the image repository.  This can be done directly through `WebCmsImageConnector` or by using the `WebCmsRenderUtilityService`.
 
-The [Thymeleaf dialect](/thymeleaf-dialect.adoc) has the **\#wcm** expression object to easily generate the url for a `WebCmsImage` in your Thymeleaf template.
+The [Thymeleaf dialect](/docs/thymeleaf-dialect.adoc) has the **\#wcm** expression object to easily generate the url for a `WebCmsImage` in your Thymeleaf template.
 
 ## Importing images
 

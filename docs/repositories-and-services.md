@@ -65,7 +65,7 @@ The core services are always created when WebCmsModule is enabled in your applic
 | `WebCmsPublicationService` | `WebCmsPublication` functionality. |
 | `WebCmsComponentModelService` | Loading and updating components. |
 | `WebCmsComponentModelHierarchy` | Request scoped bean that can be used to register components to render on the current request. |
-| `WebCmsContentMarkerService` | Functionality for working with [content markers](/components/chap-web-components-content-markers.adoc) in text. |
+| `WebCmsContentMarkerService` | Functionality for working with [content markers](/docs/components/chap-web-components-content-markers.adoc) in text. |
 | `WebCmsDataConversionService` | Specific Spring `ConversionService` implementation used for data importing.  Contains specific converters for WebCmsModule types. |
 | `WebCmsDataImportService` | General service for importing WebCmsModule data from generic `Map<String,Object>` structures. |
 | `WebCmsDefaultComponentsService` | Service for creating default components for any `WebCmsAsset` by checking for a **contentTemplate** attached to the `WebCmsAssetType`. |
@@ -73,7 +73,7 @@ The core services are always created when WebCmsModule is enabled in your applic
 | `WebCmsMultiDomainService` | Service for accessing the current domain context and inspecting the multi-domain configuration.  Extends the `WebCmsDomainService`. |
 | `WebCmsPlaceholderLookupService` | Request scoped service for retrieving placeholder content registered on the current request. |
 | `WebCmsPlaceholderContentModel` | Request scoped bean to set and retrieve placeholder data for the current request. |
-| `WebCmsRenderUtilityService` | Provides [utility functions](/thymeleaf-dialect.adoc) for using during output rendering. |
+| `WebCmsRenderUtilityService` | Provides [utility functions](/docs/thymeleaf-dialect.adoc.adoc) for using during output rendering. |
 | `WebCmsTypeSpecifierService` | Functionality for retrieving type specifiers. |
 | `WebCmsUriComponentsService` | Utility service for creating a `UriComponentsBuilder` for either `WebCmsAsset`, `WebCmsEndpoint` or `WebCmsUrl`. |
 | `WebCmsComponentAutoCreateService` | Service for automatic creation of `WebCmsComponent` based on parsed template content.  Mostly used internally, you can use this service if you want to implement your own auto-create functionality. |
