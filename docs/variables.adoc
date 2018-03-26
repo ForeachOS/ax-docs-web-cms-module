@@ -20,5 +20,6 @@
 :doc-importing-data: importing-data.adoc
 :doc-performance-tuning: performance-tuning.adoc
 :doc-whats-new: whats-new.adoc
+:doc-multi-domain: multi-domain.adoc
 :icons: font
 ifdef::env-github,env-browser[:outfilesuffix: .adoc]

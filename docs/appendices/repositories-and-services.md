@@ -1,3 +1,4 @@
+[#appendices-repositories-and-services]
 ### Repositories and services overview
 
 This section lists the most important repositories and services that are provided by WebCmsModule.  These beans are all exposed and can be use in all modules that depend on WebCmsModule.

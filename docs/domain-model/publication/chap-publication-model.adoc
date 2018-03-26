@@ -1,7 +1,7 @@
 [[publication-model-overview]]
 = Publication model
 
-{{book.moduleName}} contains a default publication model for articles.
+{module-name} contains a default publication model for articles.
 An article can typically be pretty much any type of content, but usually it is something like a piece of news or a blog article.
 
 * An article is of a specific article type and belongs to a single publication.
@@ -17,7 +17,7 @@ An article can typically be pretty much any type of content, but usually it is s
 
 === Default model
 
-Out of the box, {{book.moduleName}} configures the following data:
+Out of the box, {module-name} configures the following data:
 
 * publication types: *news*, *blogs*
 * article types: *news*, *blog*
@@ -40,7 +40,7 @@ The bulk of the article content is represented as a collection of components and
 
 Properties `articleType` and `publication` refer to the `WebCmsArticleType` and `WebCmsPublication` of the article respectively.
 
-See _<<configuring-publication-model>>_ for an example component configuration.
+See _<<publication-configuring-publication-model>>_ for an example component configuration.
 
 An article is considered an asset with an endpoint URL.
 When saving an article, a URL will always be created combining the title of the article with the canonical path of the publication template page.
@@ -57,7 +57,7 @@ The article type to reuse the component container from can be configured by sett
 
 An article is always linked to a single article type.
 
-See _<<configuring-publication-model>>_ for a full example.
+See _<<publication-configuring-publication-model>>_ for a full example.
 
 === WebCmsPublication
 Represents a named collection of articles.
@@ -66,7 +66,7 @@ Property `publicationType` refers to the `WebCmsPublicationType` of the publicat
 
 Property `articleTemplatePage` links to a `WebCmsPage` that represents the template layout of the article.
 When saving an article, the `canonicalPath` of the template page will be used as pattern (usually prefix) for the article URL.
-The template page model will also be loaded automatically when rendering an article, see _<<article-web-model>>_ for more information.
+The template page model will also be loaded automatically when rendering an article, see _<<publication-article-web-model>>_ for more information.
 
 An article is always linked to a single publication.
 
@@ -142,7 +142,7 @@ public String renderBreakingNews( WebCmsArticle article, Model model ) {
 [[publication-web-cms-article-import]]
 === Importing data
 Most domain data of the publication model can be imported using YAML.
-See _<<configuring-publication-model>>_ for a full example.
+See _<<publication-configuring-publication-model>>_ for a full example.
 
 [[publication-configuring-publication-model]]
 ==== Configuring your own publication model

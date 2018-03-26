@@ -2,8 +2,8 @@
 
 To create a custom `WebCmsAsset`, we create a class which extends `WebCmsAsset`. `WebCmsAsset`has two superclasses which require a method to be implemented:
 
-* `WebCmsObjectInheritanceSuperClass`which defines `getObjectType()`
-* `WebCmsObjectSuperClass`which defines `getObjectCollectionId()` with which every object id of the class will be prefixed with.
+* `WebCmsObjectInheritanceSuperClass` which defines `getObjectType()`
+* `WebCmsObjectSuperClass` which defines `getObjectCollectionId()` with which every object id of the class will be prefixed with.
 
 Aside of these two methods, WebCmsAsset defines an abstract method `getAssetType()`, which also needs to be implemented.
 

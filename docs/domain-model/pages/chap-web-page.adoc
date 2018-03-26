@@ -2,7 +2,7 @@
 [#pages-web-cms-page-overview]
 == Overview
 
-A `WebCmsPage` is a component that represents a single page in the application. It differs from an link:../publication/chap-publication-model.adoc#PublicationModel-overview[ article] in that the page is stand-alone,
+A `WebCmsPage` is a component that represents a single page in the application. It differs from an <<{doc-domain-model}#publication-model-overview,article>> in that the page is stand-alone,
 i.e. you have more control regarding the layout and the components of the page. One can use this, for example, to create _about_ or _faq_ pages. It is related to the publication model
  in that an article is contained in a page: the data is contained in the article component, but how the article is rendered is handled by the page.
 
@@ -11,7 +11,7 @@ i.e. you have more control regarding the layout and the components of the page. 
 [options="header", cols="2,1,1,3,1"]
 |================
 |Name|Type|Mandatory|Description|Default Value
-|Page Type|<<WebCmsPageType-overview, Page Type>>|Yes|Defines the page type of a page. Can be set during page creation but can not be changed afterwards.|Default
+|Page Type|<<pages-web-cms-page-type-overview, Page Type>>|Yes|Defines the page type of a page. Can be set during page creation but can not be changed afterwards.|Default
 |Title|String|Yes|The title of the page.|None
 |Parent|Select|No|Parent page of the page. Affects any generated URLs and (if auto-generated) the canonical path.|None
 |Template|String|No|The thymeleaf template of the page. The filename of the page without the extension. If none is defined the one from the page type is used.|None
@@ -70,11 +70,11 @@ _Example:_
 * template `th/other-module/my-template` would be resolved as `th/other-module/my-template`
 
 NOTE: You can manually specify the default template prefix using property `webCmsModule.pages.template-prefix`.
-See the link:../chap-general-information#module-settings[module settings] for all options you can configure if you want to change the default template resolving behaviour.
+See the <<{doc-general-information}#module-settings,module settings>> for all options you can configure if you want to change the default template resolving behaviour.
 
 === Web Components
 
-A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the building blocks of the pages. For further information, please check the link:../components/chap-web-components.adoc#WebCmsComponents-overview[chapter] on components.
+A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the building blocks of the pages. For further information, please check the <<{doc-components}#components-overview,chapter>> on components.
 
 === URLs
 
@@ -82,7 +82,7 @@ A `WebCmsPage` can be referred to by different URLs. Please see the respective <
 
 [[pages-web-cms-page-import]]
 === Importing a page
-One can import a page by using the import infrastructure provided by the import functionality of {{book.moduleName}}.
+One can import a page by using the import infrastructure provided by the import functionality of {module-name}.
 
 ==== Examples
 
@@ -144,7 +144,7 @@ page:
 [[pages-web-cms-page-type-overview]]
 == WebCmsPageType
 
-A WebCmsPageType is used for assigning a certain type of page to a <<WebCmsPage-overview, WebCmsPage>>. The default page type is controlled via the `webCmsModule.pages.default-page-type` parameter in the configuration.
+A WebCmsPageType is used for assigning a certain type of page to a <<pages-web-cms-page-overview, WebCmsPage>>. The default page type is controlled via the `webCmsModule.pages.default-page-type` parameter in the configuration.
 
 === Properties
 
@@ -153,11 +153,11 @@ A WebCmsPageType is used for assigning a certain type of page to a <<WebCmsPage-
 |===
 |Field|Required|Type|Description|Default Value
 |Name|Yes|String|The name of the page type. Displayed in the drop down list when creating a new page.|None
-|Attributes|No|<<WebCmsPageType-attributes, Attributes>>|The attributes affecting the behaviour when rendering/creating the page. Specified as key-value pairs.|None
+|Attributes|No|<<pages-web-cms-page-type-attributes, Attributes>>|The attributes affecting the behaviour when rendering/creating the page. Specified as key-value pairs.|None
 |wcm:components|No|Components|The components that are automatically generated when creating a page that uses this page type.|None
 |===
 
-*_Attributes_* [[WebCmsPageType-attributes]]
+*_Attributes_* [[pages-web-cms-page-type-attributes]]
 [options="header", cols="1,4"]
 |===
 |Attribute|Description
@@ -185,8 +185,8 @@ types:
         hasEndpoint: false
         isPublishable: false
 ----
-<1> The default page type. Notice that there are no attributes, so the default <<WebCmsPageType-attributes, attributes>> specified are in effect for this type.
-<2> <<WebCmsPageType-attributes, Attributes>> are defined as simple key-value pairs.
+<1> The default page type. Notice that there are no attributes, so the default <<pages-web-cms-page-type-attributes, attributes>> specified are in effect for this type.
+<2> <<pages-web-cms-page-type-attributes, Attributes>> are defined as simple key-value pairs.
 
 Another, more complex example. This page contains multiple nested containers that themselves have child components.
 

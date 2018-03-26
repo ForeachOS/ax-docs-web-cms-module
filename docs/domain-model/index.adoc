@@ -20,4 +20,4 @@ include::menu/chap-menu.adoc[]
 
 
 // Domain / multi-site
-include::multi-domain-support.md[]
+include::multi-domain/multi-domain-support.adoc[]

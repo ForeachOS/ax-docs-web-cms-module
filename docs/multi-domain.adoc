@@ -1,0 +1,11 @@
+[#multi-domain]
+= WebCmsModule - Multi-domain Support
+:toc: left
+:toc-title: Multi-domain/site
+:toclevels: 2
+:sectnums:
+:chapter-number: 0
+:docinfo1:
+include::variables.adoc[]
+
+include::multi-domain/index.adoc[]

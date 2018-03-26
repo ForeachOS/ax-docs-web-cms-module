@@ -35,9 +35,10 @@ The reference documentation is split up into several parts:
 * <<general-information.adoc#general-information, Getting started>> explains how to start using WebCmsModule
 * <<components.adoc#web-components,Web Components>> talk about the fundamentals of how to use web components
 * <<importing-data.adoc#importing-data,Importing data>> explains how to import assets, components and types based on configuration files.
+* <<{doc-multi-domain}#multi-domain,Multi domain setup>> hands you the ability to manage multiple sites/domains for your application from a single interface.
 * <<performance-tuning.adoc#performance-tuning,Performance tuning>> provides information on how to improve general performance when using WebCmsModule.
 * <<appendix.adoc#appendices,Appendices>>
-* <<how-tos.adoc#how-tos,How-tos>> provides a different approach to learning Across through some general tutorials
+* <<how-tos.adoc#how-tos,How-tos>> provides a different approach to get started with WebCmsModule through some general tutorials
 
 Module website: link:{module-url}[]
 

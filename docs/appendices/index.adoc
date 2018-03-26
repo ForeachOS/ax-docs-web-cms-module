@@ -1,5 +1,9 @@
 include::message-codes.md[]
+
 include::thymeleaf-dialect.adoc[]
-include::entity-module-attributes.md[]
+
+include::entitymodule-attributes.adoc[]
+
 include::repositories-and-services.md[]
+
 include::appendix-default-data.adoc[]

@@ -1,3 +1,4 @@
+[#appendices-thymeleaf-dialect]
 = Thymeleaf dialect
 The following section gives an overview of the custom Thymeleaf dialect provided by WebCmsModule.
 

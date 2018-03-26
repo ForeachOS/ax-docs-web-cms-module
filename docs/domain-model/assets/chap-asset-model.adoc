@@ -1,6 +1,6 @@
 = Asset model
 
-{{book.moduleName}} provides a basic model for mapping assets and types.
+{module-name} provides a basic model for mapping assets and types.
 Example assets provided by default are `WebCmsArticle` and `WebCmsPage`.
 Related types would be `WebCmsArticleType` and `WebCmsPageType`.
 
@@ -26,8 +26,8 @@ WebCmsAssets also have a sortIndex, which will initially be set to 1000. Should 
 
 == Linking assets
 
-A generic `WebCmsAssetLink`object is available to link a `WebCmsAsset` to any `WebCmsObject` with a specific `linkType` demarcation. 
-These links are mapped using `WebCmsAssetLink`and `WebCmsAssetLinkRepository`
+A generic `WebCmsAssetLink` object is available to link a `WebCmsAsset` to any `WebCmsObject` with a specific `linkType` demarcation.
+These links are mapped using `WebCmsAssetLink` and `WebCmsAssetLinkRepository`
 
 == WebCmsTypeSpecifier
 
