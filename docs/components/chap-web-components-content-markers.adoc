@@ -1,7 +1,7 @@
 [[components-content-markers]]
 ==== Content markers
 
-{{book.moduleName}} provides content marker infrastructure to work with special marker snippets inside textual content.
+{module-name} provides content marker infrastructure to work with special marker snippets inside textual content.
 Upon rendering, these markers would be processed and the resulting output would be rendered instead.
 
 .Example text with content markers
@@ -35,9 +35,9 @@ In text a content marker is always surrounde by `@@`.
 ** parameter string: _my, params_
 
 The `WebCmsContentMarkerService` is the service for working with content markers in general.
-Default rendering support is available for Thymeleaf templates, see the link:../chap-web-components-thymeleaf.adoc#thymeleaf-content-markers[{{book.moduleName}} Thymeleaf dialect].
+Default rendering support is available for Thymeleaf templates, see the <<components-thymeleaf-content-markers,{module-name} Thymeleaf dialect>>.
 
-Content markers are supported in all link:../chap-web-components-base-types.adoc#default-component-types[default component types].
+Content markers are supported in all <<components-default-component-types,default component types>>.
 
 [[components-placeholder-content-markers]]
 ===== Placeholder content markers
@@ -67,4 +67,4 @@ Examples:
 ** will search for _my.component_ in the container members - only relevant in the context of a `ContainerWebCmsComponentModel` being rendered
 
 ===== Creating custom content markers
-See link:../chap-web-components-thymeleaf.adoc#thymeleaf-content-markers[{{book.moduleName}} Thymeleaf dialect] on how to add content marker support for component rendering.
+See <<components-thymeleaf-content-markers,{module-name} Thymeleaf dialect>> on how to add content marker support for component rendering.

@@ -103,9 +103,10 @@ assets:
       wcm:components:
         body:
           content: Update the article body text
-          
----
-
+----
+[source,yaml,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
 assets:
   article:
     - title: My article

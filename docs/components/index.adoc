@@ -1,5 +1,1 @@
 include::chap-web-components.adoc[]
-include::chap-web-components-base-types.adoc[]
-include::chap-web-components-content-markers.adoc[]
-include::chap-web-components-thymeleaf.adoc[]
-include::chap-web-components-defining-component-types.adoc[]

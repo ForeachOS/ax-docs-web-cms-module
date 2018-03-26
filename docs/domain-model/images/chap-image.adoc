@@ -1,4 +1,4 @@
-[#domain-image-model]
+[#images-image-model]
 = Image model
 
 WebCmsModule provides an asset representing an image file.

@@ -13,7 +13,7 @@ The Thymeleaf dialect is a very powerful tool to convert your static templates i
 ==== HTML attributes
 Interacting with components is done by adding attributes to your template elements.
 
-{% include "fragment-component-attributes.adoc" %}
+include::fragment-component-attributes.adoc[]
 
 Auto-creation of components from markup
 
@@ -194,7 +194,7 @@ In the example above the placeholder content would be: `<div>Placeholder content
 The presence of _wcm:parse-placeholders_ ensures that placeholder content will be processed and made available during rendering.
 Rendering the actual placeholder however is always up to the component.
 
-Markup components can render placeholders by using link:chap-web-components-content-markers.adoc#placeholder-content-markers[placeholder content markers].
+Markup components can render placeholders by using <<components-placeholder-content-markers,placeholder content markers>>.
 
 Assume _my-component_ is a `TextWebCmsComponentModel` with the following content:
 
@@ -242,7 +242,7 @@ Template content...
 
 ==== Nesting components
 
-Like with placeholders, a markup component can include other components using link:chap-web-components-content-markers.adoc#component-content-markers[component content markers].
+Like with placeholders, a markup component can include other components using <<components-component-content-markers,component content markers>>.
 
 Assume you have a `TextWebCmsComponentModel` with the following content: `My component: @@wcm:component(header,global,false)@@`. +
 And on the global level the _header_ component is a `TextWebCmsComponentModel` with content `my header`.
@@ -337,7 +337,7 @@ No additional _wcm:auto-create_ attributs are required as all nested components 
 
 ==== Using placeholders in containers
 Much like a regular markup component, a container can also use placeholders that are defined in the template.
-Where a markup component uses a link:chap-web-components-content-markers.adoc#placeholder-content-markers[placeholder content markers] to render the placeholder content, a `ContainerWebCmsComponentModel` will get a member component of type `PlaceholderWebCmsComponentModel` instead.
+Where a markup component uses a <<components-placeholder-content-markers,placeholder content markers>> to render the placeholder content, a `ContainerWebCmsComponentModel` will get a member component of type `PlaceholderWebCmsComponentModel` instead.
 
 [source,html,indent=0]
 [subs="verbatim,quotes,attributes"]
@@ -428,7 +428,7 @@ Footer: @@wcm:component(footer,container,false)@@
 
 :numbered:
 
-[[thymeleaf-rendering]]
+[[components-thymeleaf-rendering]]
 ==== Custom rendering of component
 Web components in Thymeleaf are rendered using a `WebCmsComponentModelRenderer` implementation.
 You can easily create your own implementation for custom rendering:
@@ -442,7 +442,7 @@ You can do so by ordering your beans (using an `@Order` annotation or implementi
 
 If you want to use content markers in your content snippets, you can use the `WebCmsComponentContentModelWriter` to render the content with Thymeleaf.
 
-[[thymeleaf-content-markers]]
+[[components-thymeleaf-content-markers]]
 == Custom content markers
 Content containing content markers can easily be written to Thymeleaf output using the `WebCmsComponentContentModelWriter`.
 If you want to implement your own custom content markers you must provide an implementation of `WebCmsComponentContentMarkerRenderer` as a bean.

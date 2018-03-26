@@ -2,7 +2,7 @@
 == Defining component types
 
 You can easily define your own component types.
-Depending on your needs you can <<extending-base-types,extend one of the base types>> or create a <<custom-component-type,fully custom implementation>>.
+Depending on your needs you can <<components-extending-base-types,extend one of the base types>> or create a <<components-custom-component-type,fully custom implementation>>.
 
 [[components-extending-base-types]]
 === Extending the base types
@@ -80,10 +80,10 @@ A metadata class must:
 If the administration UI is active, a form for metadata properties will automatically be generated using the EntityModule.
 This does require you to register the metadata type as an entity in the `EntityRegistry`.
 
-NOTE: Default (de-)serialization for `WebCmsObject` implementations is provided by the {{book.moduleName}} by dispatching to the `WebCmsDataConversionService`.
+NOTE: Default (de-)serialization for `WebCmsObject` implementations is provided by the {module-name} by dispatching to the `WebCmsDataConversionService`.
 This means metadata properties can often refer to other web cms types without requiring custom configuration.
 
-See <<custom-component-type,creating a custom component type>> if you want to have a custom metadata class, change serialization or admin UI rendering.
+See <<components-custom-component-type,creating a custom component type>> if you want to have a custom metadata class, change serialization or admin UI rendering.
 
 .Providing a component template
 When defining a custom component type, you can link a *componentTemplate* component to the `WebCmsComponentType` definition.  
@@ -172,7 +172,7 @@ When the administration UI is active (presence of EntityModule and AdminWebModul
 The default administration UI uses the the EntityModule to build the metadata form, so we register the `LeftRightMetadata` as an entity.
 
 NOTE: If you do not want to use the EntityModule to generate the metadata form, you can provide a custom `WebCmsComponentModelMetadataAdminRenderer`.
-See <<custom-component-type,create a custom component type>> for more information.
+See <<components-custom-component-type,create a custom component type>> for more information.
 
 .Thymeleaf template: th/mymodule/components
 [source,html,indent=0]
@@ -207,7 +207,7 @@ To prevent a `WebCmsComponentType` from showing up in the list unless explicitly
 Examples of non-selectable WebCmsComponentTypes are the default placeholder, proxy and fixed-container component types.
 
 
-Example
+.Example
 [source, yaml]
 ----
 types:
@@ -299,7 +299,7 @@ WebCmsModule provides a default administration UI built on AdminWebModule and En
 The default administration UI uses a form of tabs to display the different sections (eg. content, members, metadata) of a component.  Only sections relevant for the component type will be shown to the user.
 
 ==== Administration UI labels and descriptions
-The default administration UI for components supports configuring the labels.  See the link:/appendices/message-codes.md[appendix on message codes].
+The default administration UI for components supports configuring the labels.  See the <<{doc-appendix}#appendix-message-codes,appendix on message codes>>.
 
 ==== Creating custom component forms
 You can customize the forms being rendered by providing custom `xAdminRenderer` implementations.  This allows you to build 
@@ -308,7 +308,7 @@ You can customize the forms being rendered by providing custom `xAdminRenderer` 
 ==== Configuring rich-text and markup components
 
 WebCmsModule supports rich text components and HTML components out of the box, using TinyMCE and CodeMirror respectively.  Rich-text components are identified with the base type `rich-text`, markup with `markup`.  
-
+
 .YAML definition of default Rich text and HTML component types
 [source,yaml]
 ----
@@ -331,6 +331,7 @@ In addition to the base type, a component type can define a *profile* attribute 
 The default rich-text component type uses a profile called `rich-text` as well.
 
 You can customize the profile configuration using Javascript.  This is done by registering profiles on the `WebCmsComponentProfileRegistry`.  A profile registration requires the following three attributes:
+
 * *componentType*: this is the base type of the component (eg. `rich-text` or `markup`)
 * *profileName*: a unique profile name
 * *profile*: JSON object that holds the actual profile data (for example the TinyMCE configuration object)
