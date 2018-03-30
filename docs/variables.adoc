@@ -1,9 +1,9 @@
 :sectanchors:
-:module-version: 0.0.4-SNAPSHOT
+:module-version: 0.0.4-RELEASE
 :module-name: WebCmsModule
 :module-artifact: web-cms-module
 :module-url: https://across.foreach.be/modules/webcmsmodule
-:javadoc: https://across-docs.foreach.be/across-standard-modules/WebCmsModule/0.0.4-SNAPSHOT/javadoc/
+:javadoc: https://across-docs.foreach.be/across-standard-modules/WebCmsModule/0.0.4-RELEASE/javadoc/
 :hibernate-jpa-module-url: https://across.foreach.be/modules/acrosshibernatejpamodule
 :hibernate-jpa-unit-of-work-factory: https://across-docs.foreach.be/across-standard-modules/AcrossHibernateModule/2.0.1.RELEASE/reference/#unitofworkfactory
 :admin-web-module-url: https://across.foreach.be/modules/adminwebmodule
