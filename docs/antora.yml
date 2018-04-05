@@ -1,0 +1,5 @@
+name: web-cms-module
+title: "Module: Web CMS"
+version: 0.0.4
+nav:
+- modules/ROOT/nav.adoc
