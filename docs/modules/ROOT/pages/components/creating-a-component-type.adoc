@@ -1,3 +1,4 @@
+:page-partial:
 [[components-defining-component-types]]
 == Defining component types
 

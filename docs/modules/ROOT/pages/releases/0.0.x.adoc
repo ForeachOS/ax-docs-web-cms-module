@@ -1,5 +1,6 @@
-= What's new in this version?
+= Release notes
 
+[#0-0-3]
 == 0.0.3.RELEASE
 
 * <<{doc-multi-domain}#multi-domain-multi-domain-and-site-support,multi-domain/multi-site support>> has been added
@@ -10,7 +11,7 @@
 * component administration UI improvements
   * message codes can be used to <<{doc-appendix}#message-codes,configure descriptions and labels for component types>>
   * text components (rich-text/markup) can have a <<{doc-components}#components-component-profiles,custom profile configured>> - default implementations support TinyMCE and CodeMirror profiles
-* `WebCmsAsset`s now have a sortIndex which by default is set to 1000.
+* `WebCmsAsset` now has a `sortIndex` which by default is set to 1000
 * It is now possible to create and import `WebCmsAssetLinks`
 * It is now possible to import `<<{doc-domain-model}#publication-model-overview,WebCmsUrls>>` and `<<{doc-domain-model}#redirects-redirects-overview,Redirects>>`
 

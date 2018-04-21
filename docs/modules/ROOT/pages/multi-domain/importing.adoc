@@ -1,0 +1,186 @@
+== Importing domain configuration
+
+`WebCmsDomain` is a `WebCmsObject` like most other entities provided by WebCmsModule.
+It has full support for being imported using YAML (or another format - see the section <<{doc-importing}#importing-data,Importing Data>> for more information).
+
+====== Example importing a WebCmsDomain with WebCmsSiteConfiguration metadata
+
+[source,yaml]
+----
+domains:
+  foreach.be:
+    name: foreach.be
+    description: Main Foreach website.
+    active: true
+    attributes:
+      customString: some text
+      customNumber: 123
+      hostNames:
+        - foreach.be
+        - *.foreach.be
+      sortIndex: 1
+      cookieDomain: foreach.be
+      defaultLocale: en_UK
+      urlPrefix: "https://foreach.be/"
+      alwaysPrefix: true
+----
+
+=== Importing domain configuration for WebCmsObjects
+
+All default `WebCmsObject` s (`WebCmsPage`, `WebCmsMenu`...) are domainbound. This means that their identifiers can be reused across different domains.
+To attach a `WebCmsObject` to a specific `WebCmsDomain` you only need to add the _domain_ property in the yaml configuration. The domain property can be any of the following:
+
+* objectId of the WebCmsDomain (e.g. `"wcm:domain:my-domain"` )
+* the domainKey (e.g. `my-domain`)
+
+.Example domainbound menu import
+[source,yaml]
+----
+menus:
+ topNav:
+   description: Top navigation
+   domain: my-domain
+ sideNav:
+   description: Side navigation
+   domain: "wcm:domain:my-domain"
+----
+
+To import a `WebCmsTypeSpecifier` you are required to prefix the _typeKey_ with the attached domain for all _newly_ created types. This is however not required when updating existing types.
+
+.Example domainbound component type  import
+[source, yaml]
+----
+types:
+  component:
+    my-domain:my-teaser:
+      name: My teaser
+      domain: my-domain
+    my-domain:another-teaser:
+      name: Another teaser
+      domain: "wcm:domain:my-domain"
+----
+
+=== Scoping imports to a domain
+
+With the use of `wcm:domain` it is possible to set the domain of the surrounding block and it's children to the specified domain.
+
+Example scoped imports:
+
+[source,yaml]
+----
+wcm:domain: my-domain
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+
+assets:
+    component:
+        my-teaser:
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+----
+
+* All `WebCmsDomainBound` objects will be imported under _my-domain_
+
+[source,yaml]
+----
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+
+assets:
+    wcm:domain: my-domain
+    component:
+        my-teaser:
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+----
+
+* All `WebCmsDomainBound` assets will be imported under _my-domain_
+
+[source,yaml]
+----
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+
+assets:
+    component:
+        wcm:domain: my-domain
+        my-teaser:
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+----
+
+* All `WebCmsDomainBound` component assets (=global components) and their children will be imported under _my-domain._
+
+[source,yaml]
+----
+types:
+    component:
+        my-teaser:
+            name: My teaser
+            attributes:
+                componentType: fixed-container
+            wcm:components:
+                componentTemplate:
+                    componentType: container
+                    wcm:components:
+                        body:
+                            componentType: rich-text
+
+assets:
+    component:
+        my-teaser:
+            wcm:domain: my-domain
+            name: My component
+            componentType: my-teaser
+            wcm:components:
+                body:
+                    content: My teaser body
+----
+
+* The component _my-teaser_ and it's child component, _body_, will be imported under _my-domain_.
+
+[NOTE]
+====
+In a multi-domain supported setup, all newly created `WebCmsDomainBound` objects will be imported under their currently scoped domain \(by default: no domain\). The domain of a specific entry can still be changed by using the _domain_ property.
+
+We strongly advise to scope entire imports for a specific domain in a multi-domain setup. If you do want to explicitly set the domain afterwards, we advise you to explicitly set it everywhere.
+====

@@ -1,3 +1,4 @@
+:page-partial:
 [[components-thymeleaf-integration]]
 === Thymeleaf integration
 

@@ -1,3 +1,4 @@
+:page-partial:
 [[components-content-markers]]
 ==== Content markers
 

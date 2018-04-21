@@ -1,1 +1,21 @@
-include::multi-domain-support.adoc[]
+[#multi-domain-multi-domain-and-site-support]
+= Multi-domain and multi-site support
+
+The default configuration of WebCmsModule considers all entities as part of a single pool of data (the "domain").
+Usually a domain corresponds with a single website, often represented by an actual DNS record.
+
+WebCmsModule also supports multiple domains within a single application, with a domain being represented by a `WebCmsDomain` entity.
+Default configuration is provided for the use case where a domain corresponds with a website.
+However a `WebCmsDomain` is an abstract grouping of asset and configuration data, and the domain concept could be used in an entirely different fashion if so wanted.
+
+Any entity that can be attached to a particular `WebCmsDomain` should implement the `WebCmsDomainBound` interface.
+WebCmsModule will automatically reconfigure EntityModule settings for any `WebCmsDomainBound` entity, based on the multi-domain configuration provided.
+
+All default implementations provided by WebCmsModule implement this interface.
+When using one of the default base classes (eg. `WebCmsObjectSuperClass`), you automatically implement `WebCmsDomainBound`.
+
+---
+
+**In a multi-domain setup, entities not attached to a specific domain are shared across all domains.  Entities attached to a single domain are available only on that specific domain.**
+
+---

@@ -8,7 +8,7 @@ include::../ax-docs-shared/copyright.adoc[]
 
 //== Version
 //
-//[{{ book.moduleVersion }}](/docs/whats-new.adoc)
+//[{{ book.moduleVersion }}](/docs/0.0.x.adoc)
 //
 //== Authors
 //

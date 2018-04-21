@@ -1,1 +1,41 @@
-include::chap-importing-data.adoc[]
+
+[[importing-importing-data]]
+[#importing-importing-data]
+= Importing data
+{module-name} provides infrastructure for easy importing of data using YAML files.
+The data import services are also the ones used for the default data of {module-name}, see the <<{doc-appendix}#appendix-default-data,appendix>> for the YAML version of the default types and assets.
+
+== WebCmsDataImportService
+The `WebCmsDataImportService` allows importing data from `Map` structures.
+The `Map` based data could for example be sourced from YAML, JSON or XML files.
+
+When converting to the domain model, the `WebCmsDataImportService` will dispatch to `WebCmsDataImporter` beans for handling data items.
+The `WebCmsDataConversionService` is used to convert from raw values (for example `String`) to the actual data type (for example `WebCmsPage`).
+
+.Example importing from YAML file data
+[source,java,indent=0]
+----
+Yaml yaml = new Yaml();
+Map<String, Object> data = (Map<String, Object>) yaml.load( inputStream );
+dataImportService.importData( data );
+----
+
+[[importing-installer]]
+== Using an installer
+The `AbstractWebCmsDataInstaller` is a base class for an installer that imports one or more YAML files using the `WebCmsDataImportService`.
+The files specified will be imported in registration order.
+
+.Example YAML data installer
+[source,java,indent=0]
+----
+@Installer(description = "Install some test data", phase = InstallerPhase.AfterContextBootstrap, version = 1)
+@RequiredArgsConstructor
+public class TestDataInstaller extends AbstractWebCmsDataInstaller
+{
+    @Override
+	protected void registerResources( List<String> locations ) {
+		locations.add( "classpath:installers/test-data/my-types.yml" );
+		locations.add( "classpath:installers/test-data/my-assets.yml" );
+	}
+}
+----

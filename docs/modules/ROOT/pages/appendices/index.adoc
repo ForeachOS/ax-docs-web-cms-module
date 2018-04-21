@@ -1,9 +1,0 @@
-include::message-codes.adoc[]
-
-include::thymeleaf-dialect.adoc[]
-
-include::entitymodule-attributes.adoc[]
-
-include::repositories-and-services.adoc[]
-
-include::appendix-default-data.adoc[]

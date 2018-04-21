@@ -3,3 +3,4 @@ title: "Module: Web CMS"
 version: 0.0.4
 nav:
 - modules/ROOT/nav.adoc
+- modules/guides/nav.adoc

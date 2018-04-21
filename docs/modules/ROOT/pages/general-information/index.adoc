@@ -1,1 +1,0 @@
-include::chap-general-information.adoc[]
