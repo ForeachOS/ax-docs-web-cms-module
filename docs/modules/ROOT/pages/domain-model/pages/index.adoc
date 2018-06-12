@@ -1,10 +1,12 @@
 = Page model
+
 [#pages-web-cms-page-overview]
 == Overview
 
-A `WebCmsPage` is a component that represents a single page in the application. It differs from an <<{doc-domain-model}#publication-model-overview,article>> in that the page is stand-alone,
-i.e. you have more control regarding the layout and the components of the page. One can use this, for example, to create _about_ or _faq_ pages. It is related to the publication model
- in that an article is contained in a page: the data is contained in the article component, but how the article is rendered is handled by the page.
+A `WebCmsPage` is a component that represents a single page in the application.
+It differs from an xref:domain-model/publication/index.adoc[article>]in that the page is stand-alone, i.e. you have more control regarding the layout and the components of the page.
+One can use this, for example, to create _about_ or _faq_ pages.
+It is related to the publication model in that an article is contained in a page: the data is contained in the article component, but how the article is rendered is handled by the page.
 
 === Properties
 
@@ -70,19 +72,21 @@ _Example:_
 * template `th/other-module/my-template` would be resolved as `th/other-module/my-template`
 
 NOTE: You can manually specify the default template prefix using property `webCmsModule.pages.template-prefix`.
-See the <<{doc-general-information}#module-settings,module settings>> for all options you can configure if you want to change the default template resolving behaviour.
+See the xref:configuration-properties.adoc[module settings] for all options you can configure if you want to change the default template resolving behaviour.
 
 === Web Components
 
-A `WebCmsPage` can contain different `WebCmsComponent` assets. Those form the building blocks of the pages. For further information, please check the <<{doc-components}#components-overview,chapter>> on components.
+A `WebCmsPage` can contain different `WebCmsComponent` assets.
+Those form the building blocks of the pages.
+For further information, please check the xref:components/index.adoc[chapters on components].
 
 === URLs
 
 A `WebCmsPage` can be referred to by different URLs. Please see the respective <<WebCmsUrl-pages, chapter>> for more information.
 
-[[pages-web-cms-page-import]]
+[#importing]
 === Importing a page
-One can import a page by using the import infrastructure provided by the import functionality of {module-name}.
+One can import a page by using the import infrastructure provided by the import functionality of WebCmsModule.
 
 ==== Examples
 
@@ -148,7 +152,7 @@ A WebCmsPageType is used for assigning a certain type of page to a <<pages-web-c
 
 === Properties
 
-===== Parameters
+.Parameters
 [options="header", cols="1,1,1,4,1"]
 |===
 |Field|Required|Type|Description|Default Value

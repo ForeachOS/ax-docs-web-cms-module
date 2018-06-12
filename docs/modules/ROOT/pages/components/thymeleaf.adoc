@@ -1,6 +1,4 @@
-:page-partial:
-[[components-thymeleaf-integration]]
-=== Thymeleaf integration
+= Thymeleaf integration
 
 WebCmsModule provides its own Thymeleaf dialect for working with components.
 It enables you to:
@@ -11,7 +9,7 @@ It enables you to:
 
 The Thymeleaf dialect is a very powerful tool to convert your static templates into user modifiable components.
 
-==== HTML attributes
+== HTML attributes
 Interacting with components is done by adding attributes to your template elements.
 
 include::fragment-component-attributes.adoc[]
@@ -38,9 +36,8 @@ Special scopes:
 *NOTE*
 In a single domain configuration, scope *domain* will always be the same as scope *global*.
 
-==== Examples
+== Examples
 
-:!numbered:
 This section contains a number of real-life examples for working with components from Thymeleaf.
 
 - Only look in the scope of the page asset. If not present, don't do anything.
@@ -57,7 +54,7 @@ This section contains a number of real-life examples for working with components
 - Start by looking in the scope of the page asset, don't look in the parent components even if you don't find them in the page scope. If the component is not found,
 render the code that is written down in the thymeleaf template.
 
-[code, html]
+[source,html,indent=0]
 ----
 <th:block wcm:component="page-header" wcm:scope="page">
     <div class="l-page__title">Our title</div>
@@ -70,7 +67,7 @@ render the code that is written down in the thymeleaf template.
 - Start by looking if the component exists in the page asset, but look in the parent scope(s) if you don't find the component in the page scope. If the component
  is nowhere to be found, the content in the thymeleaf template itself is rendered.
 
-[code, html]
+[source,html,indent=0]
 ----
 <th:block wcm:component="page-header" wcm:scope="global">
     <div class="l-page__title">Our title</div>
@@ -83,7 +80,7 @@ render the code that is written down in the thymeleaf template.
 - Look in the global scope for the component, skipping over any and all more granular scopes. If the component is nowhere to be
  found, the content in the thymeleaf template itself is rendered.
 
-==== Rendering a component
+=== Rendering a component
 You can specify a component to render by just setting the name of the component as the value of the _wcm:component_ attribute.
 
 .Simple rendering of component
@@ -124,7 +121,7 @@ In our example we look for a component 'my-component' in the set of shared compo
 
 NOTE: A `WebCmsComponentModel` is also a `ViewElement` and can always be rendered using the *across:view* element from the AcrossWebDialect as well.
 
-== Auto-create a markup component
+=== Auto-create a markup component
 The presence of _wcm:auto-create_ will automatically create a component for you if it does not yet exist.
 
 [source,html,indent=0]
@@ -168,7 +165,7 @@ If the component is not found, we now auto-create it in the _global_ scope inste
 WARNING: You can combine the use of _wcm:scope_ with a scope in _wcm:auto-create_.
 Be careful though because if you auto-create the component in a scope that is in fact not searched for the component, you will re-create on every request.
 
-==== Using placeholders in a markup component
+== Using placeholders in a markup component
 You can define placeholder sections in your template and allow other components to include them.
 Using placeholders is handy for fixed dynamic content that is not a component in itself, but you would like to provide some flexibility on positioning the content.
 
@@ -241,7 +238,7 @@ Template content...
 @@wcm:placeholder(my-placeholder)@@
 ----
 
-==== Nesting components
+== Nesting components
 
 Like with placeholders, a markup component can include other components using <<components-component-content-markers,component content markers>>.
 
@@ -291,7 +288,7 @@ Let's change our example markup to the following:
 Assume component _title_ is a `TextWebCmsComponentModel` with `Some title` as content.
 Upon first rendering _my-component_ would get created with the _title_ component output included: `My title: <span>Some title</span>`.
 
-==== Auto-create a simple container
+=== Auto-create a simple container
 Apart from simple markup components like `TextWebCmsComponentModel` you can also auto-create `ContainerWebCmsComponentModel` components.
 
 Let's change our example markup to the following:
@@ -310,7 +307,7 @@ The container will have 2 members: _title_ and _body_, both being `TextWebCmsCom
 NOTE: Because _title_ and _body_ are component children within a container type, they do not require the _wcm:auto-create_ attribute themselves.
 It is assumed they should be created automatically as members of the container - if the container itself gets auto-created.
 
-==== Nesting container components
+=== Nesting container components
 You're not limited to using a single level of containers for auto-creation.
 Consider the following example:
 
@@ -336,7 +333,7 @@ In this case the following components would be created:
 
 No additional _wcm:auto-create_ attributs are required as all nested components have a container as direct parent.
 
-==== Using placeholders in containers
+=== Using placeholders in containers
 Much like a regular markup component, a container can also use placeholders that are defined in the template.
 Where a markup component uses a <<components-placeholder-content-markers,placeholder content markers>> to render the placeholder content, a `ContainerWebCmsComponentModel` will get a member component of type `PlaceholderWebCmsComponentModel` instead.
 
@@ -360,7 +357,7 @@ This would auto-create the following components:
 NOTE: In the above example the _footer_ component reference is outside of the container section as it is inside the placeholder block.
 This means that all ties with the container will be severed: the normal scope lookup will apply and the component will not get auto-created unless it also has the _wcm:auto-create_ attribute.
 
-==== Linking to other components
+=== Linking to other components
 A `ContainerWebCmsComponentModel` can hold `ProxyWebCmsComponentModel` members that refer to other components that are not container members.
 If your template refers to a scoped component inside a container, a proxy will get auto-created as well.
 
@@ -389,7 +386,7 @@ You can of course still auto-create the global component as well - just as if it
 
 Now the global _footer_ component would first get created if it doesn't exist yet and then a proxy member would be added to the container.
 
-==== Containers with markup
+=== Containers with markup
 Unless a container has markup support active, all template markup outside of _wcm:component_ blocks will simply be ignored.
 If markup is supported however, the markup will contain component content markers much like in the case of markup components.
 
@@ -427,10 +424,8 @@ Title: @@wcm:component(title,container,false)@@
 Footer: @@wcm:component(footer,container,false)@@
 ----
 
-:numbered:
-
 [[components-thymeleaf-rendering]]
-==== Custom rendering of component
+== Custom rendering of component
 Web components in Thymeleaf are rendered using a `WebCmsComponentModelRenderer` implementation.
 You can easily create your own implementation for custom rendering:
 

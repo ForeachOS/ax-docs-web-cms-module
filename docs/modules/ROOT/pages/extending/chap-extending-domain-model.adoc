@@ -1,4 +1,4 @@
-= Extending {module-name}
+= Extending WebCmsModule
 
 customize configuration
 types & attributes -> importer

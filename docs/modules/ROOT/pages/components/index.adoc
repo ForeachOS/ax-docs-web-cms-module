@@ -76,7 +76,7 @@ include::chap-web-components-content-markers.adoc[]
 
 include::chap-web-components-defining-component-types.adoc[]
 
-[[components-web-cms-component-import]]
+[#importing]
 == Importing components
 
 === Single value importing

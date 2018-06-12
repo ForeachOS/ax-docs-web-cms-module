@@ -81,7 +81,7 @@ A metadata class must:
 If the administration UI is active, a form for metadata properties will automatically be generated using the EntityModule.
 This does require you to register the metadata type as an entity in the `EntityRegistry`.
 
-NOTE: Default (de-)serialization for `WebCmsObject` implementations is provided by the {module-name} by dispatching to the `WebCmsDataConversionService`.
+NOTE: Default (de-)serialization for `WebCmsObject` implementations is provided by the WebCmsModule by dispatching to the `WebCmsDataConversionService`.
 This means metadata properties can often refer to other web cms types without requiring custom configuration.
 
 See <<components-custom-component-type,creating a custom component type>> if you want to have a custom metadata class, change serialization or admin UI rendering.
@@ -300,7 +300,8 @@ WebCmsModule provides a default administration UI built on AdminWebModule and En
 The default administration UI uses a form of tabs to display the different sections (eg. content, members, metadata) of a component.  Only sections relevant for the component type will be shown to the user.
 
 ==== Administration UI labels and descriptions
-The default administration UI for components supports configuring the labels.  See the <<{doc-appendix}#appendix-message-codes,appendix on message codes>>.
+The default administration UI for components supports configuring the labels.
+See the xref:services-and-components/message-codes.adoc[message codes overview].
 
 ==== Creating custom component forms
 You can customize the forms being rendered by providing custom `xAdminRenderer` implementations.  This allows you to build 

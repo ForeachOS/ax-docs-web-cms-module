@@ -1,22 +1,21 @@
-== Using domains
+= Using domains
 
 This section explains how you can use the domain concept directly in your controllers or business logic.
 
-=== Accessing the current domain
+== Accessing the current domain
 
 You can access the current domain or its metadata using one of the methods on the `WebCmsMultiDomainService`.
 From a static context, you can directly use the `WebCmsDomainContextHolder` and `WebCmsDomainContext`.
 
 Use the service wherever possible, as it will ensure correct behaviour in both a multi-domain and no-domain context.
 
-=== Mapping handler methods to domain
+== Mapping handler methods to domain
 
 Most web cms mapping annotations allow you to specify the domain for which they apply.
 If you want to create regular `@RequestMapping` handler methods for specific domains, you can add the `@WebCmsDomainMapping` annotation.
 
-====== Example declaring a domain-specific handler method
-
-[suorce,java]
+.Example declaring a domain-specific handler method
+[source,java]
 ----
 /**
  * Declare a handler method that should only execute on the WebCmsDomain with domain key 'my-domain'.
@@ -28,7 +27,7 @@ public String domainSpecificMethod() {
 }
 ----
 
-=== Entity Query Language extensions
+== Entity Query Language extensions
 
 WebCmsModule adds some domain-related functions that can be used in EQL statements:
 
@@ -39,7 +38,7 @@ WebCmsModule adds some domain-related functions that can be used in EQL statemen
 
 The multi-domain auto-configuration will adjust views and selections only be specifying default EQL predicates to apply, containing these functions.
 
-=== Resolving the current domain
+== Resolving the current domain
 
 The current domain is resolved in 2 ways:
 

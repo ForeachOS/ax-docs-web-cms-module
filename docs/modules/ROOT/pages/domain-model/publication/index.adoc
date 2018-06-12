@@ -1,23 +1,23 @@
 [[publication-model-overview]]
 = Publication model
 
-{module-name} contains a default publication model for articles.
+WebCmsModule contains a default publication model for articles.
 An article can typically be pretty much any type of content, but usually it is something like a piece of news or a blog article.
 
 * An article is of a specific article type and belongs to a single publication.
 * A publication is of a specific publication type.
 * The publication type determines the different article types any publication of that publication type can have.
 
-=== Example model
+.Example model
 
 * Publication type _blog_ would represent a collection of blog articles
 ** Article types _blog_ and _status-update_ would be linked to the publication type
 * Publication _John's blog_ would be a single instance of the _blog_ publication type
 * _Leaving on holiday today!_ would be an article of type _status-update_ in _John's blog_
 
-=== Default model
+.Default model
 
-Out of the box, {module-name} configures the following data:
+Out of the box, WebCmsModule configures the following data:
 
 * publication types: *news*, *blogs*
 * article types: *news*, *blog*
@@ -75,7 +75,7 @@ Represents the specific type of a publication.
 `WebCmsPublicationType` is an implementation of `WebCmsTypeSpecifier`.
 The publication type defines the different article types that are allowed in a publication of that type.
 
-===== Services and repositories
+=== Services and repositories
 The following repositories are available for managing the publication related domain model:
 
 * `WebCmsPublicationTypeRepository`
@@ -139,7 +139,7 @@ public String renderBreakingNews( WebCmsArticle article, Model model ) {
 <3> The `@IgnoreEndpointModel` annotation suppresses the default article model from being loaded.
  The handler method should fully initialize the model required as well as return the view that should be rendered.
 
-[[publication-web-cms-article-import]]
+[#importing]
 === Importing data
 Most domain data of the publication model can be imported using YAML.
 See _<<publication-configuring-publication-model>>_ for a full example.

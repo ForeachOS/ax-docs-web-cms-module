@@ -25,7 +25,7 @@ assets:
 ----
 
 === Root key values
-By default, {module-name} supports 4 top-level keywords:
+By default, WebCmsModule supports 4 top-level keywords:
 
 * `assets`: specifies the children define `WebCmsAsset` import data
 * `types`: specifies the children define `WebCmsTypeSpecifier` import data
@@ -35,17 +35,17 @@ By default, {module-name} supports 4 top-level keywords:
 For `assets` and `types` the child key (eg. `page`) determines the sub-type that is being imported (eg. `WebCmsPage`).
 
 === Data importers
-{module-name} provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
+WebCmsModule provides importers for most default assets like `WebCmsPage`, `WebCmsMenu` etc.
 
 See the relevant chapters for examples and more details:
 
-* <<{doc-domain-model}#menu-web-cms-menu-import,importing menus>>
-* <<{doc-components}#components-web-cms-component-import,importing web components>>
-* <<{doc-domain-model}#pages-web-cms-page-import,importing pages>>
-* <<{doc-domain-model}#publication-web-cms-article-import,importing publications and articles>>
+* xref:domain-model/menus/index.adoc#importing[importing menus]
+* xref:components/index.adoc#importing[importing web components]
+* xref:domain-model/pages/index.adoc#importing[importing pages]
+* xref:domain-model/publication/index.adoc#importing[importing publications and articles]
 
 === Generic importers
-{module-name} has some generic importers that can be used in multiple situations.
+WebCmsModule has some generic importers that can be used in multiple situations.
 These importers act on a specific prefixed keyword.
 
 .Generic importer keywords
@@ -73,7 +73,7 @@ These links are mapped using the `WebCmsTypeSpecifierLink` and `WebCmsTypeSpecif
 |`wcm:menu-items`
 |Can be used on any data block representing a `WebCmsAsset`.
  Will create menu items for that asset provided that there is a `WebCmsAssetEndpoint` available as well.
-See <<{doc-domain-model}#pages-web-cms-page-import,page importing>> for examples.
+See xref:domain-model/pages/index.adoc#importing[page importing] for examples.
 
 |`wcm:urls`
 |Can be used on any data block representing a `WebCmsAsset`.

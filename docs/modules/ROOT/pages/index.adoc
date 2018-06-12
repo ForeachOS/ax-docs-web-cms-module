@@ -1,52 +1,13 @@
-= +++ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.9 95.7" width="40" style="margin-right: 10px"><path fill="#3CA873" d="M0 23.9l15.9-9.2 41.5 23.9-16 9.2"></path><path fill="#0093D8" d="M25.5 9.2L41.4 0l41.5 23.9-16 9.2"></path><path fill="#53DD99" d="M41.4 95.7l16-9.3V38.6l-16 9.2"></path><path fill="#22CEFA" d="M66.9 80.9l16-9.2V23.9l-16 9.2"></path><path fill="#257A50" d="M12.5 64.5L28.9 55l-16.4-9.4"></path><path fill="#4DBC86" d="M12.5 64.5L28.9 74V55"></path></svg> +++ Across - WebCmsModule
-
-include::variables.adoc[]
-
-include::../ax-docs-shared/copyright.adoc[]
-
----
-
-//== Version
-//
-//[{{ book.moduleVersion }}](/docs/0.0.x.adoc)
-//
-//== Authors
-//
-//Arne Vandamme, Raf Ceuls, Steven Gentens
-
-//== About
+= WebCmsModule
 
 WebCmsModule aims to provide some core Web CMS features for your Across application out-of-the-box.
 Building a simple website is very easy and requires very little development.
 
 Features provided by WebCmsModule include:
 
-* an extensible <<{doc-domain-model}#domain-model,Domain Model>> with common asset types like <<{doc-domain-model}#pages-web-cms-page-overview,pages>>, <<{doc-domain-model}#publication-model-overview,articles>> and <<{doc-domain-model}#redirects-redirects-overview,redirects>>
-* a way to manage the <<{doc-domain-model}#publication-model-overview,URLs for these assets>>
-* a <<{doc-components}#components-overview,powerful component model>> for building templates and managing dynamic content
-* an easy way to <<{doc-importing-data}#importing-yaml,import data using YAML files>>
+* an extensible xref:domain-model/assets/index.adoc[Domain Model] with common asset types like xref:domain-model/pages/index.adoc[pages], xref:domain-model/publication/index.adoc[articles], xref:domain-model/images/index.adoc[images] and xref:domain-model/redirects/index.adoc[redirects]
+* a way to manage the xref:domain-model/assets/endpoint-url.adoc[URLs for these assets]
+* a xref:components/index.adoc[powerful component model] for building templates and managing dynamic content
+* an easy way to xref:importing/index.adoc[import data using YAML files]
 
 A fully functional administration UI is available using AdminWebModule and EntityModule.
-
-
-The reference documentation is split up into several parts:
-
-* <<whats-new.adoc#whats-new, What's new in this version>> lists the release notes of WebCmsModule
-* <<general-information.adoc#general-information, Getting started>> explains how to start using WebCmsModule
-* <<components.adoc#web-components,Web Components>> talk about the fundamentals of how to use web components
-* <<importing-data.adoc#importing-data,Importing data>> explains how to import assets, components and types based on configuration files.
-* <<{doc-multi-domain}#multi-domain,Multi domain setup>> hands you the ability to manage multiple sites/domains for your application from a single interface.
-* <<performance-tuning.adoc#performance-tuning,Performance tuning>> provides information on how to improve general performance when using WebCmsModule.
-* <<appendix.adoc#appendices,Appendices>>
-* <<how-tos.adoc#how-tos,How-tos>> provides a different approach to get started with WebCmsModule through some general tutorials
-
-Module website: link:{module-url}[]
-
-'''
-.About the reference documentation
-This document is generated from a {git-across-docs}[separate Github repository] using Asciidoctor.
-
-Corrections, additions and general contributions to this documentation are very welcome and can be submitted through the source code repository.
-
-
-

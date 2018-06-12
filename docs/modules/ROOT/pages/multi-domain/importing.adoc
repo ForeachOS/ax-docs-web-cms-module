@@ -1,9 +1,9 @@
-== Importing domain configuration
+= Importing domain configuration
 
 `WebCmsDomain` is a `WebCmsObject` like most other entities provided by WebCmsModule.
-It has full support for being imported using YAML (or another format - see the section <<{doc-importing}#importing-data,Importing Data>> for more information).
+It has full support for being imported using YAML (or another format - see the section xref:importing/index.adoc[Importing Data] for more information).
 
-====== Example importing a WebCmsDomain with WebCmsSiteConfiguration metadata
+.Example importing a WebCmsDomain with WebCmsSiteConfiguration metadata
 
 [source,yaml]
 ----
@@ -25,7 +25,7 @@ domains:
       alwaysPrefix: true
 ----
 
-=== Importing domain configuration for WebCmsObjects
+== Importing domain configuration for WebCmsObjects
 
 All default `WebCmsObject` s (`WebCmsPage`, `WebCmsMenu`...) are domainbound. This means that their identifiers can be reused across different domains.
 To attach a `WebCmsObject` to a specific `WebCmsDomain` you only need to add the _domain_ property in the yaml configuration. The domain property can be any of the following:

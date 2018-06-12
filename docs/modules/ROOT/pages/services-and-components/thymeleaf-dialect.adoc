@@ -41,7 +41,7 @@ The following HTML attributes are supported.
 
 include::../components/fragment-component-attributes.adoc[]
 
-For more details, see the section <<{doc-components}#components-thymeleaf-integration,web components Thymeleaf integration>>.
+For more details, see the section xref:components/thymeleaf.adoc[web components Thymeleaf integration].
 
 
 

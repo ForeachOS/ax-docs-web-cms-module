@@ -93,7 +93,7 @@ the menu item. This can used in the Thymeleaf template to render the items in a 
 |Update automatically|Boolean|Yes|If checked and the linked endpoint gets updated, any updates will be reflected in this menu item.|False
 |================
 
-[[menu-web-cms-menu-import]]
+[#importing]
 == Importing a menu item
 One can import a menu and its associated items by using the import infrastructure provided by the import functionality of WebCms.
 [source,yaml]

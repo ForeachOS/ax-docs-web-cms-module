@@ -1,9 +1,8 @@
-
-[[importing-importing-data]]
-[#importing-importing-data]
 = Importing data
-{module-name} provides infrastructure for easy importing of data using YAML files.
-The data import services are also the ones used for the default data of {module-name}, see the <<{doc-appendix}#appendix-default-data,appendix>> for the YAML version of the default types and assets.
+
+WebCmsModule provides infrastructure for easy importing of data using YAML files.
+The data import services are also the ones used for the default data of WebCmsModule.
+See the xref:services-and-components/default-data.adoc[default data section] for the YAML version of the default types and assets.
 
 == WebCmsDataImportService
 The `WebCmsDataImportService` allows importing data from `Map` structures.

@@ -1,13 +1,13 @@
 [[endpoint-url]]
 = Endpoints and URLs
-{module-name} provides a basic a basic model for mapping an endpoint on a website.
+WebCmsModule provides a basic a basic model for mapping an endpoint on a website.
 An endpoint has one or more URLs pointing to it.
 The endpoint data determines the handler method that will be executed on the application end.
 
 == WebCmsEndpoint
 A `WebCmsEndpoint` represents a single endpoint, and has a `urls` property which is the collection of `WebCmsUrl` instances that point to the endpoint.
 
-{module-name} provides two endpoint implementations:
+WebCmsModule provides two endpoint implementations:
 
 * `WebCmsAssetEndpoint` maps a single asset (by default only `WebCmsPage` or `WebCmsArticle`)
 * `WebCmsRemoteEndpoint` maps :link:content/chap-redirects.html[redirects to a target URL]
@@ -56,7 +56,7 @@ If you want to manually manage endpoints on a lower level, the following reposit
 * `WebCmsRemoteEndpointRepository`
 
 == Mapping infrastructure
-{module-name} configures default mapping and model loading for its default endpoints:
+WebCmsModule configures default mapping and model loading for its default endpoints:
 
 * a `WebCmsAssetEndpoint` accessed with a `WebCmsUrl` that has a redirection status code will result in a redirect to the primary URL of that endpoint
 * a `WebCmsAssetEndpoint` accessed with a `WebCmsUrl` with a non redirection status code, will load the default endpoint model and render a default template
@@ -90,7 +90,7 @@ public class SillyRemoteEndpointController
 NOTE: For `WebCmsPage` and `WebCmsArticle` it is easier to use the specialized annotations `@WebCmsPageMapping` and `@WebCmsArticleMapping` respectively.
 
 === Default model loading
-When a `WebCmsEndpoint` is loaded, {module-name} will attempt to load a default model for the request.
+When a `WebCmsEndpoint` is loaded, WebCmsModule will attempt to load a default model for the request.
 The default implementations will add model attributes, set a default template or load asset components.
 See the `WebCmsEndpointModelLoader` interface for adding your own default model loaders for endpoints.
 

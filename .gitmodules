@@ -1,4 +1,0 @@
-[submodule "ax-docs-shared"]
-	path = ax-docs-shared
-	url = https://github.com/ForeachOS/ax-docs-shared
-	branch = master
