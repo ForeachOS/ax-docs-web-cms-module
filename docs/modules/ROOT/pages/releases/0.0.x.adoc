@@ -1,5 +1,18 @@
 = Release notes
 
+[#0-0-5]
+== 0.0.5.RELEASE
+
+Minor bug fixes:
+
+* a rich text area now supports double square brackets in its content
+* fix broken datepicket in metadata properties
+
+[#0-0-4]
+== 0.0.4.RELEASE
+
+* fix issues when configuring multiple image components in a single form
+
 [#0-0-3]
 == 0.0.3.RELEASE
 
