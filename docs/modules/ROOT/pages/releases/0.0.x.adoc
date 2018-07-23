@@ -6,7 +6,7 @@
 Minor bug fixes:
 
 * a rich text area now supports double square brackets in its content
-* fix broken datepicket in metadata properties
+* fix broken datepicker in metadata properties
 
 [#0-0-4]
 == 0.0.4.RELEASE

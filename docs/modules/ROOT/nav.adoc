@@ -1,6 +1,6 @@
 * xref:quick-start.adoc[Quick start]
 * xref:releases/index.adoc[Releases]
-** xref:releases/0.0.x.adoc#0-0-3[0.0.3]
+** xref:releases/0.0.x.adoc[0.0.x]
 * xref:configuration-properties.adoc[Configuration properties]
 
 * xref:domain-model/assets/index.adoc[Web CMS Asset model]
