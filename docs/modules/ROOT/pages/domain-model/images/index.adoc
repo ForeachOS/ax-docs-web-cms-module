@@ -144,7 +144,3 @@ assets:
 
 > All Spring resource locations are supported.  Take into account that URL resources using HTTPS will only work if the executing Java runtime has the required SSL certificates to connect to the remote host.
 
-== Image search
-You can search for images based on the name, source, description and keywords that where provided for the image.
-
-
