@@ -1,7 +1,7 @@
 = Release notes
 
 [#0-0-6]
-== 0.0.6-SNAPSHOT
+== 0.0.6.RELEASE
 
 .Image support
 * a `WebCmsImage` now has additional `source`, `description` and `keywords` text fields
