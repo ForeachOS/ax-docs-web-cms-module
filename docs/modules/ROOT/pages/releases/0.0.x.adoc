@@ -1,5 +1,11 @@
 = Release notes
 
+[#0-0-6]
+== 0.0.6.RELEASE
+
+* Name, source, description and keywords where added to a WebCmsImage
+* You can now also search for images using source, description and keywords that where provided.
+
 [#0-0-5]
 == 0.0.5.RELEASE
 
