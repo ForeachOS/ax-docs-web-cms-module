@@ -1,6 +1,6 @@
 name: web-cms-module
 title: "Module: Web CMS"
-version: 0.0.6-dev
+version: 0.0.6
 nav:
 - modules/ROOT/nav.adoc
 - modules/guides/nav.adoc
