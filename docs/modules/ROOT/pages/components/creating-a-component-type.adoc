@@ -351,7 +351,7 @@ Profiles can be inherited.  If your profile data has a *_parentProfile* attribut
   WebCmsComponentProfileRegistry.registerProfileForComponentType( 
     'rich-text', /* component type */
     'limited', /* profile name */
-    {
+    {
       _parentProfile: '_base', 
       toolbar1: 'bold italic' 
     }
