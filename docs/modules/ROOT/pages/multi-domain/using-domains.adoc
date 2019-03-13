@@ -47,6 +47,35 @@ The current domain is resolved in 2 ways:
 
 You can alter the resolving mechanism by creating your own `AbstractWebCmsDomainContextFilter` implementation and registering it on the `WebCmsMultiDomainConfiguration`.
 
+When the domain is changed via the GUI, the `CookieWebCmsDomainContextResolver` will send out an event.
+The `WebCmsDomainChangedEvent` will contain the `currentDomain` (the domain being switched from), and the `newDomain` (the domain being switched to).
+
+You could for example use this event to reload the `Authorities` of the current user, when the authorities differ per domain.
+
+.Example reloading authorities for a user
+[source,java]
+----
+    @EventListener(WebCmsDomainChangedEvent.class)
+    public void reloadAuthorities( WebCmsDomainChangedEvent event ) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        WebCmsDomain domain = webCmsMultiDomainService.getDomain( event.getNewDomain() ); # <1>
+
+        Collection<? extends GrantedAuthority> authorities = buildAuthoritiesForDomain( auth.getPrincipal(), domain ); # <2>
+        Authentication newAuthentication;
+        if ( auth instanceof UsernamePasswordAuthenticationToken ) {
+            UsernamePasswordAuthenticationToken usernamePasswordAuthentication = (UsernamePasswordAuthenticationToken) auth;
+            newAuthentication = new UsernamePasswordAuthenticationToken( usernamePasswordAuthentication.getPrincipal(), usernamePasswordAuthentication.getCredentials(),
+                                                               authorities );
+           SecurityContextHolder.getContext().setAuthentication( newAuthentication ); # <3>
+        }
+    }
+----
+
+<1> Get the new domain from the event.
+<2> Create your own function to build all the authorities applicable to this domain.
+<3> Set the newly built `Authentication` object containing the new authorities.
+
 == Using no-domain in a multi-domain setup
 
 In a multi-domain setup items not attached to a specific domain are expected to be shared across all domains.
