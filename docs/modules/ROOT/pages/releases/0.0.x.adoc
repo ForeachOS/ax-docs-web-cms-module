@@ -3,6 +3,7 @@
 [#0-0-7]
 == 0.0.7-SNAPSHOT
 
+* Refactored web resources registration approach (available since Across core 3.2.0), all xref:services-and-components/web-resources.adoc[third-party web resources] are now included using webjars
 * Added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
 * Added a `WebCmsDomainChangedEvent` which triggers when another domain is selected.
 

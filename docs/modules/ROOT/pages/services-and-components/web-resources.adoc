@@ -16,7 +16,7 @@ Resources::
 |https://jqueryui.com/[JQuery UI]
 |`jquery-ui.min.js`
 |`1.12.1`
-|external
+|@webjars
 |javascript-page-end
 |`jquery-ui`
 
@@ -25,7 +25,7 @@ Resources::
 
 |`bootbox.min.js`
 |`4.4.0`
-|external
+|@webjars
 |javascript-page-end
 |`bootbox`
 
@@ -61,7 +61,7 @@ Resources::
 |https://lodash.com/[Lodash]
 |`lodash.min.js`
 |`4.17.4`
-|external
+|@webjars
 |javascript
 |`lodash`
 
@@ -124,27 +124,27 @@ The included `jquery.sticky` file is required for the sticky toolbar support._
 .5+|https://codemirror.net/[CodeMirror]
 5+|_Adds CodeMirror support (for HTML/markup components)._
 
-|`codemirror.min.css`
-|`5.25.0`
-|external
+|`codemirror.css`
+|`5.44.0`
+|@webjars
 |css
 |`codemirror-css`
 
-|`codemirror.min.js`
-|`5.25.0`
-|external
+|`codemirror.js`
+|`5.44.0`
+|@webjars
 |javascript-page-end
 |`codemirror`
 
-|`htmlmixed.min.js`
-|`5.25.0`
-|external
+|`htmlmixed.js`
+|`5.44.0`
+|@webjars
 |javascript-page-end
 |`codemirror-htmlmixed`
 
-|`xml.min.js`
-|`5.25.0`
-|external
+|`xml.js`
+|`5.44.0`
+|@webjars
 |javascript-page-end
 |`codemirror-xml`
 
