@@ -1,10 +1,10 @@
 = Release notes
 
-[#0-0-7]
-== 0.0.7.RELEASE
-
-* Added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
-* Added a `WebCmsDomainChangedEvent` which triggers when another domain is selected.
+//[#0-0-7]
+//== 0.0.7-SNAPSHOT
+//
+//* Added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
+//* Added a `WebCmsDomainChangedEvent` which triggers when another domain is selected.
 
 [#0-0-6]
 == 0.0.6.RELEASE

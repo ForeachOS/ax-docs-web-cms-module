@@ -39,6 +39,7 @@
 ** xref:services-and-components/entitymodule-attributes.adoc[EntityModule attributes]
 ** xref:services-and-components/message-codes.adoc[Message codes]
 ** xref:services-and-components/thymeleaf-dialect.adoc[Thymeleaf dialect]
+** xref:services-and-components/web-resources.adoc[Web resources]
 ** xref:services-and-components/default-data.adoc[Default data]
 
 * xref:performance-tuning/index.adoc[Performance tuning]

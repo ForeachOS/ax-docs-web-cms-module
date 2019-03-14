@@ -1,0 +1,167 @@
+= Web resources
+
+WebCmsModule uses the following web resource packages.
+
+== Package: wcm-components-admin
+
+What:: General web resources for the WebCmsModule administration UI.
+
+Package name:: `WebCmsComponentAdminResources.NAME`
+
+Resources::
+
+|===
+|What |File |Version |Location |Bucket |Key
+
+|https://jqueryui.com/[JQuery UI]
+|`jquery-ui.min.js`
+|`1.12.1`
+|external
+|javascript-page-end
+|`jquery-ui`
+
+.2+|http://bootboxjs.com/[Bootbox]
+5+|_Used for the modal dialogs, eg image selector._
+
+|`bootbox.min.js`
+|`4.4.0`
+|external
+|javascript-page-end
+|`bootbox`
+
+
+.3+|WebCmsModule
+5+|_WebCmsModule basic javascript and css._
+|`wcm-admin-components.js`
+|
+|@static
+|javascript-page-end
+|`wcm-components-admin`
+
+|`wcm-admin-styles.css`
+|
+|@static
+|css
+|`wcm-components-admin`
+
+|===
+
+== Package: wcm-image-components-admin
+
+What:: Specific scripts and styling for the `WebCmsImage` controls.
+Includes the `wcm-components-admin` package.
+
+Package name:: `ImageWebCmsComponentAdminResources.NAME`
+
+Resources::
+
+|===
+|What |File |Version |Location |Bucket |Key
+
+|https://lodash.com/[Lodash]
+|`lodash.min.js`
+|`4.17.4`
+|external
+|javascript
+|`lodash`
+
+.2+|xref:entity-module::index.adoc[EntityModule]
+5+|_Script for enabling EntityQuery filtering in image selector dialog._
+
+|`entity-query.js`
+|
+|@static
+|javascript-page-end
+|`entityQueryFilterForm`
+
+
+.3+|WebCmsModule
+5+|_WebCmsModule image control related javascript and css._
+
+|`wcm-admin-image-components.js`
+|
+|@static
+|javascript-page-end
+|`wcm-image-components-admin`
+
+|`wcm-admin-image-component-styles.css`
+|
+|@static
+|css
+|`wcm-image-components-admin`
+
+|===
+
+== Package: wcm-text-components-admin
+
+What:: Specific scripts and styling text components.
+Adds support for using https://www.tiny.cloud/[TinyMCE] with rich-text components and https://codemirror.net/[CodeMirror] with HTML components.
+Includes the `wcm-image-components-admin` package.
+
+Package name:: `TextWebCmsComponentAdminResources.NAME`
+
+Resources::
+
+|===
+|What |File |Version |Location |Bucket |Key
+
+.3+|https://www.tiny.cloud/[TinyMCE]
+5+|_Adds TinyMCE support (for rich-text components).
+The included `jquery.sticky` file is required for the sticky toolbar support._
+
+|`tinymce.min.js`
+|`4.6.4`
+|@static
+|javascript-page-end
+|`tinymce`
+
+|`jquery.sticky.js`
+|`1.0.4`
+|@static
+|javascript-page-end
+|`sticky`
+
+.5+|https://codemirror.net/[CodeMirror]
+5+|_Adds CodeMirror support (for HTML/markup components)._
+
+|`codemirror.min.css`
+|`5.25.0`
+|external
+|css
+|`codemirror-css`
+
+|`codemirror.min.js`
+|`5.25.0`
+|external
+|javascript-page-end
+|`codemirror`
+
+|`htmlmixed.min.js`
+|`5.25.0`
+|external
+|javascript-page-end
+|`codemirror-htmlmixed`
+
+|`xml.min.js`
+|`5.25.0`
+|external
+|javascript-page-end
+|`codemirror-xml`
+
+.3+|WebCmsModule
+5+|_WebCmsModule text control related javascript and css._
+
+|`wcm-admin-text-components.js`
+|
+|@static
+|javascript-page-end
+|`wcm-text-components-admin`
+
+|`wcm-admin-text-component-styles.css`
+|
+|@static
+|css
+|`wcm-text-components-admin`
+
+|===
+
