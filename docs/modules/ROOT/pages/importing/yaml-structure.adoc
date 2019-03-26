@@ -98,6 +98,7 @@ This is the default value if no action is specified.
 |delete|Delete the data if it exists.
 |replace|If the item exists, overwrite it entirely with the new data.
 This replaces the existing object but keeps the same identity (primary key).
+|create-replace|Insert the data if it does not yet exist, replace it otherwise.
 |===
 
 === Creating a custom importer
