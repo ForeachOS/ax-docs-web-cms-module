@@ -42,5 +42,19 @@ By providing this attribute (the actual value is ignored) you indicate the outpu
  The name of the placeholder is the value of the attribute.
  Note that the element itself will also be part of the placeholder content, not just the body of the element.
 
+| wcm:prop:\{propertyName} / wcm:property:\{propertyName}
+| Attribute to set the property of a component.
+ The key contains the name of the property on the component and the value of the attribute will be applied to the property when the component is auto-created.
+
+| wcm:meta:\{propertyName} / wcm:metadata:\{propertyName}
+| Attribute to set a property on the metadata attached to a component.
+ The key contains the name of the property on the metadata attached to the component and the value of the attribute will be applied to the property when the component is auto-created.
+
+| wcm:attr:\{attributeName} / wcm:attribute:\{attributeName}
+| Attribute to register the value to either a property or metadata property on the component.
+ The value of the attribute will be applied to the property when the component is auto-created.
+ If the attribute name matches a property of the component, it will be applied to that property.
+ If not, it will be treated as a metadata property.
+
 |===
 

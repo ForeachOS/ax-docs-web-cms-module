@@ -1,11 +1,12 @@
 = Release notes
 
 [#0-0-7]
-== 0.0.7-SNAPSHOT
+== 0.0.7.RELEASE
 
-* Refactored web resources registration approach (available since Across core 3.2.0), all xref:services-and-components/web-resources.adoc[third-party web resources] are now included using webjars
-* Added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
-* Added a `WebCmsDomainChangedEvent` which triggers when another domain is selected.
+* refactored web resources registration approach (available since Across core 3.2.0), all xref:services-and-components/web-resources.adoc[third-party web resources] are now included using webjars
+* added support for xref:components/thymeleaf.adoc[modifying (metadata) properties when auto-creating components]
+* added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
+* added a `WebCmsDomainChangedEvent` which triggers when another domain is selected
 
 [#0-0-6]
 == 0.0.6.RELEASE

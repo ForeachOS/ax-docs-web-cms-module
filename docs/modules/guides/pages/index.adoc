@@ -1,5 +1,5 @@
-include::creating-and-importing-a-custom-asset.adoc[]
-include::using-a-site-template-in-a-multi-site-setup.adoc[]
+include::creating-a-custom-asset.adoc[]
+include::creating-a-site-template.adoc[]
 
 
 // importing custom components

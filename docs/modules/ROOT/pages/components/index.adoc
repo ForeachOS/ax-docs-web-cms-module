@@ -22,7 +22,7 @@ The latter represents the entire strongly typed model ready for rendering, where
 converted to a `WebCmsComponent` by a `WebCmsComponentModelWriter`
 converted from a `WebCmsComponent` by a `WebCmsComponentModelReader`
 
-include::chap-web-components-base-types.adoc[]
+include::component-types.adoc[]
 
 == Activating component support
 Any `WebCmsObject` - this includes all assets and components themselves - can have web components linked to it.
@@ -72,9 +72,9 @@ public class MyController {
 === Placeholders
 `WebCmsPlaceholderContentModel`
 
-include::chap-web-components-content-markers.adoc[]
+include::content-markers.adoc[]
 
-include::chap-web-components-defining-component-types.adoc[]
+include::creating-a-component-type.adoc[]
 
 [#importing]
 == Importing components

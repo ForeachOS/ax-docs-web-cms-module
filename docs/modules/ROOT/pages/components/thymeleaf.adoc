@@ -41,7 +41,7 @@ In a single domain configuration, scope *domain* will always be the same as scop
 This section contains a number of real-life examples for working with components from Thymeleaf.
 
 - Only look in the scope of the page asset. If not present, don't do anything.
-[code, html]
+[source,html,indent=0]
 ----
 <th:block wcm:component="page-header" wcm:scope="page" wcm:search-parent-scopes="false">
     <div class="l-page__title">Our title</div>
@@ -164,6 +164,38 @@ If the component is not found, we now auto-create it in the _global_ scope inste
 
 WARNING: You can combine the use of _wcm:scope_ with a scope in _wcm:auto-create_.
 Be careful though because if you auto-create the component in a scope that is in fact not searched for the component, you will re-create on every request.
+
+.Specifying (metadata) properties
+Several attributes are available to specify the value for properties of the component or metadata attached to the component.
+
+[source,html,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
+<div id="attributes" wcm:component="attributes" wcm:type="image-with-alt" wcm:auto-create
+     wcm:prop:sortIndex="10" wcm:attr:title="Attributes example"
+     wcm:meta:altText="hello" wcm:metadata:image="classpath:installers/deer.jpg">body
+</div>
+----
+In the above example a component will be created of which both properties and metadata properties will be set on creation.
+In this case, the properties `sortIndex` and `title` of the component will be modified as well as the properties `altText` and `image` on the metadata instance attached to the component.
+
+[NOTE]
+====
+Properties can also be defined using a nested element syntax, for example:
+
+[source,html,indent=0]
+[subs="verbatim,quotes,attributes"]
+----
+<div id="attribute-elements" wcm:component="attribute-elements" wcm:type="image-with-alt" wcm:auto-create>
+    <wcm:component-attribute name="sortIndex" value="12"/>
+    <wcm:component-attribute th:if="$\{false}" name="sortIndex" value="13"/>
+    <wcm:component-property name="title" th:text="'Updated component title'">Component title</wcm:component-property>
+    <wcm:component-metadata name="altText"><strong th:text="${5+6}"></strong>[[${'numbers'}]]</wcm:component-metadata>
+    This content should never show...
+</div>
+----
+
+====
 
 == Using placeholders in a markup component
 You can define placeholder sections in your template and allow other components to include them.
