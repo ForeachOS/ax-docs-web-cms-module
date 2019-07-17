@@ -1,6 +1,8 @@
-include::creating-and-importing-a-custom-asset.adoc[]
-include::using-a-site-template-in-a-multi-site-setup.adoc[]
+= Guides & How-tos
 
+The following guides are available:
+
+* xref:creating-a-custom-asset.adoc[Creating a custom Web CMS asset type]
 
 // importing custom components
 // Configuring articles

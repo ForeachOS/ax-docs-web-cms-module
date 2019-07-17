@@ -1,3 +1,3 @@
 * xref:index.adoc[Guides & How-tos]
 ** xref:creating-a-custom-asset.adoc[Creating a custom asset type]
-** xref:creating-a-site-template.adoc[Creating a website template]
+//** xref:creating-a-site-template.adoc[Creating a website template]

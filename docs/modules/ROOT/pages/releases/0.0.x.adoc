@@ -3,8 +3,12 @@
 [#0-0-7]
 == 0.0.7.RELEASE
 
-* Added database compatibility with PostgreSQL and Microsoft SQL Server JDBC driver
-* Added a `WebCmsDomainChangedEvent` which triggers when another domain is selected
+General changes:
+
+* refactored web resources registration approach (available since Across core 3.2.0), all xref:services-and-components/web-resources.adoc[third-party web resources] are now included using webjars
+* added support for xref:components/thymeleaf.adoc[modifying (metadata) properties when auto-creating components]
+* added database compatibility with PostgreSQL and Microsoft SQL Server
+* added a `WebCmsDomainChangedEvent` which is sent when the domain is switched in a multi-domain administration UI
 
 Bug fixes:
 
