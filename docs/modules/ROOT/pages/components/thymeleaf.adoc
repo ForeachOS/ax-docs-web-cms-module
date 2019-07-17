@@ -14,73 +14,7 @@ Interacting with components is done by adding attributes to your template elemen
 
 include::fragment-component-attributes.adoc[]
 
-Auto-creation of components from markup
-
-* if you don't specify a component type - the default component type will be created
-* if you don't specify a scope on a component - a default scope will be used:
-** outside a parent component the default scope will be _asset_, and parents will be searched if not specified within the _asset_ scope.
-** inside a parent component that is not a container: the default scope will be _asset_ and parent scopes will be searched if not specified
-** inside a parent component that is a container: the default scope will be the _container_ and parents will *not* be searched
-* if your component is a container:
-** any placeholders in the body will be added as placeholder child components and the body markup will refer to those components
-** any scoped component will be added as a proxy component referring to the original scoped component and the body markup will refer to the proxy components
-
-Special scopes:
-
-- *default*: always refers to the lowest level - first one to perform the lookup (usually asset) - you would not normally use this scope name as it is the default if a scope name is omitted
-- *asset*: components attached to the current asset being rendered, usually an asset specific name (e.g. *article*) will be available as well, but both will refer to the same components
-- *global*: always refers to the global scope, components that have no owner and are shared across domain
-- *domain*: components that have no owner but are only available on the specific domain
-- *container*: this is a reserved scope name that ensures the component is added as a container member - you would not normally use this scope name as it is the default if omitted inside a container component
-
-*NOTE*
-In a single domain configuration, scope *domain* will always be the same as scope *global*.
-
-== Examples
-
-This section contains a number of real-life examples for working with components from Thymeleaf.
-
-- Only look in the scope of the page asset. If not present, don't do anything.
-[source,html,indent=0]
-----
-<th:block wcm:component="page-header" wcm:scope="page" wcm:search-parent-scopes="false">
-    <div class="l-page__title">Our title</div>
-    <p>
-        Our text
-    </p>
-</th>
-----
-
-- Start by looking in the scope of the page asset, don't look in the parent components even if you don't find them in the page scope. If the component is not found,
-render the code that is written down in the thymeleaf template.
-
-[source,html,indent=0]
-----
-<th:block wcm:component="page-header" wcm:scope="page">
-    <div class="l-page__title">Our title</div>
-    <p>
-        Our text
-    </p>
-</th>
-----
-
-- Start by looking if the component exists in the page asset, but look in the parent scope(s) if you don't find the component in the page scope. If the component
- is nowhere to be found, the content in the thymeleaf template itself is rendered.
-
-[source,html,indent=0]
-----
-<th:block wcm:component="page-header" wcm:scope="global">
-    <div class="l-page__title">Our title</div>
-    <p>
-        Our text
-    </p>
-</th>
-----
-
-- Look in the global scope for the component, skipping over any and all more granular scopes. If the component is nowhere to be
- found, the content in the thymeleaf template itself is rendered.
-
-=== Rendering a component
+== Rendering a component
 You can specify a component to render by just setting the name of the component as the value of the _wcm:component_ attribute.
 
 .Simple rendering of component
@@ -121,7 +55,50 @@ In our example we look for a component 'my-component' in the set of shared compo
 
 NOTE: A `WebCmsComponentModel` is also a `ViewElement` and can always be rendered using the *across:view* element from the AcrossWebDialect as well.
 
-=== Auto-create a markup component
+=== Examples
+
+This section contains a number of real-life examples for working with components from Thymeleaf.
+
+[source,html,indent=0]
+----
+<th:block wcm:component="page-header" wcm:scope="page" wcm:search-parent-scopes="false">
+    <div class="l-page__title">Our title</div>
+    <p>
+        Our text
+    </p>
+</th>
+----
+
+Start by looking in the scope of the page asset, don't look in the parent components even if you don't find them in the page scope.
+If the component is not found, render the code that is written down in the thymeleaf template.
+
+[source,html,indent=0]
+----
+<th:block wcm:component="page-header" wcm:scope="page">
+    <div class="l-page__title">Our title</div>
+    <p>
+        Our text
+    </p>
+</th>
+----
+
+Start by looking if the component exists in the page asset, but look in the parent scope(s) if you don't find the component in the page scope.
+If the component is nowhere to be found, the content in the thymeleaf template itself is rendered.
+
+[source,html,indent=0]
+----
+<th:block wcm:component="page-header" wcm:scope="global">
+    <div class="l-page__title">Our title</div>
+    <p>
+        Our text
+    </p>
+</th>
+----
+
+Look in the global scope for the component, skipping over any and all more granular scopes.
+If the component is nowhere to be found, the content in the thymeleaf template itself is rendered.
+
+== Auto-create a component from markup
 The presence of _wcm:auto-create_ will automatically create a component for you if it does not yet exist.
 
 [source,html,indent=0]
@@ -136,7 +113,7 @@ The processed body of the _div_ element will be set as the content of our text c
 
 As with the component type, because we did not specify an explicit scope, the component will be added to the default scope: usually the asset being rendered.
 
-.Specifying component type
+=== Specifying component type
 Adding a component type is done with the _wcm:type_ attribute.
 
 [source,html,indent=0]
@@ -150,7 +127,7 @@ The value of the _wcm:type_ attribute must be a known `WebCmsComponentType` type
 
 NOTE: The component type you want to create must have a registered `WebCmsComponentAutoCreateStrategy` for auto-creation to be successful.
 
-.Specifying creation scope
+=== Specifying creation scope
 The _wcm:auto-create_ attribute can optionally have a value.
 
 [source,html,indent=0]
@@ -165,23 +142,22 @@ If the component is not found, we now auto-create it in the _global_ scope inste
 WARNING: You can combine the use of _wcm:scope_ with a scope in _wcm:auto-create_.
 Be careful though because if you auto-create the component in a scope that is in fact not searched for the component, you will re-create on every request.
 
-.Specifying (metadata) properties
+=== Specifying properties and metadata
 Several attributes are available to specify the value for properties of the component or metadata attached to the component.
 
 [source,html,indent=0]
 [subs="verbatim,quotes,attributes"]
 ----
-<div id="attributes" wcm:component="attributes" wcm:type="image-with-alt" wcm:auto-create
-     wcm:prop:sortIndex="10" wcm:attr:title="Attributes example"
-     wcm:meta:altText="hello" wcm:metadata:image="classpath:installers/deer.jpg">body
-</div>
+<img wcm:component="someImage" wcm:type="image" wcm:auto-create
+     wcm:prop:sortIndex="10" wcm:attr:title="Image example"
+     wcm:meta:altText="An image of a deer" wcm:metadata:image="classpath:installers/deer.jpg" />
 ----
 In the above example a component will be created of which both properties and metadata properties will be set on creation.
-In this case, the properties `sortIndex` and `title` of the component will be modified as well as the properties `altText` and `image` on the metadata instance attached to the component.
+In this case, the properties `sortIndex` and `title` of the `WebCmsComponentModel` will be modified as well as the properties `altText` and `image` on the metadata instance attached to the component.
 
 [NOTE]
 ====
-Properties can also be defined using a nested element syntax, for example:
+Properties can also be defined using a nested element syntax for more complex use cases, for example:
 
 [source,html,indent=0]
 [subs="verbatim,quotes,attributes"]
@@ -196,6 +172,28 @@ Properties can also be defined using a nested element syntax, for example:
 ----
 
 ====
+
+=== Auto-creation rules and scopes
+
+* if you don't specify a component type - the default component type will be created
+* if you don't specify a scope on a component - a default scope will be used:
+** outside a parent component the default scope will be _asset_, and parents will be searched if not specified within the _asset_ scope.
+** inside a parent component that is not a container: the default scope will be _asset_ and parent scopes will be searched if not specified
+** inside a parent component that is a container: the default scope will be the _container_ and parents will *not* be searched
+* if your component is a container:
+** any placeholders in the body will be added as placeholder child components and the body markup will refer to those components
+** any scoped component will be added as a proxy component referring to the original scoped component and the body markup will refer to the proxy components
+
+Special scopes:
+
+- *default*: always refers to the lowest level - first one to perform the lookup (usually asset) - you would not normally use this scope name as it is the default if a scope name is omitted
+- *asset*: components attached to the current asset being rendered, usually an asset specific name (e.g. *article*) will be available as well, but both will refer to the same components
+- *global*: always refers to the global scope, components that have no owner and are shared across domain
+- *domain*: components that have no owner but are only available on the specific domain
+- *container*: this is a reserved scope name that ensures the component is added as a container member - you would not normally use this scope name as it is the default if omitted inside a container component
+
+*NOTE*
+In a single domain configuration, scope *domain* will always be the same as scope *global*.
 
 == Using placeholders in a markup component
 You can define placeholder sections in your template and allow other components to include them.
