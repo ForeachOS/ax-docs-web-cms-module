@@ -1,5 +1,6 @@
 * xref:quick-start.adoc[Quick start]
 * xref:releases/index.adoc[Releases]
+** xref:releases/0.1.x.adoc[0.1.x]
 ** xref:releases/0.0.x.adoc[0.0.x]
 * xref:configuration-properties.adoc[Configuration properties]
 
