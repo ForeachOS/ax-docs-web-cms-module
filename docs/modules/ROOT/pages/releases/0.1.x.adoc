@@ -1,7 +1,7 @@
 = 0.1.x release notes
 
 [#0-1-0]
-== 0.1.0.RELEASE
+== 0.1.0-SNAPSHOT
 * *Requires Across 5.0.0.*
 * Spring upgrade related changes
 * `WebCmsComponentIcons`, `WebCmsIcons`, `WebCmsMenuIcons` and `WebCmsImageIcons` configure the used icons in WebCmsModule
