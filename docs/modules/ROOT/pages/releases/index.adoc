@@ -17,6 +17,7 @@
 
 WebCmsModule follows a https://semver.org[semantic versioning] scheme.
 
+* xref:releases/0.1.x.adoc#0-1-0[0.1.0]
 * xref:releases/0.0.x.adoc#0-0-7[0.0.7]
 * xref:releases/0.0.x.adoc#0-0-6[0.0.6]
 
