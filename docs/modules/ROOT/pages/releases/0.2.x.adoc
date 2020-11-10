@@ -3,4 +3,5 @@
 [#0-2-0]
 == 0.2.0.RELEASE
 
+* Add explicit `@RequestMapping("**")` for controllers that contain a `@CustomRequestMapping`
 * Switched to JUnit5
