@@ -1,0 +1,6 @@
+= 0.2.x release notes
+
+[#0-2-0]
+== 0.2.0.RELEASE
+
+* Switched to JUnit5
